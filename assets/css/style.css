@@ -1205,6 +1205,36 @@ body.rtl .mobile-dropdown-item a:hover i:last-child {
     50% { transform: rotate(15deg) translateY(-20px); }
 }
 
+.footer-logo-link {
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo-link:hover {
+    transform: scale(1.05);
+}
+
+.footer-logo-link:hover .footer-logo i {
+    filter: drop-shadow(0 0 20px #ffaa33);
+    animation: logoHover 0.5s ease-in-out;
+}
+
+.footer-logo-link:hover .footer-logo span {
+    color: #ffaa33;
+    text-shadow: 
+        4px 4px 0 #8b4513,
+        6px 6px 0 #4a2c1a,
+        8px 8px 0 #2a1a0a,
+        0 0 20px #ffaa33;
+}
+
+@keyframes logoHover {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(-5deg) scale(1.1); }
+    75% { transform: rotate(5deg) scale(1.1); }
+}
+
 .footer-logo {
     display: flex;
     align-items: center;
@@ -1229,14 +1259,17 @@ body.rtl .mobile-dropdown-item a:hover i:last-child {
     font-size: 2.5rem;
     font-weight: bold;
     color: #f7c35c;
-    text-shadow: 4px 4px 0 #8b4513, 6px 6px 0 #4a2c1a;
+    text-shadow: 
+        4px 4px 0 #8b4513,
+        6px 6px 0 #4a2c1a,
+        8px 8px 0 #2a1a0a;
     letter-spacing: 4px;
     animation: logoTextPulse 3s ease-in-out infinite;
 }
 
 @keyframes logoTextPulse {
-    0%, 100% { text-shadow: 4px 4px 0 #8b4513, 6px 6px 0 #4a2c1a; }
-    50% { text-shadow: 6px 6px 0 #8b4513, 8px 8px 0 #4a2c1a; }
+    0%, 100% { text-shadow: 4px 4px 0 #8b4513, 6px 6px 0 #4a2c1a, 8px 8px 0 #2a1a0a; }
+    50% { text-shadow: 6px 6px 0 #8b4513, 8px 8px 0 #4a2c1a, 10px 10px 0 #2a1a0a; }
 }
 
 .footer-brand p {
@@ -1289,6 +1322,7 @@ body.rtl .mobile-dropdown-item a:hover i:last-child {
     justify-content: center;
     gap: 1.2rem;
     margin-top: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .footer-social a {
@@ -1315,6 +1349,7 @@ body.rtl .mobile-dropdown-item a:hover i:last-child {
 .footer-social a:nth-child(5) { animation-delay: 0.4s; }
 .footer-social a:nth-child(6) { animation-delay: 0.5s; }
 .footer-social a:nth-child(7) { animation-delay: 0.6s; }
+.footer-social a:nth-child(8) { animation-delay: 0.7s; }
 
 @keyframes socialFloat {
     0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -1447,6 +1482,8 @@ body.rtl .mobile-dropdown-item a:hover i:last-child {
 .footer-col:nth-child(1) ul li:nth-child(6) { animation-delay: 0.7s; }
 .footer-col:nth-child(1) ul li:nth-child(7) { animation-delay: 0.8s; }
 .footer-col:nth-child(1) ul li:nth-child(8) { animation-delay: 0.9s; }
+.footer-col:nth-child(1) ul li:nth-child(9) { animation-delay: 1.0s; }
+.footer-col:nth-child(1) ul li:nth-child(10) { animation-delay: 1.1s; }
 
 @keyframes listItemFade {
     from {
@@ -1479,6 +1516,7 @@ body.rtl .mobile-dropdown-item a:hover i:last-child {
     opacity: 0;
     transition: all 0.3s ease;
     color: #f39c12;
+    font-size: 0.8rem;
 }
 
 .footer-col a:hover {
@@ -1564,6 +1602,8 @@ body.rtl .mobile-dropdown-item a:hover i:last-child {
 .footer-certifications span:nth-child(4) { animation-delay: 0.6s; }
 .footer-certifications span:nth-child(5) { animation-delay: 0.8s; }
 .footer-certifications span:nth-child(6) { animation-delay: 1s; }
+.footer-certifications span:nth-child(7) { animation-delay: 1.2s; }
+.footer-certifications span:nth-child(8) { animation-delay: 1.4s; }
 
 @keyframes certPulse {
     0%, 100% { background: rgba(255, 170, 51, 0.1); }
@@ -1595,6 +1635,7 @@ body.rtl .mobile-dropdown-item a:hover i:last-child {
     justify-content: center;
     gap: 1rem;
     font-size: 2rem;
+    flex-wrap: wrap;
 }
 
 .payment-methods i {
@@ -1610,6 +1651,8 @@ body.rtl .mobile-dropdown-item a:hover i:last-child {
 .payment-methods i:nth-child(5) { animation-delay: 0.4s; }
 .payment-methods i:nth-child(6) { animation-delay: 0.5s; }
 .payment-methods i:nth-child(7) { animation-delay: 0.6s; }
+.payment-methods i:nth-child(8) { animation-delay: 0.7s; }
+.payment-methods i:nth-child(9) { animation-delay: 0.8s; }
 
 @keyframes paymentFloat {
     0%, 100% { transform: translateY(0); }
@@ -1644,6 +1687,7 @@ body.rtl .mobile-dropdown-item a:hover i:last-child {
 .stat:nth-child(2) { animation-delay: 0.2s; }
 .stat:nth-child(3) { animation-delay: 0.3s; }
 .stat:nth-child(4) { animation-delay: 0.4s; }
+.stat:nth-child(5) { animation-delay: 0.5s; }
 
 @keyframes statAppear {
     from {
@@ -1723,9 +1767,32 @@ body.rtl .footer-col a:hover::before {
     right: -5px;
 }
 
+body.rtl .footer-logo {
+    flex-direction: row-reverse;
+}
+
+body.rtl .footer-social {
+    flex-direction: row-reverse;
+}
+
+body.rtl .footer-certifications {
+    flex-direction: row-reverse;
+}
+
+body.rtl .stat::before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 /* ============================================ */
 /* RESPONSIVE FOOTER
 /* ============================================ */
+
+@media (max-width: 1200px) {
+    .footer-links {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 
 @media (max-width: 992px) {
     .footer-links {
@@ -1733,7 +1800,11 @@ body.rtl .footer-col a:hover::before {
     }
     
     .footer-logo span {
-        font-size: 2rem;
+        font-size: 2.2rem;
+    }
+    
+    .footer-logo i {
+        font-size: 3rem;
     }
 }
 
@@ -1751,12 +1822,32 @@ body.rtl .footer-col a:hover::before {
         padding: 1.5rem;
     }
     
+    .footer-logo {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
     .footer-logo span {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
     
     .footer-logo i {
-        font-size: 2.5rem;
+        font-size: 3rem;
+    }
+    
+    .footer-brand p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .footer-social {
+        gap: 0.8rem;
+    }
+    
+    .footer-social a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
     }
     
     .footer-certifications {
@@ -1782,27 +1873,72 @@ body.rtl .footer-col a:hover::before {
         grid-template-columns: 1fr;
     }
     
+    .footer-col {
+        padding: 1rem;
+    }
+    
     .footer-brand p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .footer-rating {
+        flex-wrap: wrap;
     }
     
     .footer-social {
         flex-wrap: wrap;
+        justify-content: center;
     }
     
     .footer-certifications {
         flex-direction: column;
         align-items: center;
         border-radius: 20px;
+        padding: 1rem;
+    }
+    
+    .footer-certifications span {
+        width: 100%;
+        justify-content: center;
     }
     
     .payment-methods {
         flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
     }
     
     .footer-stats {
         flex-direction: column;
         gap: 2rem;
+    }
+    
+    .stat {
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .footer-logo span {
+        font-size: 1.5rem;
+    }
+    
+    .footer-logo i {
+        font-size: 2.5rem;
+    }
+    
+    .footer-col h3 {
+        font-size: 1.1rem;
+    }
+    
+    .footer-col a {
+        font-size: 0.9rem;
+    }
+    
+    .footer-social a {
+        width: 35px;
+        height: 35px;
+        font-size: 1.1rem;
     }
 }
 
@@ -1829,23 +1965,35 @@ body.dark-mode .footer-certifications {
 @media (prefers-reduced-motion: reduce) {
     .footer::before,
     .footer-brand::before,
+    .footer-logo i,
+    .footer-logo span,
+    .footer-rating i,
+    .footer-social a,
     .footer-social a::before,
     .footer-bottom::before,
     .footer-certifications i,
+    .footer-certifications span,
+    .footer-col,
+    .footer-col h3 i,
     .footer-col a::before,
-    .stat::before {
+    .stat,
+    .stat::before,
+    .stat-value,
+    .payment-methods i {
         animation: none !important;
+        transition: none !important;
     }
     
-    .footer-social a:hover {
-        transform: scale(1.1);
+    .footer-social a:hover,
+    .footer-col a:hover,
+    .payment-methods i:hover {
+        transform: none !important;
     }
     
-    .footer-col a:hover {
-        transform: translateX(3px);
+    .footer-logo-link:hover {
+        transform: none;
     }
 }
-
 /* ============================================ */
 /* COMMON UI ELEMENTS
 /* ============================================ */
@@ -2298,4 +2446,34 @@ body.dark-mode .theme-switch {
 @keyframes footerTextFloat {
     0%, 100% { transform: translateZ(0) translateY(0); }
     50% { transform: translateZ(30px) translateY(-5px); }
+}
+
+/* Add to your existing CSS */
+.footer-logo-link {
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo-link:hover {
+    transform: scale(1.05);
+}
+
+.footer-logo-link:hover .footer-3d-logo {
+    animation: footerLogoHover 0.5s ease-in-out;
+}
+
+.footer-logo-link:hover .footer-3d-text {
+    color: var(--secondary, #ff9933);
+    text-shadow: 
+        3px 3px 0 #8b4513,
+        5px 5px 0 #4a2c1a,
+        7px 7px 0 #2a1a0a,
+        0 0 20px var(--accent, #ffaa33);
+}
+
+@keyframes footerLogoHover {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(-5deg) scale(1.1); }
+    75% { transform: rotate(5deg) scale(1.1); }
 }
