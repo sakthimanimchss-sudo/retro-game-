@@ -3,835 +3,1441 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>User Dashboard - Retro Game Marketplace</title>
+    <title>Dashboard - Retro Game Marketplace</title>
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>🎮</text></svg>">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/dashboard.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <style>
+        /* ============================================ */
+        /* DASHBOARD - ADVANCED UI/UX
+        /* ============================================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: linear-gradient(135deg, #0f0a07 0%, #1a120c 100%);
+            color: #e5d9c6;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body.light-mode {
+            background: linear-gradient(135deg, #f4e9d8 0%, #e5d9c6 100%);
+            color: #2c1e0e;
+        }
+
+        /* Animated Background */
+        .dashboard-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bg-grid {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background-image: 
+                linear-gradient(rgba(255, 170, 51, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 170, 51, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            transform: rotate(45deg);
+            animation: gridMove 30s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: rotate(45deg) translateY(0); }
+            100% { transform: rotate(45deg) translateY(50px); }
+        }
+
+        .bg-float {
+            position: absolute;
+            font-size: 15rem;
+            color: rgba(255, 170, 51, 0.03);
+            pointer-events: none;
+        }
+
+        .bg-float:nth-child(2) { top: 10%; right: 5%; transform: rotate(15deg); animation: float1 20s ease-in-out infinite; }
+        .bg-float:nth-child(3) { bottom: 10%; left: 5%; transform: rotate(-15deg); animation: float2 25s ease-in-out infinite; }
+        .bg-float:nth-child(4) { top: 40%; left: 20%; font-size: 10rem; animation: float3 18s ease-in-out infinite; }
+
+        @keyframes float1 {
+            0%, 100% { transform: rotate(15deg) translateY(0); }
+            50% { transform: rotate(15deg) translateY(-50px); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: rotate(-15deg) translateY(0); }
+            50% { transform: rotate(-15deg) translateY(50px); }
+        }
+
+        @keyframes float3 {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            33% { transform: translateX(30px) rotate(5deg); }
+            66% { transform: translateX(-30px) rotate(-5deg); }
+        }
+
+        /* Main Container */
+        .dashboard-container {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* ============================================ */
+        /* DASHBOARD HEADER - REDESIGNED
+        /* ============================================ */
+
+        .dashboard-header {
+            background: rgba(26, 18, 12, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 170, 51, 0.2);
+            border-radius: 30px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            animation: headerAppear 0.8s ease-out;
+        }
+
+        @keyframes headerAppear {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dashboard-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 170, 51, 0.1), transparent);
+            animation: headerShine 8s infinite;
+        }
+
+        @keyframes headerShine {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-content h1 i {
+            color: #ffaa33;
+            font-size: 2.5rem;
+            animation: headerIcon 3s ease-in-out infinite;
+        }
+
+        @keyframes headerIcon {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(10deg) scale(1.1); }
+            75% { transform: rotate(-10deg) scale(1.1); }
+        }
+
+        .glow-text {
+            background: linear-gradient(135deg, #ffaa33, #ff9933);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 170, 51, 0.5);
+        }
+
+        .header-content p {
+            color: #b7a88b;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .header-content p i {
+            color: #44ff44;
+            font-size: 0.8rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Courier New', monospace;
+        }
+
+        .action-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .action-btn:hover::before {
+            left: 100%;
+        }
+
+        .action-btn.primary {
+            background: linear-gradient(135deg, #ffaa33, #ff9933);
+            color: #221100;
+            box-shadow: 0 10px 20px rgba(255, 170, 51, 0.3);
+        }
+
+        .action-btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 170, 51, 0.4);
+        }
+
+        .action-btn.secondary {
+            background: rgba(255, 170, 51, 0.1);
+            border: 2px solid #ffaa33;
+            color: #ffaa33;
+        }
+
+        .action-btn.secondary:hover {
+            background: rgba(255, 170, 51, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .credits-badge {
+            background: linear-gradient(135deg, #ffaa33, #ff9933);
+            color: #221100;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+        }
+
+        /* ============================================ */
+        /* DASHBOARD LAYOUT
+        /* ============================================ */
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            animation: contentAppear 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes contentAppear {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================================ */
+        /* SIDEBAR - ADVANCED
+        /* ============================================ */
+
+        .dashboard-sidebar {
+            background: rgba(26, 18, 12, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 170, 51, 0.2);
+            border-radius: 30px;
+            padding: 2rem;
+            height: fit-content;
+            position: sticky;
+            top: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .user-profile-card {
+            text-align: center;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid rgba(255, 170, 51, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .avatar-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid #ffaa33;
+            box-shadow: 0 0 30px rgba(255, 170, 51, 0.5);
+            transition: transform 0.3s;
+        }
+
+        .avatar-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .status-badge {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            background: #44ff44;
+            border: 3px solid #221100;
+            border-radius: 50%;
+            animation: statusPulse 2s infinite;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .user-profile-card h3 {
+            font-size: 1.5rem;
+            color: #ffaa33;
+            margin-bottom: 0.3rem;
+        }
+
+        .member-badge {
+            background: rgba(255, 170, 51, 0.1);
+            border: 1px solid #ffaa33;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .rating-stars {
+            display: flex;
+            justify-content: center;
+            gap: 0.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-stars i {
+            color: gold;
+            animation: starTwinkle 2s infinite;
+        }
+
+        .rating-stars i:nth-child(1) { animation-delay: 0s; }
+        .rating-stars i:nth-child(2) { animation-delay: 0.2s; }
+        .rating-stars i:nth-child(3) { animation-delay: 0.4s; }
+        .rating-stars i:nth-child(4) { animation-delay: 0.6s; }
+        .rating-stars i:nth-child(5) { animation-delay: 0.8s; }
+
+        @keyframes starTwinkle {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .rating-text {
+            color: #b7a88b;
+            font-size: 0.9rem;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-item {
+            list-style: none;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.2rem;
+            color: #b7a88b;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: #ffaa33;
+            transition: height 0.3s;
+        }
+
+        .nav-link:hover::before,
+        .nav-item.active .nav-link::before {
+            height: 100%;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 170, 51, 0.1);
+            color: #ffaa33;
+            transform: translateX(5px);
+        }
+
+        .nav-item.active .nav-link {
+            background: rgba(255, 170, 51, 0.15);
+            color: #ffaa33;
+        }
+
+        .nav-link i {
+            width: 24px;
+            font-size: 1.2rem;
+        }
+
+        .badge {
+            background: #ffaa33;
+            color: #221100;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: auto;
+        }
+
+        .logout-item {
+            margin-top: 1rem;
+            border-top: 2px solid rgba(255, 170, 51, 0.2);
+            padding-top: 1rem;
+        }
+
+        .logout-link {
+            color: #ff5555;
+        }
+
+        .logout-link i {
+            color: #ff5555;
+        }
+
+        /* ============================================ */
+        /* MAIN CONTENT
+        /* ============================================ */
+
+        .dashboard-main {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-card-modern {
+            background: rgba(26, 18, 12, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 170, 51, 0.2);
+            border-radius: 25px;
+            padding: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            animation: statAppear 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .stat-card-modern:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card-modern:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card-modern:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card-modern:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes statAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-card-modern:hover {
+            transform: translateY(-5px);
+            border-color: #ffaa33;
+            box-shadow: 0 20px 30px rgba(255, 170, 51, 0.2);
+        }
+
+        .stat-icon-modern {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(255, 170, 51, 0.2), rgba(255, 153, 51, 0.2));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #ffaa33;
+        }
+
+        .stat-content-modern h3 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffaa33;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-content-modern p {
+            color: #b7a88b;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section Cards */
+        .section-card {
+            background: rgba(26, 18, 12, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 170, 51, 0.2);
+            border-radius: 30px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .section-header-modern {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .section-header-modern h2 {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: #ffaa33;
+        }
+
+        .section-header-modern h2 i {
+            animation: sectionIcon 3s infinite;
+        }
+
+        @keyframes sectionIcon {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(10deg); }
+            75% { transform: rotate(-10deg); }
+        }
+
+        .view-link {
+            color: #ffaa33;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid transparent;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+
+        .view-link:hover {
+            border-color: #ffaa33;
+            background: rgba(255, 170, 51, 0.1);
+            gap: 1rem;
+        }
+
+        /* Orders Table */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        .orders-table-modern {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .orders-table-modern th {
+            text-align: left;
+            padding: 1rem;
+            color: #ffaa33;
+            font-weight: bold;
+            border-bottom: 2px solid rgba(255, 170, 51, 0.3);
+        }
+
+        .orders-table-modern td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 170, 51, 0.1);
+        }
+
+        .order-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .order-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 2px solid #ffaa33;
+        }
+
+        .status-badge-modern {
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .status-badge-modern.delivered {
+            background: rgba(0, 170, 85, 0.2);
+            color: #00aa55;
+            border: 1px solid #00aa55;
+        }
+
+        .status-badge-modern.shipped {
+            background: rgba(255, 170, 51, 0.2);
+            color: #ffaa33;
+            border: 1px solid #ffaa33;
+        }
+
+        .status-badge-modern.processing {
+            background: rgba(255, 170, 68, 0.2);
+            color: #ffaa44;
+            border: 1px solid #ffaa44;
+        }
+
+        .btn-modern {
+            padding: 0.4rem 1rem;
+            background: rgba(255, 170, 51, 0.1);
+            border: 1px solid #ffaa33;
+            border-radius: 30px;
+            color: #ffaa33;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+
+        .btn-modern:hover {
+            background: #ffaa33;
+            color: #221100;
+        }
+
+        /* Listings Grid */
+        .listings-grid-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .listing-card-modern {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 170, 51, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .listing-card-modern:hover {
+            transform: translateY(-5px);
+            border-color: #ffaa33;
+            box-shadow: 0 15px 30px rgba(255, 170, 51, 0.2);
+        }
+
+        .listing-image-modern {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+        }
+
+        .listing-image-modern img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .listing-card-modern:hover .listing-image-modern img {
+            transform: scale(1.1);
+        }
+
+        .listing-status-modern {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .listing-status-modern.active {
+            background: #00aa55;
+            color: white;
+        }
+
+        .listing-status-modern.pending {
+            background: #ffaa44;
+            color: #221100;
+        }
+
+        .listing-info-modern {
+            padding: 1.5rem;
+        }
+
+        .listing-info-modern h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #e5d9c6;
+        }
+
+        .listing-price-modern {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ffaa33;
+            margin-bottom: 0.5rem;
+        }
+
+        .listing-views-modern {
+            color: #b7a88b;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .listing-actions-modern {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .icon-btn {
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 170, 51, 0.1);
+            border: 1px solid #ffaa33;
+            border-radius: 10px;
+            color: #ffaa33;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .icon-btn:hover {
+            background: #ffaa33;
+            color: #221100;
+        }
+
+        /* Wishlist Grid */
+        .wishlist-grid-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .wishlist-item-modern {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 170, 51, 0.2);
+            border-radius: 15px;
+            padding: 1rem;
+            transition: all 0.3s;
+        }
+
+        .wishlist-item-modern:hover {
+            border-color: #ffaa33;
+            transform: translateX(5px);
+        }
+
+        .wishlist-item-modern img {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 2px solid #ffaa33;
+        }
+
+        .wishlist-info-modern {
+            flex: 1;
+        }
+
+        .wishlist-info-modern h4 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .wishlist-price-modern {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffaa33;
+            margin-bottom: 0.2rem;
+        }
+
+        .wishlist-seller-modern {
+            font-size: 0.8rem;
+            color: #b7a88b;
+        }
+
+        /* Activity Feed */
+        .activity-feed-modern {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .activity-item-modern {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 170, 51, 0.2);
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .activity-item-modern:hover {
+            border-color: #ffaa33;
+            transform: translateX(5px);
+        }
+
+        .activity-icon-modern {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 170, 51, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffaa33;
+            font-size: 1.2rem;
+        }
+
+        .activity-content-modern {
+            flex: 1;
+        }
+
+        .activity-content-modern p {
+            margin-bottom: 0.3rem;
+        }
+
+        .activity-content-modern strong {
+            color: #ffaa33;
+        }
+
+        .activity-time-modern {
+            color: #b7a88b;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-sidebar {
+                position: static;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-container {
+                padding: 0 1rem;
+            }
+
+            .dashboard-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-content h1 {
+                justify-content: center;
+            }
+
+            .header-actions {
+                width: 100%;
+            }
+
+            .action-btn {
+                flex: 1;
+                justify-content: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .wishlist-grid-modern {
+                grid-template-columns: 1fr;
+            }
+
+            .listings-grid-modern {
+                grid-template-columns: 1fr;
+            }
+
+            .table-container {
+                margin: 0 -1rem;
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .dashboard-header {
+                padding: 1.5rem;
+            }
+
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            .stat-card-modern {
+                padding: 1.2rem;
+            }
+
+            .stat-icon-modern {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .stat-content-modern h3 {
+                font-size: 1.5rem;
+            }
+
+            .wishlist-item-modern {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .activity-item-modern {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .activity-icon-modern {
+                margin: 0 auto;
+            }
+        }
+
+        /* RTL Support */
+        body.rtl .nav-link:hover {
+            transform: translateX(-5px);
+        }
+
+        body.rtl .nav-link::before {
+            left: auto;
+            right: 0;
+        }
+
+        body.rtl .view-link i:last-child {
+            transform: rotate(180deg);
+        }
+
+        body.rtl .view-link:hover {
+            gap: 1rem;
+        }
+
+        body.rtl .wishlist-item-modern:hover {
+            transform: translateX(-5px);
+        }
+
+        body.rtl .activity-item-modern:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            .bg-grid,
+            .bg-float,
+            .dashboard-header::before,
+            .header-content h1 i,
+            .status-badge,
+            .rating-stars i,
+            .section-header-modern h2 i,
+            .stat-card-modern,
+            .listing-card-modern,
+            .wishlist-item-modern,
+            .activity-item-modern,
+            .icon-btn,
+            .btn-modern,
+            .action-btn {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
 </head>
 <body class="light-mode">
-    <!-- HEADER SECTION -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <i class="fas fa-gamepad"></i>
-                    RETRO MARKET
-                </a>
+    <!-- Animated Background -->
+    <div class="dashboard-bg">
+        <div class="bg-grid"></div>
+        <div class="bg-float">🎮</div>
+        <div class="bg-float">👾</div>
+        <div class="bg-float">🕹️</div>
+    </div>
+
+    <div class="dashboard-container">
+        <!-- DASHBOARD HEADER -->
+        <div class="dashboard-header">
+            <div class="header-content">
+                <h1>
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span class="glow-text">DASHBOARD</span>
+                </h1>
+                <p>
+                    <i class="fas fa-circle"></i>
+                    Welcome back, <strong>MarioFan</strong>! Ready to level up?
+                </p>
             </div>
-
-            <!-- Desktop Navigation -->
-            <nav class="nav-desktop">
-                <ul class="nav-menu">
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-home"></i>
-                            <span>Home</span>
-                            <i class="fas fa-chevron-down dropdown-arrow"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-item">
-                                <a href="index.html">
-                                    <i class="fas fa-home"></i>
-                                    <span>Home 1 (Retro Landing)</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="home2.html">
-                                    <i class="fas fa-store"></i>
-                                    <span>Home 2 (Marketplace)</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span>Shop</span>
-                            <i class="fas fa-chevron-down dropdown-arrow"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-item">
-                                <a href="marketplace.html">
-                                    <i class="fas fa-store"></i>
-                                    <span>All Products</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="nes.html">
-                                    <i class="fas fa-gamepad"></i>
-                                    <span>NES Games</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="snes.html">
-                                    <i class="fas fa-gamepad"></i>
-                                    <span>SNES Games</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="sega.html">
-                                    <i class="fas fa-bolt"></i>
-                                    <span>Sega Genesis</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-file"></i>
-                            <span>Pages</span>
-                            <i class="fas fa-chevron-down dropdown-arrow"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-item">
-                                <a href="product-details.html">
-                                    <i class="fas fa-box"></i>
-                                    <span>Product Details</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="dashboard.html">
-                                    <i class="fas fa-tachometer-alt"></i>
-                                    <span>User Dashboard</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="seller-dashboard.html">
-                                    <i class="fas fa-store-alt"></i>
-                                    <span>Seller Panel</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="about.html">
-                                    <i class="fas fa-info-circle"></i>
-                                    <span>About Us</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="contact.html">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>Contact</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item auth-buttons">
-                        <a href="login.html" class="btn btn-login">
-                            <i class="fas fa-sign-in-alt"></i>
-                            <span>Login</span>
-                        </a>
-                        <a href="register.html" class="btn btn-register">
-                            <i class="fas fa-user-plus"></i>
-                            <span>Register</span>
-                        </a>
-                    </li>
-
-                    <!-- Theme/RTL Controls -->
-                    <li class="nav-item">
-                        <div class="theme-rtl">
-                            <button id="themeToggle" class="theme-btn-compact" aria-label="Toggle theme">
-                                <i class="fas fa-moon"></i>
-                                <i class="fas fa-sun"></i>
-                            </button>
-                            <button id="rtlToggle" class="rtl-btn" aria-label="Toggle RTL">
-                                <i class="fas fa-exchange-alt"></i>
-                                <span>RTL</span>
-                            </button>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-
-            <!-- Mobile Navigation -->
-            <nav class="nav-mobile">
-                <button class="hamburger" id="hamburgerBtn">
-                    <i class="fas fa-bars"></i>
+            <div class="header-actions">
+                <button class="action-btn primary">
+                    <i class="fas fa-plus"></i>
+                    SELL ITEM
                 </button>
-                
-                <div class="mobile-menu" id="mobileMenu">
-                    <ul class="nav-mobile-menu">
-                        <li class="mobile-nav-item mobile-dropdown">
-                            <div class="mobile-dropdown-header">
-                                <a href="#" class="mobile-nav-link">
-                                    <i class="fas fa-home"></i>
-                                    <span>Home</span>
-                                </a>
-                                <button class="mobile-dropdown-toggle">
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                            </div>
-                            <ul class="mobile-dropdown-menu">
-                                <li class="mobile-dropdown-item">
-                                    <a href="index.html">
-                                        <i class="fas fa-home"></i>
-                                        <span>Home 1 (Retro Landing)</span>
-                                        <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </li>
-                                <li class="mobile-dropdown-item">
-                                    <a href="home2.html">
-                                        <i class="fas fa-store"></i>
-                                        <span>Home 2 (Marketplace)</span>
-                                        <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                <button class="action-btn secondary">
+                    <i class="fas fa-coins"></i>
+                    CREDITS
+                    <span class="credits-badge">$245.50</span>
+                </button>
+            </div>
+        </div>
 
-                        <li class="mobile-nav-item mobile-dropdown">
-                            <div class="mobile-dropdown-header">
-                                <a href="#" class="mobile-nav-link">
-                                    <i class="fas fa-shopping-cart"></i>
-                                    <span>Shop</span>
-                                </a>
-                                <button class="mobile-dropdown-toggle">
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                            </div>
-                            <ul class="mobile-dropdown-menu">
-                                <li class="mobile-dropdown-item">
-                                    <a href="marketplace.html">
-                                        <i class="fas fa-store"></i>
-                                        <span>All Products</span>
-                                        <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </li>
-                                <li class="mobile-dropdown-item">
-                                    <a href="nes.html">
-                                        <i class="fas fa-gamepad"></i>
-                                        <span>NES Games</span>
-                                        <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </li>
-                                <li class="mobile-dropdown-item">
-                                    <a href="snes.html">
-                                        <i class="fas fa-gamepad"></i>
-                                        <span>SNES Games</span>
-                                        <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </li>
-                                <li class="mobile-dropdown-item">
-                                    <a href="sega.html">
-                                        <i class="fas fa-bolt"></i>
-                                        <span>Sega Genesis</span>
-                                        <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+        <!-- DASHBOARD GRID -->
+        <div class="dashboard-grid">
+            <!-- SIDEBAR -->
+            <aside class="dashboard-sidebar">
+                <div class="user-profile-card">
+                    <div class="avatar-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Profile">
+                        <div class="status-badge"></div>
+                    </div>
+                    <h3>MarioFan</h3>
+                    <div class="member-badge">PREMIUM COLLECTOR</div>
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="rating-text">4.9 · 1,247 reviews</span>
+                </div>
 
-                        <li class="mobile-nav-item mobile-dropdown">
-                            <div class="mobile-dropdown-header">
-                                <a href="#" class="mobile-nav-link">
-                                    <i class="fas fa-file"></i>
-                                    <span>Pages</span>
-                                </a>
-                                <button class="mobile-dropdown-toggle">
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                            </div>
-                            <ul class="mobile-dropdown-menu">
-                                <li class="mobile-dropdown-item">
-                                    <a href="product-details.html">
-                                        <i class="fas fa-box"></i>
-                                        <span>Product Details</span>
-                                        <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </li>
-                                <li class="mobile-dropdown-item">
-                                    <a href="dashboard.html">
-                                        <i class="fas fa-tachometer-alt"></i>
-                                        <span>User Dashboard</span>
-                                        <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </li>
-                                <li class="mobile-dropdown-item">
-                                    <a href="seller-dashboard.html">
-                                        <i class="fas fa-store-alt"></i>
-                                        <span>Seller Panel</span>
-                                        <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </li>
-                                <li class="mobile-dropdown-item">
-                                    <a href="about.html">
-                                        <i class="fas fa-info-circle"></i>
-                                        <span>About Us</span>
-                                        <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </li>
-                                <li class="mobile-dropdown-item">
-                                    <a href="contact.html">
-                                        <i class="fas fa-envelope"></i>
-                                        <span>Contact</span>
-                                        <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li class="nav-item active">
+                            <a href="#overview" class="nav-link">
+                                <i class="fas fa-home"></i>
+                                <span>Overview</span>
+                            </a>
                         </li>
-
-                        <li class="mobile-nav-item">
-                            <div class="mobile-auth-buttons">
-                                <a href="login.html" class="btn btn-login mobile-btn">Login</a>
-                                <a href="register.html" class="btn btn-register mobile-btn">Register</a>
-                            </div>
+                        <li class="nav-item">
+                            <a href="#orders" class="nav-link">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span>My Orders</span>
+                                <span class="badge">12</span>
+                            </a>
                         </li>
-
-                        <!-- Mobile Theme/RTL -->
-                        <li class="mobile-nav-item">
-                            <div class="theme-rtl mobile-theme-rtl">
-                                <button id="mobileThemeToggle" class="theme-btn-compact">
-                                    <i class="fas fa-moon"></i>
-                                    <i class="fas fa-sun"></i>
-                                </button>
-                                <button id="mobileRtlToggle" class="rtl-btn">
-                                    <i class="fas fa-exchange-alt"></i>
-                                    <span>RTL</span>
-                                </button>
-                            </div>
+                        <li class="nav-item">
+                            <a href="#listings" class="nav-link">
+                                <i class="fas fa-store"></i>
+                                <span>My Listings</span>
+                                <span class="badge">5</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#wishlist" class="nav-link">
+                                <i class="fas fa-heart"></i>
+                                <span>Wishlist</span>
+                                <span class="badge">18</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#collection" class="nav-link">
+                                <i class="fas fa-layer-group"></i>
+                                <span>Collection</span>
+                                <span class="badge">24</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#messages" class="nav-link">
+                                <i class="fas fa-envelope"></i>
+                                <span>Messages</span>
+                                <span class="badge">3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#settings" class="nav-link">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                        <li class="nav-item logout-item">
+                            <a href="index.html" class="nav-link logout-link">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </a>
                         </li>
                     </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
+                </nav>
+            </aside>
 
-    <main>
-        <!-- DASHBOARD HEADER -->
-        <section class="dashboard-header">
-            <div class="container">
-                <div class="dashboard-header-content">
-                    <h1><i class="fas fa-tachometer-alt"></i> USER DASHBOARD</h1>
-                    <p>Welcome back, MarioFan! Manage your account, orders, and collection.</p>
-                </div>
-                <div class="dashboard-actions">
-                    <button class="btn btn-primary"><i class="fas fa-plus"></i> SELL ITEM</button>
-                    <button class="btn btn-secondary"><i class="fas fa-coins"></i> CREDITS: $245.50</button>
-                </div>
-            </div>
-        </section>
-
-        <div class="container">
-            <div class="dashboard-layout">
-                <!-- DASHBOARD SIDEBAR -->
-                <aside class="dashboard-sidebar">
-                    <div class="user-profile">
-                        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Profile Picture">
-                        <h3>MarioFan</h3>
-                        <p>Member since 2022</p>
-                        <div class="user-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span>4.9 (1,247 reviews)</span>
+            <!-- MAIN CONTENT -->
+            <main class="dashboard-main">
+                <!-- STATS CARDS -->
+                <div class="stats-grid">
+                    <div class="stat-card-modern">
+                        <div class="stat-icon-modern">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="stat-content-modern">
+                            <h3>12</h3>
+                            <p>Orders</p>
                         </div>
                     </div>
+                    <div class="stat-card-modern">
+                        <div class="stat-icon-modern">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="stat-content-modern">
+                            <h3>5</h3>
+                            <p>Active Listings</p>
+                        </div>
+                    </div>
+                    <div class="stat-card-modern">
+                        <div class="stat-icon-modern">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="stat-content-modern">
+                            <h3>18</h3>
+                            <p>Wishlist</p>
+                        </div>
+                    </div>
+                    <div class="stat-card-modern">
+                        <div class="stat-icon-modern">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="stat-content-modern">
+                            <h3>$245</h3>
+                            <p>Credits</p>
+                        </div>
+                    </div>
+                </div>
 
-                    <nav class="sidebar-nav">
-                        <ul>
-                            <li class="active"><a href="#overview"><i class="fas fa-home"></i> <span>Overview</span></a></li>
-                            <li><a href="#orders"><i class="fas fa-shopping-bag"></i> <span>My Orders</span></a></li>
-                            <li><a href="#selling"><i class="fas fa-store"></i> <span>My Listings</span></a></li>
-                            <li><a href="#wishlist"><i class="fas fa-heart"></i> <span>Wishlist</span></a></li>
-                            <li><a href="#collection"><i class="fas fa-layer-group"></i> <span>Collection</span></a></li>
-                            <li><a href="#messages"><i class="fas fa-envelope"></i> <span>Messages</span> <span class="badge">3</span></a></li>
-                            <li><a href="#settings"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
-                            <li class="logout"><a href="index.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
-                        </ul>
-                    </nav>
-                </aside>
+                <!-- RECENT ORDERS -->
+                <div class="section-card">
+                    <div class="section-header-modern">
+                        <h2><i class="fas fa-clock"></i> RECENT ORDERS</h2>
+                        <a href="#" class="view-link">VIEW ALL <i class="fas fa-arrow-right"></i></a>
+                    </div>
 
-                <!-- DASHBOARD MAIN CONTENT -->
-                <div class="dashboard-main">
-                    <!-- STATS CARDS -->
-                    <div class="stats-cards">
-                        <div class="stat-card">
-                            <div class="stat-icon">
+                    <div class="table-container">
+                        <table class="orders-table-modern">
+                            <thead>
+                                <tr>
+                                    <th>ORDER #</th>
+                                    <th>ITEM</th>
+                                    <th>DATE</th>
+                                    <th>TOTAL</th>
+                                    <th>STATUS</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#ORD-12345</td>
+                                    <td>
+                                        <div class="order-item">
+                                            <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/25282.jpg?raw=true" alt="Super Mario World">
+                                            <span>Super Mario World (SNES)</span>
+                                        </div>
+                                    </td>
+                                    <td>Feb 15, 2025</td>
+                                    <td>$79.99</td>
+                                    <td><span class="status-badge-modern delivered">Delivered</span></td>
+                                    <td><a href="#" class="btn-modern">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-12346</td>
+                                    <td>
+                                        <div class="order-item">
+                                            <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/25360.jpg?raw=true" alt="Zelda">
+                                            <span>The Legend of Zelda (NES)</span>
+                                        </div>
+                                    </td>
+                                    <td>Feb 10, 2025</td>
+                                    <td>$129.99</td>
+                                    <td><span class="status-badge-modern shipped">Shipped</span></td>
+                                    <td><a href="#" class="btn-modern">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-12347</td>
+                                    <td>
+                                        <div class="order-item">
+                                            <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/25425.jpg?raw=true" alt="Sonic">
+                                            <span>Sonic the Hedgehog 2 (Genesis)</span>
+                                        </div>
+                                    </td>
+                                    <td>Feb 5, 2025</td>
+                                    <td>$49.99</td>
+                                    <td><span class="status-badge-modern processing">Processing</span></td>
+                                    <td><a href="#" class="btn-modern">View</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ACTIVE LISTINGS -->
+                <div class="section-card">
+                    <div class="section-header-modern">
+                        <h2><i class="fas fa-store"></i> ACTIVE LISTINGS</h2>
+                        <a href="#" class="view-link">MANAGE <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="listings-grid-modern">
+                        <div class="listing-card-modern">
+                            <div class="listing-image-modern">
+                                <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/24944.jpg?raw=true" alt="Mega Man 2">
+                                <span class="listing-status-modern active">Active</span>
+                            </div>
+                            <div class="listing-info-modern">
+                                <h4>Mega Man 2 (NES)</h4>
+                                <div class="listing-price-modern">$79.99</div>
+                                <div class="listing-views-modern"><i class="fas fa-eye"></i> 234 views</div>
+                                <div class="listing-actions-modern">
+                                    <button class="icon-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="icon-btn"><i class="fas fa-chart-line"></i></button>
+                                    <button class="icon-btn"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="listing-card-modern">
+                            <div class="listing-image-modern">
+                                <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/25140.jpg?raw=true" alt="Donkey Kong">
+                                <span class="listing-status-modern active">Active</span>
+                            </div>
+                            <div class="listing-info-modern">
+                                <h4>Donkey Kong Country (SNES)</h4>
+                                <div class="listing-price-modern">$44.99</div>
+                                <div class="listing-views-modern"><i class="fas fa-eye"></i> 156 views</div>
+                                <div class="listing-actions-modern">
+                                    <button class="icon-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="icon-btn"><i class="fas fa-chart-line"></i></button>
+                                    <button class="icon-btn"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="listing-card-modern">
+                            <div class="listing-image-modern">
+                                <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/25270.jpg?raw=true" alt="Castlevania">
+                                <span class="listing-status-modern pending">Pending</span>
+                            </div>
+                            <div class="listing-info-modern">
+                                <h4>Castlevania (NES)</h4>
+                                <div class="listing-price-modern">$44.99</div>
+                                <div class="listing-views-modern"><i class="fas fa-eye"></i> 89 views</div>
+                                <div class="listing-actions-modern">
+                                    <button class="icon-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="icon-btn"><i class="fas fa-chart-line"></i></button>
+                                    <button class="icon-btn"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WISHLIST -->
+                <div class="section-card">
+                    <div class="section-header-modern">
+                        <h2><i class="fas fa-heart"></i> WISHLIST</h2>
+                        <a href="#" class="view-link">VIEW ALL <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="wishlist-grid-modern">
+                        <div class="wishlist-item-modern">
+                            <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/25224.jpg?raw=true" alt="Chrono Trigger">
+                            <div class="wishlist-info-modern">
+                                <h4>Chrono Trigger (SNES)</h4>
+                                <div class="wishlist-price-modern">$399.99</div>
+                                <div class="wishlist-seller-modern">RareGames · 4.9★</div>
+                            </div>
+                            <button class="btn-modern">Add to Cart</button>
+                        </div>
+
+                        <div class="wishlist-item-modern">
+                            <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/25248.jpg?raw=true" alt="EarthBound">
+                            <div class="wishlist-info-modern">
+                                <h4>EarthBound (SNES)</h4>
+                                <div class="wishlist-price-modern">$1,299.99</div>
+                                <div class="wishlist-seller-modern">GradedGaming · 5.0★</div>
+                            </div>
+                            <button class="btn-modern">Add to Cart</button>
+                        </div>
+
+                        <div class="wishlist-item-modern">
+                            <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/25282.jpg?raw=true" alt="Panzer Dragoon">
+                            <div class="wishlist-info-modern">
+                                <h4>Panzer Dragoon Saga (Saturn)</h4>
+                                <div class="wishlist-price-modern">$899.99</div>
+                                <div class="wishlist-seller-modern">SaturnKing · 4.8★</div>
+                            </div>
+                            <button class="btn-modern">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RECENT ACTIVITY -->
+                <div class="section-card">
+                    <div class="section-header-modern">
+                        <h2><i class="fas fa-history"></i> RECENT ACTIVITY</h2>
+                    </div>
+
+                    <div class="activity-feed-modern">
+                        <div class="activity-item-modern">
+                            <div class="activity-icon-modern">
                                 <i class="fas fa-shopping-bag"></i>
                             </div>
-                            <div class="stat-content">
-                                <h3>12</h3>
-                                <p>Orders</p>
+                            <div class="activity-content-modern">
+                                <p>You purchased <strong>Super Mario World</strong> for $79.99</p>
+                                <div class="activity-time-modern">
+                                    <i class="fas fa-clock"></i> 2 days ago
+                                </div>
                             </div>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-store"></i>
+
+                        <div class="activity-item-modern">
+                            <div class="activity-icon-modern">
+                                <i class="fas fa-tag"></i>
                             </div>
-                            <div class="stat-content">
-                                <h3>5</h3>
-                                <p>Active Listings</p>
+                            <div class="activity-content-modern">
+                                <p>You listed <strong>Mega Man 2</strong> for $79.99</p>
+                                <div class="activity-time-modern">
+                                    <i class="fas fa-clock"></i> 5 days ago
+                                </div>
                             </div>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-icon">
+
+                        <div class="activity-item-modern">
+                            <div class="activity-icon-modern">
                                 <i class="fas fa-heart"></i>
                             </div>
-                            <div class="stat-content">
-                                <h3>18</h3>
-                                <p>Wishlist</p>
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-coins"></i>
-                            </div>
-                            <div class="stat-content">
-                                <h3>$245.50</h3>
-                                <p>Credits</p>
+                            <div class="activity-content-modern">
+                                <p>You added <strong>Chrono Trigger</strong> to your wishlist</p>
+                                <div class="activity-time-modern">
+                                    <i class="fas fa-clock"></i> 1 week ago
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- RECENT ORDERS SECTION -->
-                    <section class="dashboard-section">
-                        <div class="section-header">
-                            <h2><i class="fas fa-clock"></i> RECENT ORDERS</h2>
-                            <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
-                        </div>
-
-                        <div class="orders-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Order #</th>
-                                        <th>Item</th>
-                                        <th>Date</th>
-                                        <th>Total</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>#ORD-12345</td>
-                                        <td>
-                                            <div class="order-item">
-                                                <img src="https://cdn-icons-png.flaticon.com/512/2459/2459156.png" alt="Super Mario World">
-                                                <span>Super Mario World (SNES)</span>
-                                            </div>
-                                        </td>
-                                        <td>Feb 15, 2025</td>
-                                        <td>$79.99</td>
-                                        <td><span class="status delivered">Delivered</span></td>
-                                        <td><a href="#" class="btn-small">View</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>#ORD-12346</td>
-                                        <td>
-                                            <div class="order-item">
-                                                <img src="https://cdn-icons-png.flaticon.com/512/2459/2459115.png" alt="Zelda">
-                                                <span>The Legend of Zelda (NES)</span>
-                                            </div>
-                                        </td>
-                                        <td>Feb 10, 2025</td>
-                                        <td>$129.99</td>
-                                        <td><span class="status shipped">Shipped</span></td>
-                                        <td><a href="#" class="btn-small">View</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>#ORD-12347</td>
-                                        <td>
-                                            <div class="order-item">
-                                                <img src="https://cdn-icons-png.flaticon.com/512/2459/2459122.png" alt="Sonic">
-                                                <span>Sonic the Hedgehog 2 (Genesis)</span>
-                                            </div>
-                                        </td>
-                                        <td>Feb 5, 2025</td>
-                                        <td>$49.99</td>
-                                        <td><span class="status processing">Processing</span></td>
-                                        <td><a href="#" class="btn-small">View</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>#ORD-12348</td>
-                                        <td>
-                                            <div class="order-item">
-                                                <img src="https://cdn-icons-png.flaticon.com/512/2459/2459143.png" alt="Mortal Kombat">
-                                                <span>Mortal Kombat II (Genesis)</span>
-                                            </div>
-                                        </td>
-                                        <td>Jan 28, 2025</td>
-                                        <td>$34.99</td>
-                                        <td><span class="status delivered">Delivered</span></td>
-                                        <td><a href="#" class="btn-small">View</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
-
-                    <!-- ACTIVE LISTINGS SECTION -->
-                    <section class="dashboard-section">
-                        <div class="section-header">
-                            <h2><i class="fas fa-store"></i> ACTIVE LISTINGS</h2>
-                            <a href="#" class="view-all">Manage Listings <i class="fas fa-arrow-right"></i></a>
-                        </div>
-
-                        <div class="listings-grid">
-                            <div class="listing-card">
-                                <div class="listing-image">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/2459/2459130.png" alt="Mega Man 2">
-                                    <span class="listing-status active">Active</span>
-                                </div>
-                                <div class="listing-info">
-                                    <h4>Mega Man 2 (NES)</h4>
-                                    <div class="listing-price">$79.99</div>
-                                    <div class="listing-views"><i class="fas fa-eye"></i> 234 views</div>
-                                    <div class="listing-actions">
-                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                        <button class="btn-icon"><i class="fas fa-chart-line"></i></button>
-                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="listing-card">
-                                <div class="listing-image">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/2459/2459091.png" alt="Donkey Kong">
-                                    <span class="listing-status active">Active</span>
-                                </div>
-                                <div class="listing-info">
-                                    <h4>Donkey Kong Country (SNES)</h4>
-                                    <div class="listing-price">$44.99</div>
-                                    <div class="listing-views"><i class="fas fa-eye"></i> 156 views</div>
-                                    <div class="listing-actions">
-                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                        <button class="btn-icon"><i class="fas fa-chart-line"></i></button>
-                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="listing-card">
-                                <div class="listing-image">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/686/686215.png" alt="Castlevania">
-                                    <span class="listing-status pending">Pending</span>
-                                </div>
-                                <div class="listing-info">
-                                    <h4>Castlevania (NES)</h4>
-                                    <div class="listing-price">$44.99</div>
-                                    <div class="listing-views"><i class="fas fa-eye"></i> 89 views</div>
-                                    <div class="listing-actions">
-                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                        <button class="btn-icon"><i class="fas fa-chart-line"></i></button>
-                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- WISHLIST SECTION -->
-                    <section class="dashboard-section">
-                        <div class="section-header">
-                            <h2><i class="fas fa-heart"></i> WISHLIST</h2>
-                            <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
-                        </div>
-
-                        <div class="wishlist-grid">
-                            <div class="wishlist-item">
-                                <img src="https://cdn-icons-png.flaticon.com/512/2459/2459178.png" alt="Chrono Trigger">
-                                <div class="wishlist-info">
-                                    <h4>Chrono Trigger (SNES)</h4>
-                                    <p class="wishlist-price">$399.99</p>
-                                    <p class="wishlist-seller">Seller: RareGames</p>
-                                </div>
-                                <button class="btn-small">Add to Cart</button>
-                            </div>
-                            <div class="wishlist-item">
-                                <img src="https://cdn-icons-png.flaticon.com/512/2459/2459167.png" alt="EarthBound">
-                                <div class="wishlist-info">
-                                    <h4>EarthBound (SNES)</h4>
-                                    <p class="wishlist-price">$1,299.99</p>
-                                    <p class="wishlist-seller">Seller: GradedGaming</p>
-                                </div>
-                                <button class="btn-small">Add to Cart</button>
-                            </div>
-                            <div class="wishlist-item">
-                                <img src="https://cdn-icons-png.flaticon.com/512/2459/2459108.png" alt="Panzer Dragoon">
-                                <div class="wishlist-info">
-                                    <h4>Panzer Dragoon Saga (Saturn)</h4>
-                                    <p class="wishlist-price">$899.99</p>
-                                    <p class="wishlist-seller">Seller: SaturnKing</p>
-                                </div>
-                                <button class="btn-small">Add to Cart</button>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- RECENT ACTIVITY -->
-                    <section class="dashboard-section">
-                        <div class="section-header">
-                            <h2><i class="fas fa-history"></i> RECENT ACTIVITY</h2>
-                        </div>
-
-                        <div class="activity-feed">
-                            <div class="activity-item">
-                                <div class="activity-icon"><i class="fas fa-shopping-bag"></i></div>
-                                <div class="activity-content">
-                                    <p>You purchased <strong>Super Mario World</strong> for $79.99</p>
-                                    <span class="activity-time">2 days ago</span>
-                                </div>
-                            </div>
-                            <div class="activity-item">
-                                <div class="activity-icon"><i class="fas fa-tag"></i></div>
-                                <div class="activity-content">
-                                    <p>You listed <strong>Mega Man 2</strong> for $79.99</p>
-                                    <span class="activity-time">5 days ago</span>
-                                </div>
-                            </div>
-                            <div class="activity-item">
-                                <div class="activity-icon"><i class="fas fa-heart"></i></div>
-                                <div class="activity-content">
-                                    <p>You added <strong>Chrono Trigger</strong> to your wishlist</p>
-                                    <span class="activity-time">1 week ago</span>
-                                </div>
-                            </div>
-                            <div class="activity-item">
-                                <div class="activity-icon"><i class="fas fa-star"></i></div>
-                                <div class="activity-content">
-                                    <p>You received a 5-star review from <strong>RetroCollector</strong></p>
-                                    <span class="activity-time">1 week ago</span>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
                 </div>
-            </div>
+            </main>
         </div>
-    </main>
+    </div>
 
-    <!-- EXPANDED FOOTER WITH BRAND LOGO -->
-    <footer class="footer">
-        <div class="footer-main">
-            <div class="container">
-                <!-- Footer Brand Section -->
-                <div class="footer-brand">
-                    <div class="footer-logo-3d">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3655/3655578.png" alt="Retro Market" class="footer-3d-logo">
-                        <span class="footer-3d-text">RETRO MARKET</span>
-                    </div>
-                    <p>The #1 trusted marketplace for authentic retro video games since 2010. Buy, sell, and trade with confidence.</p>
-                    <div class="footer-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span>4.8/5 from 15,000+ reviews</span>
-                    </div>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-discord"></i></a>
-                        <a href="#"><i class="fab fa-reddit"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-twitch"></i></a>
-                    </div>
-                </div>
-
-                <!-- Footer Links Columns -->
-                <div class="footer-links">
-                    <div class="footer-col">
-                        <h3>SHOP <i class="fas fa-chevron-right"></i></h3>
-                        <ul>
-                            <li><a href="marketplace.html">All Games</a></li>
-                            <li><a href="marketplace.html?condition=new">New Arrivals</a></li>
-                            <li><a href="marketplace.html?condition=mint">Mint Condition</a></li>
-                            <li><a href="marketplace.html?condition=graded">Graded Games</a></li>
-                            <li><a href="marketplace.html?category=rare">Rare Finds</a></li>
-                            <li><a href="accessories.html">Accessories</a></li>
-                            <li><a href="consoles.html">Consoles</a></li>
-                            <li><a href="clearance.html">Clearance</a></li>
-                            <li><a href="preorders.html">Pre-orders</a></li>
-                            <li><a href="bundles.html">Game Bundles</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-col">
-                        <h3>CONSOLES <i class="fas fa-chevron-right"></i></h3>
-                        <ul>
-                            <li><a href="marketplace.html?console=nes">NES</a></li>
-                            <li><a href="marketplace.html?console=snes">SNES</a></li>
-                            <li><a href="marketplace.html?console=n64">Nintendo 64</a></li>
-                            <li><a href="marketplace.html?console=gameboy">Game Boy</a></li>
-                            <li><a href="marketplace.html?console=gamecube">GameCube</a></li>
-                            <li><a href="marketplace.html?console=sega">Sega Genesis</a></li>
-                            <li><a href="marketplace.html?console=sega-saturn">Sega Saturn</a></li>
-                            <li><a href="marketplace.html?console=dreamcast">Dreamcast</a></li>
-                            <li><a href="marketplace.html?console=ps1">PlayStation</a></li>
-                            <li><a href="marketplace.html?console=ps2">PS2</a></li>
-                            <li><a href="marketplace.html?console=xbox">Original Xbox</a></li>
-                            <li><a href="marketplace.html?console=atari">Atari 2600</a></li>
-                            <li><a href="marketplace.html?console=turbografx">TurboGrafx-16</a></li>
-                            <li><a href="marketplace.html?console=neogeo">Neo Geo</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-col">
-                        <h3>SELLER CENTRAL <i class="fas fa-chevron-right"></i></h3>
-                        <ul>
-                            <li><a href="seller-dashboard.html">Seller Dashboard</a></li>
-                            <li><a href="how-to-sell.html">How to Start Selling</a></li>
-                            <li><a href="seller-fees.html">Fees & Commissions</a></li>
-                            <li><a href="shipping.html">Shipping Guide</a></li>
-                            <li><a href="grading.html">Grading Standards</a></li>
-                            <li><a href="seller-protection.html">Seller Protection</a></li>
-                            <li><a href="bulk-listing.html">Bulk Listing Tools</a></li>
-                            <li><a href="seller-forum.html">Seller Forum</a></li>
-                            <li><a href="success-stories.html">Success Stories</a></li>
-                            <li><a href="analytics.html">Sales Analytics</a></li>
-                            <li><a href="promotions.html">Seller Promotions</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-col">
-                        <h3>BUYER RESOURCES <i class="fas fa-chevron-right"></i></h3>
-                        <ul>
-                            <li><a href="buyer-protection.html">Buyer Protection</a></li>
-                            <li><a href="authentication.html">Authentication Guide</a></li>
-                            <li><a href="price-guide.html">Price Guide</a></li>
-                            <li><a href="condition-guide.html">Condition Guide</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="shipping-tracking.html">Shipping & Tracking</a></li>
-                            <li><a href="returns.html">Returns Policy</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
-                            <li><a href="deals.html">Daily Deals</a></li>
-                            <li><a href="gift-cards.html">Gift Cards</a></li>
-                            <li><a href="newsletter.html">Newsletter</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-col">
-                        <h3>COMPANY <i class="fas fa-chevron-right"></i></h3>
-                        <ul>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="careers.html">Careers</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="press.html">Press</a></li>
-                            <li><a href="affiliates.html">Affiliates</a></li>
-                            <li><a href="partners.html">Partners</a></li>
-                            <li><a href="events.html">Events</a></li>
-                            <li><a href="investors.html">Investors</a></li>
-                            <li><a href="sustainability.html">Sustainability</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-col">
-                        <h3>SUPPORT <i class="fas fa-chevron-right"></i></h3>
-                        <ul>
-                            <li><a href="help.html">Help Center</a></li>
-                            <li><a href="contact-support.html">Contact Support</a></li>
-                            <li><a href="report.html">Report a Problem</a></li>
-                            <li><a href="privacy.html">Privacy Policy</a></li>
-                            <li><a href="terms.html">Terms of Service</a></li>
-                            <li><a href="cookies.html">Cookie Policy</a></li>
-                            <li><a href="accessibility.html">Accessibility</a></li>
-                            <li><a href="sitemap.html">Sitemap</a></li>
-                            <li><a href="security.html">Security</a></li>
-                            <li><a href="dmca.html">DMCA</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer Bottom with Certifications -->
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-content">
-                    <div class="footer-certifications">
-                        <span><i class="fas fa-shield-alt"></i> Verified Secure</span>
-                        <span><i class="fas fa-lock"></i> 256-bit SSL</span>
-                        <span><i class="fas fa-check-circle"></i> Authenticity Guaranteed</span>
-                        <span><i class="fas fa-truck"></i> Free Shipping Over $100</span>
-                        <span><i class="fas fa-undo"></i> 30-Day Returns</span>
-                        <span><i class="fas fa-credit-card"></i> Secure Payments</span>
-                        <span><i class="fas fa-gem"></i> Member Since 2010</span>
-                        <span><i class="fas fa-award"></i> Top Rated</span>
-                    </div>
-                    
-                    <div class="footer-copyright">
-                        <p>© 2025 Retro Video Game Marketplace. All rights reserved. All trademarks are property of their respective owners.</p>
-                        <div class="payment-methods">
-                            <i class="fab fa-cc-visa"></i>
-                            <i class="fab fa-cc-mastercard"></i>
-                            <i class="fab fa-cc-amex"></i>
-                            <i class="fab fa-cc-paypal"></i>
-                            <i class="fab fa-cc-discover"></i>
-                            <i class="fab fa-cc-apple-pay"></i>
-                            <i class="fab fa-cc-amazon-pay"></i>
-                            <i class="fab fa-bitcoin"></i>
-                            <i class="fab fa-ethereum"></i>
-                        </div>
-                    </div>
-
-                    <div class="footer-stats">
-                        <div class="stat">
-                            <span class="stat-value">50K+</span>
-                            <span class="stat-label">Games Sold</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">15K+</span>
-                            <span class="stat-label">Happy Collectors</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">2.5K+</span>
-                            <span class="stat-label">Active Sellers</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">12+</span>
-                            <span class="stat-label">Years Online</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">98%</span>
-                            <span class="stat-label">Satisfaction</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="assets/js/main.js"></script>
     <script>
-
-            // Sidebar navigation active state
-            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
-            sidebarLinks.forEach(link => {
+        // Sidebar navigation active state
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     if (this.getAttribute('href').startsWith('#')) {
                         e.preventDefault();
-                        sidebarLinks.forEach(l => l.parentElement.classList.remove('active'));
-                        this.parentElement.classList.add('active');
+                        
+                        // Remove active class from all nav items
+                        document.querySelectorAll('.nav-item').forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        
+                        // Add active class to parent nav item
+                        this.closest('.nav-item').classList.add('active');
                     }
                 });
             });
+        });
     </script>
 </body>
-
 </html>
