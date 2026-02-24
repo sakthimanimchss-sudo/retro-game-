@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Retro Game Market - Buy & Sell Classic Games</title>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>🎮</text></svg>">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/home2.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="light-mode">
+    <!-- HEADER SECTION (Same as home2.html) -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-gamepad"></i>
+                    RETRO MARKET
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop" aria-label="Desktop navigation">
+                <ul class="nav-menu">
+                    <!-- Home Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" role="button">
+                            <i class="fas fa-home"></i>
+                            <span class="nav-text">Home</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">
+                                <a href="index.html">
+                                    <i class="fas fa-home"></i>
+                                    <span>Home 1 (Retro Landing)</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="home2.html">
+                                    <i class="fas fa-store"></i>
+                                    <span>Home 2 (Marketplace)</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Marketplace Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" role="button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="nav-text">Shop</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">
+                                <a href="marketplace.html">
+                                    <i class="fas fa-store"></i>
+                                    <span>All Products</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="nes.html">
+                                    <i class="fas fa-gamepad"></i>
+                                    <span>NES Games</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="snes.html">
+                                    <i class="fas fa-gamepad"></i>
+                                    <span>SNES Games</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="sega.html">
+                                    <i class="fas fa-gamepad"></i>
+                                    <span>Sega Genesis</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Pages Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" role="button">
+                            <i class="fas fa-file"></i>
+                            <span class="nav-text">Pages</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">
+                                <a href="product-details.html">
+                                    <i class="fas fa-box"></i>
+                                    <span>Product Details</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="dashboard.html">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>User Dashboard</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="seller-dashboard.html">
+                                    <i class="fas fa-store-alt"></i>
+                                    <span>Seller Panel</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="about.html">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>About Us</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="contact.html">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Contact</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Auth Buttons (Desktop) -->
+                    <li class="nav-item auth-buttons">
+                        <a href="auth.html?mode=login" class="btn btn-login">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>Login</span>
+                        </a>
+                        <a href="auth.html?mode=register" class="btn btn-register">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Register</span>
+                        </a>
+                    </li>
+
+                    <!-- Theme/RTL Controls -->
+                      <li class="nav-item">
+                        <div class="theme-rtl">
+                            <button id="themeToggle" class="theme-btn-compact" aria-label="Toggle theme">
+                                <i class="fas fa-moon"></i>
+                                <i class="fas fa-sun"></i>
+                            </button>
+                            <button id="rtlToggle" class="rtl-btn" aria-label="Toggle RTL">
+                                <i class="fas fa-exchange-alt"></i>
+                                <span>RTL</span>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile" aria-label="Mobile navigation">
+                <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="mobile-menu" id="mobileMenu">
+                    <ul class="nav-mobile-menu">
+                        <!-- Mobile Home Dropdown -->
+                        <li class="mobile-nav-item mobile-dropdown">
+                            <div class="mobile-dropdown-header">
+                                <a href="#" class="mobile-nav-link">
+                                    <i class="fas fa-home"></i>
+                                    <span>Home</span>
+                                </a>
+                                <button class="mobile-dropdown-toggle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <ul class="mobile-dropdown-menu">
+                                <li class="mobile-dropdown-item">
+                                    <a href="index.html">
+                                        <i class="fas fa-home"></i>
+                                        <span>Home 1 (Retro Landing)</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="home2.html">
+                                        <i class="fas fa-store"></i>
+                                        <span>Home 2 (Marketplace)</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Mobile Shop Dropdown -->
+                        <li class="mobile-nav-item mobile-dropdown">
+                            <div class="mobile-dropdown-header">
+                                <a href="#" class="mobile-nav-link">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Shop</span>
+                                </a>
+                                <button class="mobile-dropdown-toggle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <ul class="mobile-dropdown-menu">
+                                <li class="mobile-dropdown-item">
+                                    <a href="marketplace.html">
+                                        <i class="fas fa-store"></i>
+                                        <span>All Products</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="nes.html">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>NES Games</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="snes.html">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>SNES Games</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="sega.html">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>Sega Genesis</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Mobile Pages Dropdown -->
+                        <li class="mobile-nav-item mobile-dropdown">
+                            <div class="mobile-dropdown-header">
+                                <a href="#" class="mobile-nav-link">
+                                    <i class="fas fa-file"></i>
+                                    <span>Pages</span>
+                                </a>
+                                <button class="mobile-dropdown-toggle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <ul class="mobile-dropdown-menu">
+                                <li class="mobile-dropdown-item">
+                                    <a href="product-details.html">
+                                        <i class="fas fa-box"></i>
+                                        <span>Product Details</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="dashboard.html">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        <span>User Dashboard</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="seller-dashboard.html">
+                                        <i class="fas fa-store-alt"></i>
+                                        <span>Seller Panel</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="about.html">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span>About Us</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="contact.html">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>Contact</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Mobile Auth Buttons -->
+                        <li class="mobile-nav-item">
+                            <div class="mobile-auth-buttons">
+                                <a href="auth.html?mode=login" class="btn btn-login mobile-btn">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    <span>Login</span>
+                                </a>
+                                <a href="auth.html?mode=register" class="btn btn-register mobile-btn">
+                                    <i class="fas fa-user-plus"></i>
+                                    <span>Register</span>
+                                </a>
+                            </div>
+                        </li>
+
+                        <!-- Mobile Theme/RTL -->
+                        <li class="mobile-nav-item">
+                            <div class="theme-rtl mobile-theme-rtl">
+                                <button id="mobileThemeToggle" class="theme-btn-compact">
+                                    <i class="fas fa-moon"></i>
+                                    <i class="fas fa-sun"></i>
+                                </button>
+                                <button id="mobileRtlToggle" class="rtl-btn">
+                                    <i class="fas fa-exchange-alt"></i>
+                                    <span>RTL</span>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION - MARKETPLACE FOCUS -->
+        <section class="hero-section" style="background: linear-gradient(135deg, rgba(139, 69, 19, 0.95), rgba(90, 45, 15, 0.98)), url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;">
+            <div class="container">
+                <h1 class="hero-title">
+                    <span class="retro-logo">BUY & SELL</span><br>
+                    <span class="retro-logo">RETRO GAMES</span>
+                </h1>
+                
+                <p class="hero-description">
+                    The largest marketplace for authentic retro video games. Buy, sell, and trade 
+                    classic games from NES, SNES, Sega Genesis, PlayStation, and more. 
+                    Join 50,000+ collectors today!
+                </p>
+
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search for games, consoles, accessories..." class="search-input">
+                        <button class="search-button">Search</button>
+                    </div>
+                </div>
+
+                <div class="platform-tags">
+                    <a href="#" class="platform-tag">NES</a>
+                    <a href="#" class="platform-tag">SNES</a>
+                    <a href="#" class="platform-tag">N64</a>
+                    <a href="#" class="platform-tag">Game Boy</a>
+                    <a href="#" class="platform-tag">Sega Genesis</a>
+                    <a href="#" class="platform-tag">PlayStation</a>
+                    <a href="#" class="platform-tag">Xbox</a>
+                    <a href="#" class="platform-tag">Atari</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- MARKET STATS SECTION -->
+        <div class="container">
+            <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 3rem 0;">
+                <div class="stat-card" style="background: rgba(0,0,0,0.3); border: 3px solid var(--accent); border-radius: 15px; padding: 2rem; text-align: center;">
+                    <i class="fas fa-gamepad" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 2.5rem; color: var(--secondary);">50K+</h3>
+                    <p style="color: var(--text-muted);">Games Listed</p>
+                </div>
+                <div class="stat-card" style="background: rgba(0,0,0,0.3); border: 3px solid var(--accent); border-radius: 15px; padding: 2rem; text-align: center;">
+                    <i class="fas fa-users" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 2.5rem; color: var(--secondary);">15K+</h3>
+                    <p style="color: var(--text-muted);">Active Sellers</p>
+                </div>
+                <div class="stat-card" style="background: rgba(0,0,0,0.3); border: 3px solid var(--accent); border-radius: 15px; padding: 2rem; text-align: center;">
+                    <i class="fas fa-tag" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 2.5rem; color: var(--secondary);">$2.5M</h3>
+                    <p style="color: var(--text-muted);">Monthly Sales</p>
+                </div>
+                <div class="stat-card" style="background: rgba(0,0,0,0.3); border: 3px solid var(--accent); border-radius: 15px; padding: 2rem; text-align: center;">
+                    <i class="fas fa-star" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 2.5rem; color: var(--secondary);">4.8/5</h3>
+                    <p style="color: var(--text-muted);">Seller Rating</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FEATURED LISTINGS SECTION -->
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Listings</h2>
+                <a href="marketplace.html" class="view-all">
+                    View All <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="game-grid">
+                <!-- Listing Card 1 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2459/2459130.png" alt="Super Mario 64">
+                        <div class="game-overlay">
+                            <button class="play-button">View Listing</button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Super Mario 64</h3>
+                        <span class="game-platform">Nintendo 64</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$89.99</span>
+                            <span style="color: #44ff44; font-size: 0.8rem;">Mint</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Listing Card 2 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2459/2459122.png" alt="Sonic 3">
+                        <div class="game-overlay">
+                            <button class="play-button">View Listing</button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Sonic 3 & Knuckles</h3>
+                        <span class="game-platform">Sega Genesis</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$129.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">CIB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Listing Card 3 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2459/2459115.png" alt="Zelda">
+                        <div class="game-overlay">
+                            <button class="play-button">View Listing</button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Zelda: Ocarina of Time</h3>
+                        <span class="game-platform">Nintendo 64</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$149.99</span>
+                            <span style="color: #44ff44; font-size: 0.8rem;">Graded 8.5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Listing Card 4 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2459/2459108.png" alt="Street Fighter">
+                        <div class="game-overlay">
+                            <button class="play-button">View Listing</button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Street Fighter II Turbo</h3>
+                        <span class="game-platform">SNES</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$59.99</span>
+                            <span style="color: #44ff44; font-size: 0.8rem;">Mint</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Listing Card 5 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2459/2459143.png" alt="Mortal Kombat">
+                        <div class="game-overlay">
+                            <button class="play-button">View Listing</button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Mortal Kombat II</h3>
+                        <span class="game-platform">Sega Genesis</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$44.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">Good</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Listing Card 6 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2459/2459091.png" alt="Crash">
+                        <div class="game-overlay">
+                            <button class="play-button">View Listing</button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Crash Bandicoot 3</h3>
+                        <span class="game-platform">PlayStation</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$34.99</span>
+                            <span style="color: #44ff44; font-size: 0.8rem;">Mint</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SELLER CTA BANNER -->
+        <div class="container">
+            <div class="featured-banner" style="background: linear-gradient(135deg, #8b4513, #5a2e0f);">
+                <div class="featured-content">
+                    <h2 class="featured-title">SELL YOUR COLLECTION</h2>
+                    <p class="featured-description">
+                        Turn your retro games into cash! List your games for free and reach thousands 
+                        of collectors worldwide. No fees until 2026.
+                    </p>
+                    <a href="seller-dashboard.html" class="featured-button">Start Selling</a>
+                </div>
+                <div class="featured-image">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3655/3655578.png" alt="Sell Games">
+                </div>
+            </div>
+        </div>
+
+        <!-- RECENTLY SOLD SECTION -->
+        <div class="container">
+            <div class="section-header">
+                <div class="d-flex align-items-center">
+                    <h2 class="section-title">Recently Sold</h2>
+                    <span class="pulse-dot ml-3"></span>
+                </div>
+                <span class="text-gray">Updated in real-time</span>
+            </div>
+
+            <div class="game-grid">
+                <!-- Sold Card 1 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/686/686215.png" alt="Chrono Trigger">
+                        <div class="game-overlay">
+                            <span style="color: var(--accent); font-weight: bold;">SOLD</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Chrono Trigger</h3>
+                        <span class="game-platform">SNES</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$399.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">2 days ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sold Card 2 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/686/686222.png" alt="Earthbound">
+                        <div class="game-overlay">
+                            <span style="color: var(--accent); font-weight: bold;">SOLD</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">EarthBound</h3>
+                        <span class="game-platform">SNES</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$899.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">5 days ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sold Card 3 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/686/686232.png" alt="Panzer Dragoon">
+                        <div class="game-overlay">
+                            <span style="color: var(--accent); font-weight: bold;">SOLD</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Panzer Dragoon Saga</h3>
+                        <span class="game-platform">Sega Saturn</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$1,299.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">1 week ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sold Card 4 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/686/686208.png" alt="Metal Slug">
+                        <div class="game-overlay">
+                            <span style="color: var(--accent); font-weight: bold;">SOLD</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Metal Slug AES</h3>
+                        <span class="game-platform">Neo Geo</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$4,500</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">3 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CATEGORIES SECTION -->
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Shop by Category</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
+                <a href="#" style="background: rgba(0,0,0,0.3); border: 2px solid var(--primary-light); border-radius: 10px; padding: 2rem 1rem; text-align: center; text-decoration: none; transition: all 0.3s;">
+                    <i class="fas fa-gamepad" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="color: var(--light); font-size: 1.2rem;">NES</h3>
+                </a>
+                <a href="#" style="background: rgba(0,0,0,0.3); border: 2px solid var(--primary-light); border-radius: 10px; padding: 2rem 1rem; text-align: center; text-decoration: none; transition: all 0.3s;">
+                    <i class="fas fa-gamepad" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="color: var(--light); font-size: 1.2rem;">SNES</h3>
+                </a>
+                <a href="#" style="background: rgba(0,0,0,0.3); border: 2px solid var(--primary-light); border-radius: 10px; padding: 2rem 1rem; text-align: center; text-decoration: none; transition: all 0.3s;">
+                    <i class="fas fa-bolt" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="color: var(--light); font-size: 1.2rem;">Sega</h3>
+                </a>
+                <a href="#" style="background: rgba(0,0,0,0.3); border: 2px solid var(--primary-light); border-radius: 10px; padding: 2rem 1rem; text-align: center; text-decoration: none; transition: all 0.3s;">
+                    <i class="fas fa-compact-disc" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="color: var(--light); font-size: 1.2rem;">PlayStation</h3>
+                </a>
+                <a href="#" style="background: rgba(0,0,0,0.3); border: 2px solid var(--primary-light); border-radius: 10px; padding: 2rem 1rem; text-align: center; text-decoration: none; transition: all 0.3s;">
+                    <i class="fas fa-headphones" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="color: var(--light); font-size: 1.2rem;">Accessories</h3>
+                </a>
+                <a href="#" style="background: rgba(0,0,0,0.3); border: 2px solid var(--primary-light); border-radius: 10px; padding: 2rem 1rem; text-align: center; text-decoration: none; transition: all 0.3s;">
+                    <i class="fas fa-tv" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="color: var(--light); font-size: 1.2rem;">Consoles</h3>
+                </a>
+            </div>
+        </div>
+
+        <!-- FAQ SECTION - MARKETPLACE FOCUS -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Marketplace FAQs</h2>
+
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3 class="faq-question">How do I sell my retro games?</h3>
+                        <p class="faq-answer">
+                            Selling on our marketplace is easy! Create a seller account, take clear photos of your games, set your price, and list them. We provide grading guidelines and shipping tips to help you get the best value for your collection.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">What payment methods are accepted?</h3>
+                        <p class="faq-answer">
+                            We accept all major credit cards, PayPal, Apple Pay, Google Pay, and cryptocurrency. All transactions are secured with 256-bit SSL encryption and our buyer/seller protection program.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">How does game grading work?</h3>
+                        <p class="faq-answer">
+                            Our grading system follows industry standards: Mint (like new), Excellent (minimal wear), Good (normal wear), Fair (heavy wear). Sellers can also list professionally graded games from WATA, VGA, or CGC.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">What are the seller fees?</h3>
+                        <p class="faq-answer">
+                            Listing is completely free! We only charge a small commission (3%) when your item sells. Until 2026, we're running a promotion with 0% fees for all sellers. No hidden costs, ever.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">How do I know if a game is authentic?</h3>
+                        <p class="faq-answer">
+                            We have a dedicated authentication team that reviews suspicious listings. Buyers are protected by our authenticity guarantee - if a game is found to be counterfeit, we refund 100% of your purchase.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">What's the shipping process?</h3>
+                        <p class="faq-answer">
+                            Sellers handle shipping directly. We provide discounted shipping labels and tracking integration. Most sellers ship within 2 business days, and tracking is automatically updated in your dashboard.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUSTED SELLERS SECTION -->
+        <div class="container">
+            <div class="brand-showcase" style="margin: 3rem 0;">
+                <h2 class="section-title text-center mb-4">Trusted Sellers</h2>
+                <div class="brand-grid" style="display: flex; gap: 3rem; animation: scrollBrands 20s linear infinite; width: fit-content;">
+                    <div class="brand-item" style="min-width: 150px; padding: 1rem; background: white; border-radius: 10px;">
+                        <span style="font-weight: bold; color: #333;">RETRO GAMES NYC</span>
+                    </div>
+                    <div class="brand-item" style="min-width: 150px; padding: 1rem; background: white; border-radius: 10px;">
+                        <span style="font-weight: bold; color: #333;">CLASSIC GAMER</span>
+                    </div>
+                    <div class="brand-item" style="min-width: 150px; padding: 1rem; background: white; border-radius: 10px;">
+                        <span style="font-weight: bold; color: #333;">TOKYO RETRO</span>
+                    </div>
+                    <div class="brand-item" style="min-width: 150px; padding: 1rem; background: white; border-radius: 10px;">
+                        <span style="font-weight: bold; color: #333;">GAME PRESERVE</span>
+                    </div>
+                    <div class="brand-item" style="min-width: 150px; padding: 1rem; background: white; border-radius: 10px;">
+                        <span style="font-weight: bold; color: #333;">RETRO HUNTER</span>
+                    </div>
+                    <div class="brand-item" style="min-width: 150px; padding: 1rem; background: white; border-radius: 10px;">
+                        <span style="font-weight: bold; color: #333;">METROPOLIS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER (Same as home2.html with different content) -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <!-- Footer Brand Section -->
+                <div class="footer-brand">
+                    <div class="footer-logo-3d">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3655/3655578.png" alt="Retro Market" class="footer-3d-logo">
+                        <span class="footer-3d-text">RETRO MARKET</span>
+                    </div>
+                    <p>The #1 trusted marketplace for authentic retro video games since 2010. Buy, sell, and trade with confidence.</p>
+                    <div class="footer-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>4.8/5 from 15,000+ reviews</span>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-reddit"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-twitch"></i></a>
+                    </div>
+                </div>
+
+                <!-- Footer Links Columns -->
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h3>MARKETPLACE <i class="fas fa-chevron-right"></i></h3>
+                        <ul>
+                            <li><a href="marketplace.html">All Games</a></li>
+                            <li><a href="marketplace.html?condition=mint">Mint Condition</a></li>
+                            <li><a href="marketplace.html?condition=graded">Graded Games</a></li>
+                            <li><a href="marketplace.html?category=rare">Rare Finds</a></li>
+                            <li><a href="accessories.html">Accessories</a></li>
+                            <li><a href="consoles.html">Consoles</a></li>
+                            <li><a href="clearance.html">Clearance</a></li>
+                            <li><a href="bundles.html">Game Bundles</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>SELLER CENTRAL <i class="fas fa-chevron-right"></i></h3>
+                        <ul>
+                            <li><a href="seller-dashboard.html">Seller Dashboard</a></li>
+                            <li><a href="how-to-sell.html">How to Start Selling</a></li>
+                            <li><a href="seller-fees.html">Fees & Commissions</a></li>
+                            <li><a href="shipping.html">Shipping Guide</a></li>
+                            <li><a href="grading.html">Grading Standards</a></li>
+                            <li><a href="seller-protection.html">Seller Protection</a></li>
+                            <li><a href="bulk-listing.html">Bulk Listing Tools</a></li>
+                            <li><a href="success-stories.html">Success Stories</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>BUYER RESOURCES <i class="fas fa-chevron-right"></i></h3>
+                        <ul>
+                            <li><a href="buyer-protection.html">Buyer Protection</a></li>
+                            <li><a href="authentication.html">Authentication Guide</a></li>
+                            <li><a href="price-guide.html">Price Guide</a></li>
+                            <li><a href="condition-guide.html">Condition Guide</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="shipping-tracking.html">Shipping & Tracking</a></li>
+                            <li><a href="returns.html">Returns Policy</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>COMPANY <i class="fas fa-chevron-right"></i></h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="press.html">Press</a></li>
+                            <li><a href="affiliates.html">Affiliates</a></li>
+                            <li><a href="partners.html">Partners</a></li>
+                            <li><a href="events.html">Events</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>SUPPORT <i class="fas fa-chevron-right"></i></h3>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="contact-support.html">Contact Support</a></li>
+                            <li><a href="report.html">Report a Problem</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="cookies.html">Cookie Policy</a></li>
+                            <li><a href="accessibility.html">Accessibility</a></li>
+                            <li><a href="sitemap.html">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom with Certifications -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <div class="footer-certifications">
+                        <span><i class="fas fa-shield-alt"></i> Verified Secure</span>
+                        <span><i class="fas fa-lock"></i> 256-bit SSL</span>
+                        <span><i class="fas fa-check-circle"></i> Authenticity Guaranteed</span>
+                        <span><i class="fas fa-truck"></i> Free Shipping Over $100</span>
+                        <span><i class="fas fa-undo"></i> 30-Day Returns</span>
+                        <span><i class="fas fa-credit-card"></i> Secure Payments</span>
+                        <span><i class="fas fa-gem"></i> Member Since 2010</span>
+                        <span><i class="fas fa-award"></i> Top Rated</span>
+                    </div>
+                    
+                    <div class="footer-copyright">
+                        <p>© 2025 Retro Video Game Marketplace. All rights reserved. All trademarks are property of their respective owners.</p>
+                        <div class="payment-methods">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-cc-discover"></i>
+                            <i class="fab fa-cc-apple-pay"></i>
+                            <i class="fab fa-cc-amazon-pay"></i>
+                            <i class="fab fa-bitcoin"></i>
+                            <i class="fab fa-ethereum"></i>
+                        </div>
+                    </div>
+
+                    <div class="footer-stats">
+                        <div class="stat">
+                            <span class="stat-value">50K+</span>
+                            <span class="stat-label">Games Sold</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">15K+</span>
+                            <span class="stat-label">Happy Collectors</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">2.5K+</span>
+                            <span class="stat-label">Active Sellers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">12+</span>
+                            <span class="stat-label">Years Online</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">98%</span>
+                            <span class="stat-label">Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    
+   
+</body>
+</html>

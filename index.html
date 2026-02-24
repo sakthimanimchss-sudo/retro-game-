@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Retro Video Game Marketplace - Home 1</title>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>🎮</text></svg>">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="light-mode">
+    <!-- HEADER SECTION WITH DROPDOWNS -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-gamepad"></i>
+                    <span class="logo-3d">RETRO MARKET</span>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop" aria-label="Desktop navigation">
+                <ul class="nav-menu">
+                    <!-- Home Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" role="button">
+                            <i class="fas fa-home"></i>
+                            <span class="nav-text">Home</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">
+                                <a href="index.html">
+                                    <i class="fas fa-home"></i>
+                                    <span>Home 1 (Retro Landing)</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="home2.html">
+                                    <i class="fas fa-store"></i>
+                                    <span>Home 2 (Marketplace)</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Marketplace Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" role="button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="nav-text">Shop</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">
+                                <a href="marketplace.html">
+                                    <i class="fas fa-store"></i>
+                                    <span>All Products</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="nes.html">
+                                    <i class="fas fa-gamepad"></i>
+                                    <span>NES Games</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="snes.html">
+                                    <i class="fas fa-gamepad"></i>
+                                    <span>SNES Games</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="sega.html">
+                                    <i class="fas fa-gamepad"></i>
+                                    <span>Sega Genesis</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Pages Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" role="button">
+                            <i class="fas fa-file"></i>
+                            <span class="nav-text">Pages</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">
+                                <a href="product-details.html">
+                                    <i class="fas fa-box"></i>
+                                    <span>Product Details</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="dashboard.html">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>User Dashboard</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="seller-dashboard.html">
+                                    <i class="fas fa-store-alt"></i>
+                                    <span>Seller Panel</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="about.html">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>About Us</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="contact.html">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Contact</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Auth Buttons (Desktop) -->
+                    <li class="nav-item auth-buttons">
+                        <a href="login.html" class="btn btn-login">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>Login</span>
+                        </a>
+                        <a href="register.html" class="btn btn-register">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Register</span>
+                        </a>
+                    </li>
+
+                    <!-- Theme/RTL Controls -->
+                    <li class="nav-item">
+                        <div class="theme-rtl">
+                            <button id="themeToggle" class="theme-btn-compact" aria-label="Toggle theme">
+                                <i class="fas fa-moon"></i>
+                                <i class="fas fa-sun"></i>
+                            </button>
+                            <button id="rtlToggle" class="rtl-btn" aria-label="Toggle RTL">
+                                <i class="fas fa-exchange-alt"></i>
+                                <span>RTL</span>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile" aria-label="Mobile navigation">
+                <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="mobile-menu" id="mobileMenu">
+                    <ul class="nav-mobile-menu">
+                        <!-- Mobile Home Dropdown -->
+                        <li class="mobile-nav-item mobile-dropdown">
+                            <div class="mobile-dropdown-header">
+                                <a href="#" class="mobile-nav-link">
+                                    <i class="fas fa-home"></i>
+                                    <span>Home</span>
+                                </a>
+                                <button class="mobile-dropdown-toggle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <ul class="mobile-dropdown-menu">
+                                <li class="mobile-dropdown-item">
+                                    <a href="index.html">
+                                        <i class="fas fa-home"></i>
+                                        <span>Home 1 (Retro Landing)</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="home2.html">
+                                        <i class="fas fa-store"></i>
+                                        <span>Home 2 (Marketplace)</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Mobile Shop Dropdown -->
+                        <li class="mobile-nav-item mobile-dropdown">
+                            <div class="mobile-dropdown-header">
+                                <a href="#" class="mobile-nav-link">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Shop</span>
+                                </a>
+                                <button class="mobile-dropdown-toggle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <ul class="mobile-dropdown-menu">
+                                <li class="mobile-dropdown-item">
+                                    <a href="marketplace.html">
+                                        <i class="fas fa-store"></i>
+                                        <span>All Products</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="nes.html">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>NES Games</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="snes.html">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>SNES Games</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="sega.html">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>Sega Genesis</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Mobile Pages Dropdown -->
+                        <li class="mobile-nav-item mobile-dropdown">
+                            <div class="mobile-dropdown-header">
+                                <a href="#" class="mobile-nav-link">
+                                    <i class="fas fa-file"></i>
+                                    <span>Pages</span>
+                                </a>
+                                <button class="mobile-dropdown-toggle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <ul class="mobile-dropdown-menu">
+                                <li class="mobile-dropdown-item">
+                                    <a href="product-details.html">
+                                        <i class="fas fa-box"></i>
+                                        <span>Product Details</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="dashboard.html">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        <span>User Dashboard</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="seller-dashboard.html">
+                                        <i class="fas fa-store-alt"></i>
+                                        <span>Seller Panel</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="about.html">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span>About Us</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="contact.html">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>Contact</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Mobile Auth Buttons -->
+                        <li class="mobile-nav-item">
+                            <div class="mobile-auth-buttons">
+                                <a href="login.html" class="btn btn-login mobile-btn">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    <span>Login</span>
+                                </a>
+                                <a href="register.html" class="btn btn-register mobile-btn">
+                                    <i class="fas fa-user-plus"></i>
+                                    <span>Register</span>
+                                </a>
+                            </div>
+                        </li>
+
+                        <!-- Mobile Theme/RTL -->
+                        <li class="mobile-nav-item">
+                            <div class="theme-rtl mobile-theme-rtl">
+                                <button id="mobileThemeToggle" class="theme-btn-compact">
+                                    <i class="fas fa-moon"></i>
+                                    <i class="fas fa-sun"></i>
+                                </button>
+                                <button id="mobileRtlToggle" class="rtl-btn">
+                                    <i class="fas fa-exchange-alt"></i>
+                                    <span>RTL</span>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECTION 1: HERO SECTION - HOME 1 (RETRO LANDING) -->
+        <section class="hero-retro">
+            <div class="container">
+                <div class="hero-3d-logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3655/3655578.png" alt="Retro Gaming" class="hero-3d-image">
+                </div>
+                <h1>
+                    <i class="fas fa-crown"></i>
+                    LEVEL UP YOUR COLLECTION
+                    <i class="fas fa-crown"></i>
+                </h1>
+                <p class="hero-subtitle">Buy, Sell, and Trade Authentic Retro Games</p>
+                <div class="hero-buttons">
+                    <a href="marketplace.html" class="btn hero-btn primary-btn">
+                        <i class="fas fa-search"></i>
+                        Browse Marketplace
+                    </a>
+                    <a href="seller-dashboard.html" class="btn hero-btn secondary-btn">
+                        <i class="fas fa-tag"></i>
+                        Start Selling
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: FEATURED CONSOLES -->
+        <div class="container">
+            <div class="section-header">
+                <div class="section-logo-3d">
+                    <img src="https://cdn-icons-png.flaticon.com/512/686/686225.png" alt="Console" class="section-3d-icon">
+                </div>
+                <h2><i class="fas fa-star"></i> FEATURED CONSOLES <i class="fas fa-star"></i></h2>
+                <p>Browse by your favorite retro systems</p>
+            </div>
+
+            <div class="feature-grid">
+                <!-- NES Card -->
+                <div class="card console-card">
+                    <div class="console-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/686/686215.png" alt="NES" class="console-3d">
+                    </div>
+                    <h3>NES</h3>
+                    <p>Nintendo Entertainment System</p>
+                    <span class="game-count">124 games available</span>
+                    <a href="marketplace.html?console=nes" class="btn card-btn">
+                        View Games <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- SNES Card -->
+                <div class="card console-card">
+                    <div class="console-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/686/686222.png" alt="SNES" class="console-3d">
+                    </div>
+                    <h3>Super NES</h3>
+                    <p>16-bit classics</p>
+                    <span class="game-count">98 games available</span>
+                    <a href="marketplace.html?console=snes" class="btn card-btn">
+                        View Games <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Sega Genesis Card -->
+                <div class="card console-card">
+                    <div class="console-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/686/686232.png" alt="Sega" class="console-3d">
+                    </div>
+                    <h3>Sega Genesis</h3>
+                    <p>Blast processing</p>
+                    <span class="game-count">76 games available</span>
+                    <a href="marketplace.html?console=sega" class="btn card-btn">
+                        View Games <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- PlayStation Card -->
+                <div class="card console-card">
+                    <div class="console-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/686/686208.png" alt="PS" class="console-3d">
+                    </div>
+                    <h3>PlayStation</h3>
+                    <p>Original PS1 & PS2</p>
+                    <span class="game-count">156 games available</span>
+                    <a href="marketplace.html?console=ps1" class="btn card-btn">
+                        View Games <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: RECENTLY ADDED GAMES -->
+        <div class="container">
+            <div class="section-header">
+                <div class="section-logo-3d">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991555.png" alt="Recent" class="section-3d-icon">
+                </div>
+                <h2><i class="fas fa-clock"></i> RECENTLY ADDED <i class="fas fa-clock"></i></h2>
+                <p>Fresh listings from our community</p>
+            </div>
+
+            <div class="recent-grid">
+                <!-- Game Card 1 -->
+                <div class="card game-card">
+                    <div class="game-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2459/2459130.png" alt="Mario" class="game-3d">
+                    </div>
+                    <h3>Super Mario Bros. 3</h3>
+                    <p class="game-console"><i class="fas fa-gamepad"></i> NES</p>
+                    <p class="game-condition condition-mint">Mint - CIB</p>
+                    <p class="game-price">$89.99</p>
+                    <a href="product-details.html?id=1" class="btn view-btn">
+                        View Details <i class="fas fa-eye"></i>
+                    </a>
+                </div>
+
+                <!-- Game Card 2 -->
+                <div class="card game-card">
+                    <div class="game-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2459/2459122.png" alt="Sonic" class="game-3d">
+                    </div>
+                    <h3>Sonic the Hedgehog 2</h3>
+                    <p class="game-console"><i class="fas fa-gamepad"></i> Sega Genesis</p>
+                    <p class="game-condition condition-good">Good - Cart Only</p>
+                    <p class="game-price">$24.99</p>
+                    <a href="product-details.html?id=2" class="btn view-btn">
+                        View Details <i class="fas fa-eye"></i>
+                    </a>
+                </div>
+
+                <!-- Game Card 3 -->
+                <div class="card game-card">
+                    <div class="game-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2459/2459115.png" alt="Zelda" class="game-3d">
+                    </div>
+                    <h3>The Legend of Zelda</h3>
+                    <p class="game-console"><i class="fas fa-gamepad"></i> NES</p>
+                    <p class="game-condition condition-fair">Fair - With Manual</p>
+                    <p class="game-price">$45.50</p>
+                    <a href="product-details.html?id=3" class="btn view-btn">
+                        View Details <i class="fas fa-eye"></i>
+                    </a>
+                </div>
+
+                <!-- Game Card 4 -->
+                <div class="card game-card">
+                    <div class="game-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2459/2459108.png" alt="Street Fighter" class="game-3d">
+                    </div>
+                    <h3>Street Fighter II</h3>
+                    <p class="game-console"><i class="fas fa-gamepad"></i> SNES</p>
+                    <p class="game-condition condition-mint">Mint - CIB</p>
+                    <p class="game-price">$65.00</p>
+                    <a href="product-details.html?id=4" class="btn view-btn">
+                        View Details <i class="fas fa-eye"></i>
+                    </a>
+                </div>
+
+                <!-- Game Card 5 -->
+                <div class="card game-card">
+                    <div class="game-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2459/2459143.png" alt="Mortal Kombat" class="game-3d">
+                    </div>
+                    <h3>Mortal Kombat</h3>
+                    <p class="game-console"><i class="fas fa-gamepad"></i> Sega Genesis</p>
+                    <p class="game-condition condition-good">Good - Cart Only</p>
+                    <p class="game-price">$34.99</p>
+                    <a href="product-details.html?id=5" class="btn view-btn">
+                        View Details <i class="fas fa-eye"></i>
+                    </a>
+                </div>
+
+                <!-- Game Card 6 -->
+                <div class="card game-card">
+                    <div class="game-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2459/2459091.png" alt="Crash" class="game-3d">
+                    </div>
+                    <h3>Crash Bandicoot</h3>
+                    <p class="game-console"><i class="fas fa-gamepad"></i> PS1</p>
+                    <p class="game-condition condition-mint">Mint - CIB</p>
+                    <p class="game-price">$54.99</p>
+                    <a href="product-details.html?id=6" class="btn view-btn">
+                        View Details <i class="fas fa-eye"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: GAMING ACCESSORIES -->
+        <div class="container">
+            <div class="section-header">
+                <div class="section-logo-3d">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991586.png" alt="Accessories" class="section-3d-icon">
+                </div>
+                <h2><i class="fas fa-headphones"></i> RETRO ACCESSORIES <i class="fas fa-headphones"></i></h2>
+                <p>Complete your gaming setup</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="card accessory-card">
+                    <div class="accessory-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3655/3655578.png" alt="Controller" class="accessory-3d">
+                    </div>
+                    <h3>NES Controller</h3>
+                    <p>Original OEM - Tested</p>
+                    <p class="accessory-price">$24.99</p>
+                </div>
+
+                <div class="card accessory-card">
+                    <div class="accessory-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3655/3655590.png" alt="Joystick" class="accessory-3d">
+                    </div>
+                    <h3>Arcade Stick</h3>
+                    <p>Genesis Arcade Power Stick</p>
+                    <p class="accessory-price">$39.99</p>
+                </div>
+
+                <div class="card accessory-card">
+                    <div class="accessory-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3655/3655568.png" alt="Memory Card" class="accessory-3d">
+                    </div>
+                    <h3>PS1 Memory Card</h3>
+                    <p>Sony Official - 15 blocks</p>
+                    <p class="accessory-price">$19.99</p>
+                </div>
+
+                <div class="card accessory-card">
+                    <div class="accessory-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3655/3655555.png" alt="Cables" class="accessory-3d">
+                    </div>
+                    <h3>AV Cables</h3>
+                    <p>Composite - NES/SNES/N64</p>
+                    <p class="accessory-price">$12.99</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: COLLECTOR'S CORNER -->
+        <div class="container">
+            <div class="section-header">
+                <div class="section-logo-3d">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991612.png" alt="Collector" class="section-3d-icon">
+                </div>
+                <h2><i class="fas fa-trophy"></i> COLLECTOR'S CORNER <i class="fas fa-trophy"></i></h2>
+                <p>Rare and graded games</p>
+            </div>
+
+            <div class="collector-grid">
+                <div class="card collector-card featured">
+                    <div class="collector-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2459/2459156.png" alt="Stadium Events" class="collector-3d">
+                    </div>
+                    <h3>Stadium Events (NES)</h3>
+                    <p class="game-condition condition-mint">Graded WATA 9.0</p>
+                    <p class="collector-price">$15,999.99</p>
+                </div>
+
+                <div class="card collector-card">
+                    <div class="collector-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2459/2459167.png" alt="Panzer Dragoon" class="collector-3d">
+                    </div>
+                    <h3>Panzer Dragoon Saga</h3>
+                    <p class="game-condition condition-mint">Complete - Like New</p>
+                    <p class="collector-price">$1,299.99</p>
+                </div>
+
+                <div class="card collector-card">
+                    <div class="collector-image">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2459/2459178.png" alt="EarthBound" class="collector-3d">
+                    </div>
+                    <h3>EarthBound (SNES)</h3>
+                    <p class="game-condition condition-good">Cart + Guide</p>
+                    <p class="collector-price">$899.99</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 6: SELLER CTA BANNER -->
+        <div class="cta-banner">
+            <div class="container">
+                <div class="cta-logo-3d">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991638.png" alt="Sell" class="cta-3d-icon">
+                </div>
+                <div class="cta-content">
+                    <h2><i class="fas fa-store"></i> SELL YOUR COLLECTION <i class="fas fa-store"></i></h2>
+                    <p>Join our community of retro game sellers. List your games in minutes!</p>
+                    <div class="cta-features">
+                        <span><i class="fas fa-check-circle"></i> 0% fees until 2026</span>
+                        <span><i class="fas fa-check-circle"></i> 5000+ active buyers</span>
+                        <span><i class="fas fa-check-circle"></i> Free shipping labels</span>
+                        <span><i class="fas fa-check-circle"></i> Bulk listing tools</span>
+                        <span><i class="fas fa-check-circle"></i> Price guides</span>
+                        <span><i class="fas fa-check-circle"></i> Instant payouts</span>
+                        <span><i class="fas fa-check-circle"></i> Seller protection</span>
+                    </div>
+                    <a href="seller-dashboard.html" class="btn cta-btn">
+                        Start Selling <i class="fas fa-rocket"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 7: COMMUNITY HIGHLIGHTS -->
+        <div class="container">
+            <div class="section-header">
+                <div class="section-logo-3d">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991652.png" alt="Community" class="section-3d-icon">
+                </div>
+                <h2><i class="fas fa-users"></i> COMMUNITY HIGHLIGHTS <i class="fas fa-users"></i></h2>
+                <p>What our collectors are saying</p>
+            </div>
+
+            <div class="community-grid">
+                <div class="card community-card">
+                    <div class="community-avatar">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="User" class="avatar-3d">
+                    </div>
+                    <p>"Found a complete copy of Chrono Trigger for $200! Best marketplace ever."</p>
+                    <h4>- RetroGamerMike</h4>
+                    <div class="community-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="card community-card">
+                    <div class="community-avatar">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140051.png" alt="User" class="avatar-3d">
+                    </div>
+                    <p>"Sold my collection for top dollar. The seller tools are amazing!"</p>
+                    <h4>- Sarah_Collects</h4>
+                    <div class="community-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="card community-card">
+                    <div class="community-avatar">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140040.png" alt="User" class="avatar-3d">
+                    </div>
+                    <p>"The grading verification service saved me from buying a fake. Highly recommended!"</p>
+                    <h4>- ClassicGameHunter</h4>
+                    <div class="community-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 8: BRAND SHOWCASE (BONUS) -->
+        <div class="brand-showcase">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-logo-3d">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2991/2991668.png" alt="Brands" class="section-3d-icon">
+                    </div>
+                    <h2><i class="fas fa-certificate"></i> TRUSTED BRANDS <i class="fas fa-certificate"></i></h2>
+                </div>
+                <div class="brand-grid">
+                    <div class="brand-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Nintendo.svg/1200px-Nintendo.svg.png" alt="Nintendo" class="brand-3d">
+                    </div>
+                    <div class="brand-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Sega_logo.svg/1200px-Sega_logo.svg.png" alt="Sega" class="brand-3d">
+                    </div>
+                    <div class="brand-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/PlayStation_logo.svg/1200px-PlayStation_logo.svg.png" alt="Sony" class="brand-3d">
+                    </div>
+                    <div class="brand-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Atari_logo.svg/1200px-Atari_logo.svg.png" alt="Atari" class="brand-3d">
+                    </div>
+                    <div class="brand-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/NEC_logo.svg/1200px-NEC_logo.svg.png" alt="NEC" class="brand-3d">
+                    </div>
+                    <div class="brand-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/SNK_Logo.svg/1200px-SNK_Logo.svg.png" alt="SNK" class="brand-3d">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- EXPANDED FOOTER WITH BRAND LOGO -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <!-- Footer Brand Section -->
+                <div class="footer-brand">
+                    <div class="footer-logo-3d">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3655/3655578.png" alt="Retro Market" class="footer-3d-logo">
+                        <span class="footer-3d-text">RETRO MARKET</span>
+                    </div>
+                    <p>The #1 trusted marketplace for authentic retro video games since 2010. Buy, sell, and trade with confidence.</p>
+                    <div class="footer-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>4.8/5 from 15,000+ reviews</span>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-reddit"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-twitch"></i></a>
+                    </div>
+                </div>
+
+                <!-- Footer Links Columns -->
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h3>SHOP <i class="fas fa-chevron-right"></i></h3>
+                        <ul>
+                            <li><a href="marketplace.html">All Games</a></li>
+                            <li><a href="marketplace.html?condition=new">New Arrivals</a></li>
+                            <li><a href="marketplace.html?condition=mint">Mint Condition</a></li>
+                            <li><a href="marketplace.html?condition=graded">Graded Games</a></li>
+                            <li><a href="marketplace.html?category=rare">Rare Finds</a></li>
+                            <li><a href="accessories.html">Accessories</a></li>
+                            <li><a href="consoles.html">Consoles</a></li>
+                            <li><a href="clearance.html">Clearance</a></li>
+                            <li><a href="preorders.html">Pre-orders</a></li>
+                            <li><a href="bundles.html">Game Bundles</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>CONSOLES <i class="fas fa-chevron-right"></i></h3>
+                        <ul>
+                            <li><a href="marketplace.html?console=nes">NES</a></li>
+                            <li><a href="marketplace.html?console=snes">SNES</a></li>
+                            <li><a href="marketplace.html?console=n64">Nintendo 64</a></li>
+                            <li><a href="marketplace.html?console=gameboy">Game Boy</a></li>
+                            <li><a href="marketplace.html?console=gamecube">GameCube</a></li>
+                            <li><a href="marketplace.html?console=sega">Sega Genesis</a></li>
+                            <li><a href="marketplace.html?console=sega-saturn">Sega Saturn</a></li>
+                            <li><a href="marketplace.html?console=dreamcast">Dreamcast</a></li>
+                            <li><a href="marketplace.html?console=ps1">PlayStation</a></li>
+                            <li><a href="marketplace.html?console=ps2">PS2</a></li>
+                            <li><a href="marketplace.html?console=xbox">Original Xbox</a></li>
+                            <li><a href="marketplace.html?console=atari">Atari 2600</a></li>
+                            <li><a href="marketplace.html?console=turbografx">TurboGrafx-16</a></li>
+                            <li><a href="marketplace.html?console=neogeo">Neo Geo</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>SELLER CENTRAL <i class="fas fa-chevron-right"></i></h3>
+                        <ul>
+                            <li><a href="seller-dashboard.html">Seller Dashboard</a></li>
+                            <li><a href="how-to-sell.html">How to Start Selling</a></li>
+                            <li><a href="seller-fees.html">Fees & Commissions</a></li>
+                            <li><a href="shipping.html">Shipping Guide</a></li>
+                            <li><a href="grading.html">Grading Standards</a></li>
+                            <li><a href="seller-protection.html">Seller Protection</a></li>
+                            <li><a href="bulk-listing.html">Bulk Listing Tools</a></li>
+                            <li><a href="seller-forum.html">Seller Forum</a></li>
+                            <li><a href="success-stories.html">Success Stories</a></li>
+                            <li><a href="analytics.html">Sales Analytics</a></li>
+                            <li><a href="promotions.html">Seller Promotions</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>BUYER RESOURCES <i class="fas fa-chevron-right"></i></h3>
+                        <ul>
+                            <li><a href="buyer-protection.html">Buyer Protection</a></li>
+                            <li><a href="authentication.html">Authentication Guide</a></li>
+                            <li><a href="price-guide.html">Price Guide</a></li>
+                            <li><a href="condition-guide.html">Condition Guide</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="shipping-tracking.html">Shipping & Tracking</a></li>
+                            <li><a href="returns.html">Returns Policy</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                            <li><a href="deals.html">Daily Deals</a></li>
+                            <li><a href="gift-cards.html">Gift Cards</a></li>
+                            <li><a href="newsletter.html">Newsletter</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>COMPANY <i class="fas fa-chevron-right"></i></h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="press.html">Press</a></li>
+                            <li><a href="affiliates.html">Affiliates</a></li>
+                            <li><a href="partners.html">Partners</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="investors.html">Investors</a></li>
+                            <li><a href="sustainability.html">Sustainability</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>SUPPORT <i class="fas fa-chevron-right"></i></h3>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="contact-support.html">Contact Support</a></li>
+                            <li><a href="report.html">Report a Problem</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="cookies.html">Cookie Policy</a></li>
+                            <li><a href="accessibility.html">Accessibility</a></li>
+                            <li><a href="sitemap.html">Sitemap</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="dmca.html">DMCA</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom with Certifications -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <div class="footer-certifications">
+                        <span><i class="fas fa-shield-alt"></i> Verified Secure</span>
+                        <span><i class="fas fa-lock"></i> 256-bit SSL</span>
+                        <span><i class="fas fa-check-circle"></i> Authenticity Guaranteed</span>
+                        <span><i class="fas fa-truck"></i> Free Shipping Over $100</span>
+                        <span><i class="fas fa-undo"></i> 30-Day Returns</span>
+                        <span><i class="fas fa-credit-card"></i> Secure Payments</span>
+                        <span><i class="fas fa-gem"></i> Member Since 2010</span>
+                        <span><i class="fas fa-award"></i> Top Rated</span>
+                    </div>
+                    
+                    <div class="footer-copyright">
+                        <p>© 2025 Retro Video Game Marketplace. All rights reserved. All trademarks are property of their respective owners.</p>
+                        <div class="payment-methods">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-cc-discover"></i>
+                            <i class="fab fa-cc-apple-pay"></i>
+                            <i class="fab fa-cc-amazon-pay"></i>
+                            <i class="fab fa-bitcoin"></i>
+                            <i class="fab fa-ethereum"></i>
+                        </div>
+                    </div>
+
+                    <div class="footer-stats">
+                        <div class="stat">
+                            <span class="stat-value">50K+</span>
+                            <span class="stat-label">Games Sold</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">15K+</span>
+                            <span class="stat-label">Happy Collectors</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">2.5K+</span>
+                            <span class="stat-label">Active Sellers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">12+</span>
+                            <span class="stat-label">Years Online</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">98%</span>
+                            <span class="stat-label">Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    
+    <style>
+        /* 3D Visual Effects */
+        .logo-3d, .hero-3d-image, .console-3d, .game-3d, .accessory-3d, .collector-3d, .avatar-3d, .brand-3d, .footer-3d-logo {
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        
+        .logo-3d:hover, .console-3d:hover, .game-3d:hover, .accessory-3d:hover {
+            transform: perspective(500px) rotateY(10deg) rotateX(5deg) scale(1.05);
+            filter: drop-shadow(0 20px 25px rgba(255,170,51,0.4));
+        }
+        
+        .hero-3d-image {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 20px;
+            animation: float3d 3s ease-in-out infinite;
+        }
+        
+        @keyframes float3d {
+            0%, 100% { transform: perspective(500px) rotateY(0deg) rotateX(5deg) translateY(0); }
+            50% { transform: perspective(500px) rotateY(10deg) rotateX(10deg) translateY(-15px); }
+        }
+        
+        .section-logo-3d {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .section-3d-icon {
+            width: 60px;
+            height: 60px;
+            filter: drop-shadow(0 10px 15px rgba(255,170,51,0.5));
+            animation: iconSpin 10s linear infinite;
+        }
+        
+        @keyframes iconSpin {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+        
+        .cta-logo-3d {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .cta-3d-icon {
+            width: 80px;
+            height: 80px;
+            filter: drop-shadow(0 0 20px #ffaa00);
+            animation: pulse3d 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse3d {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px #ffaa00); }
+            50% { transform: scale(1.1); filter: drop-shadow(0 0 40px #ff5500); }
+        }
+        
+        .footer-logo-3d {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-3d-logo {
+            width: 60px;
+            height: 60px;
+            animation: logoGlow3d 3s ease-in-out infinite;
+        }
+        
+        .footer-3d-text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #f7c35c;
+            text-shadow: 3px 3px 0 #8b4513, 5px 5px 0 #4a2c1a, 7px 7px 0 #2a1a0a;
+            animation: textFloat3d 3s ease-in-out infinite;
+        }
+        
+        @keyframes logoGlow3d {
+            0%, 100% { filter: drop-shadow(0 0 10px #ffaa00); }
+            50% { filter: drop-shadow(0 0 30px #ff5500) drop-shadow(0 0 50px #ffaa00); }
+        }
+        
+        @keyframes textFloat3d {
+            0%, 100% { transform: translateZ(0) translateY(0); }
+            50% { transform: translateZ(20px) translateY(-5px); }
+        }
+        
+        .community-rating {
+            margin-top: 10px;
+            color: #ffaa00;
+        }
+        
+        .community-rating i {
+            margin: 0 2px;
+            animation: starTwinkle 2s ease-in-out infinite;
+        }
+        
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+    </style>
+</body>
+</html>

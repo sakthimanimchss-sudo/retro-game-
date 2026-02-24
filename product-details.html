@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Super Mario World - SNES - Retro Game Marketplace</title>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>🎮</text></svg>">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/product-details.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="light-mode">
+    <!-- HEADER SECTION -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-gamepad"></i>
+                    RETRO MARKET
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">
+                                <a href="index.html">
+                                    <i class="fas fa-home"></i>
+                                    <span>Home 1 (Retro Landing)</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="home2.html">
+                                    <i class="fas fa-store"></i>
+                                    <span>Home 2 (Marketplace)</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Shop</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">
+                                <a href="marketplace.html">
+                                    <i class="fas fa-store"></i>
+                                    <span>All Products</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="nes.html">
+                                    <i class="fas fa-gamepad"></i>
+                                    <span>NES Games</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="snes.html">
+                                    <i class="fas fa-gamepad"></i>
+                                    <span>SNES Games</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="sega.html">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>Sega Genesis</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-file"></i>
+                            <span>Pages</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">
+                                <a href="product-details.html">
+                                    <i class="fas fa-box"></i>
+                                    <span>Product Details</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="dashboard.html">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>User Dashboard</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="seller-dashboard.html">
+                                    <i class="fas fa-store-alt"></i>
+                                    <span>Seller Panel</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="about.html">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>About Us</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="contact.html">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Contact</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item auth-buttons">
+                        <a href="auth.html?mode=login" class="btn btn-login">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>Login</span>
+                        </a>
+                        <a href="auth.html?mode=register" class="btn btn-register">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Register</span>
+                        </a>
+                    </li>
+
+                    <!-- Theme/RTL Controls -->
+                    <li class="nav-item">
+                        <div class="theme-rtl">
+                            <button id="themeToggle" class="theme-btn-compact" aria-label="Toggle theme">
+                                <i class="fas fa-moon"></i>
+                                <i class="fas fa-sun"></i>
+                            </button>
+                            <button id="rtlToggle" class="rtl-btn" aria-label="Toggle RTL">
+                                <i class="fas fa-exchange-alt"></i>
+                                <span>RTL</span>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile">
+                <button class="hamburger" id="hamburgerBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="mobile-menu" id="mobileMenu">
+                    <ul class="nav-mobile-menu">
+                        <li class="mobile-nav-item mobile-dropdown">
+                            <div class="mobile-dropdown-header">
+                                <a href="#" class="mobile-nav-link">
+                                    <i class="fas fa-home"></i>
+                                    <span>Home</span>
+                                </a>
+                                <button class="mobile-dropdown-toggle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <ul class="mobile-dropdown-menu">
+                                <li class="mobile-dropdown-item">
+                                    <a href="index.html">
+                                        <i class="fas fa-home"></i>
+                                        <span>Home 1 (Retro Landing)</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="home2.html">
+                                        <i class="fas fa-store"></i>
+                                        <span>Home 2 (Marketplace)</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="mobile-nav-item mobile-dropdown">
+                            <div class="mobile-dropdown-header">
+                                <a href="#" class="mobile-nav-link">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Shop</span>
+                                </a>
+                                <button class="mobile-dropdown-toggle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <ul class="mobile-dropdown-menu">
+                                <li class="mobile-dropdown-item">
+                                    <a href="marketplace.html">
+                                        <i class="fas fa-store"></i>
+                                        <span>All Products</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="nes.html">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>NES Games</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="snes.html">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>SNES Games</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="sega.html">
+                                        <i class="fas fa-bolt"></i>
+                                        <span>Sega Genesis</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="mobile-nav-item mobile-dropdown">
+                            <div class="mobile-dropdown-header">
+                                <a href="#" class="mobile-nav-link">
+                                    <i class="fas fa-file"></i>
+                                    <span>Pages</span>
+                                </a>
+                                <button class="mobile-dropdown-toggle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <ul class="mobile-dropdown-menu">
+                                <li class="mobile-dropdown-item">
+                                    <a href="product-details.html">
+                                        <i class="fas fa-box"></i>
+                                        <span>Product Details</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="dashboard.html">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        <span>User Dashboard</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="seller-dashboard.html">
+                                        <i class="fas fa-store-alt"></i>
+                                        <span>Seller Panel</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="about.html">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span>About Us</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="contact.html">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>Contact</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="mobile-nav-item">
+                            <div class="mobile-auth-buttons">
+                                <a href="auth.html?mode=login" class="btn btn-login mobile-btn">Login</a>
+                                <a href="auth.html?mode=register" class="btn btn-register mobile-btn">Register</a>
+                            </div>
+                        </li>
+
+                        <!-- Mobile Theme/RTL -->
+                        <li class="mobile-nav-item">
+                            <div class="theme-rtl mobile-theme-rtl">
+                                <button id="mobileThemeToggle" class="theme-btn-compact">
+                                    <i class="fas fa-moon"></i>
+                                    <i class="fas fa-sun"></i>
+                                </button>
+                                <button id="mobileRtlToggle" class="rtl-btn">
+                                    <i class="fas fa-exchange-alt"></i>
+                                    <span>RTL</span>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- BREADCRUMB -->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="snes.html">SNES Games</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Super Mario World</span>
+            </div>
+        </div>
+
+        <!-- PRODUCT DETAILS SECTION -->
+        <section class="product-details">
+            <div class="container">
+                <div class="product-details-grid">
+                    <!-- LEFT COLUMN - PRODUCT IMAGES -->
+                    <div class="product-gallery">
+                        <div class="main-image">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2459/2459156.png" alt="Super Mario World" id="mainProductImage">
+                            <div class="image-badge">MINT</div>
+                        </div>
+                        <div class="thumbnail-grid">
+                            <div class="thumbnail active" onclick="changeImage(this, 'https://cdn-icons-png.flaticon.com/512/2459/2459156.png')">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2459/2459156.png" alt="Front Cover">
+                            </div>
+                            <div class="thumbnail" onclick="changeImage(this, 'https://cdn-icons-png.flaticon.com/512/2459/2459130.png')">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2459/2459130.png" alt="Cartridge">
+                            </div>
+                            <div class="thumbnail" onclick="changeImage(this, 'https://cdn-icons-png.flaticon.com/512/2459/2459091.png')">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2459/2459091.png" alt="Manual">
+                            </div>
+                            <div class="thumbnail" onclick="changeImage(this, 'https://cdn-icons-png.flaticon.com/512/2459/2459108.png')">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2459/2459108.png" alt="Box Back">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN - PRODUCT INFO -->
+                    <div class="product-info-detail">
+                        <div class="product-header">
+                            <h1 class="product-title-detail">Super Mario World</h1>
+                            <div class="product-meta">
+                                <span class="product-platform"><i class="fas fa-gamepad"></i> SNES</span>
+                                <span class="product-sku">SKU: SNES-SMW-001</span>
+                            </div>
+                        </div>
+
+                        <div class="product-pricing">
+                            <div class="price-container">
+                                <span class="current-price">$79.99</span>
+                                <span class="original-price">$129.99</span>
+                                <span class="discount-badge">-38%</span>
+                            </div>
+                            <div class="price-note">Price includes free shipping</div>
+                        </div>
+
+                        <div class="product-condition-detail">
+                            <h3>Condition</h3>
+                            <div class="condition-badge-detail condition-mint">Mint - Complete in Box (CIB)</div>
+                            <div class="condition-details">
+                                <p><i class="fas fa-check-circle"></i> Original cartridge in pristine condition</p>
+                                <p><i class="fas fa-check-circle"></i> Original box with minimal shelf wear</p>
+                                <p><i class="fas fa-check-circle"></i> Manual and inserts included</p>
+                                <p><i class="fas fa-check-circle"></i> Foam insert present</p>
+                            </div>
+                        </div>
+
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="qty-btn minus" onclick="updateQuantity(-1)">-</button>
+                                <input type="number" value="1" min="1" max="5" id="quantity">
+                                <button class="qty-btn plus" onclick="updateQuantity(1)">+</button>
+                            </div>
+                            <button class="add-to-cart-detail"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+
+                        <div class="buy-now-section">
+                            <button class="buy-now-btn">BUY IT NOW</button>
+                        </div>
+
+                        <div class="seller-info">
+                            <h3>Seller Information</h3>
+                            <div class="seller-card">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Seller Avatar">
+                                <div class="seller-details">
+                                    <h4>MarioFan</h4>
+                                    <div class="seller-rating-detail">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>(4.9) 1,247 reviews</span>
+                                    </div>
+                                    <div class="seller-badges">
+                                        <span class="badge"><i class="fas fa-medal"></i> Top Rated</span>
+                                        <span class="badge"><i class="fas fa-clock"></i> 5+ Years</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="view-seller-profile">View Seller Profile <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCT TABS SECTION -->
+                <div class="product-tabs">
+                    <div class="tab-headers">
+                        <button class="tab-btn active" onclick="openTab(event, 'description')">DESCRIPTION</button>
+                        <button class="tab-btn" onclick="openTab(event, 'specs')">SPECIFICATIONS</button>
+                        <button class="tab-btn" onclick="openTab(event, 'shipping')">SHIPPING & RETURNS</button>
+                        <button class="tab-btn" onclick="openTab(event, 'reviews')">REVIEWS (124)</button>
+                    </div>
+
+                    <div class="tab-content">
+                        <!-- DESCRIPTION TAB -->
+                        <div id="description" class="tab-pane active">
+                            <h2>Super Mario World (SNES) - 1990</h2>
+                            <p>Super Mario World, known in Japan as Super Mario World: Super Mario Bros. 4, is a platform game developed and published by Nintendo for the Super Nintendo Entertainment System. The game was a launch title for the SNES and was released in 1990 in Japan, 1991 in North America, and 1992 in Europe.</p>
+                            
+                            <p>The story follows Mario and Luigi as they attempt to rescue Princess Peach from the villainous Bowser and his minions, the Koopalings. After arriving in a mysterious land called Dinosaur Land, the brothers befriend a young dinosaur named Yoshi, who joins them on their quest.</p>
+                            
+                            <h3>Key Features:</h3>
+                            <ul>
+                                <li>Introduced Yoshi, who became a staple character in the Mario franchise</li>
+                                <li>96 levels across 7 worlds with multiple exits and secret areas</li>
+                                <li>Capable spin jump and new power-ups including the Cape Feather</li>
+                                <li>Save feature - revolutionary for its time</li>
+                                <li>Iconic soundtrack by Koji Kondo</li>
+                            </ul>
+                            
+                            <p>This copy is in MINT condition and includes everything originally packed with the game: cartridge, box, manual, and all inserts. The cartridge has been tested and saves perfectly.</p>
+                        </div>
+
+                        <!-- SPECIFICATIONS TAB -->
+                        <div id="specs" class="tab-pane">
+                            <h2>Technical Specifications</h2>
+                            <table class="specs-table">
+                                <tr>
+                                    <th>Platform</th>
+                                    <td>Super Nintendo Entertainment System (SNES)</td>
+                                </tr>
+                                <tr>
+                                    <th>Region</th>
+                                    <td>USA (NTSC)</td>
+                                </tr>
+                                <tr>
+                                    <th>Release Date</th>
+                                    <td>August 13, 1991 (North America)</td>
+                                </tr>
+                                <tr>
+                                    <th>Publisher</th>
+                                    <td>Nintendo</td>
+                                </tr>
+                                <tr>
+                                    <th>Developer</th>
+                                    <td>Nintendo EAD</td>
+                                </tr>
+                                <tr>
+                                    <th>Genre</th>
+                                    <td>Platformer</td>
+                                </tr>
+                                <tr>
+                                    <th>Players</th>
+                                    <td>1-2 (alternating)</td>
+                                </tr>
+                                <tr>
+                                    <th>Save Feature</th>
+                                    <td>Yes - Battery save</td>
+                                </tr>
+                                <tr>
+                                    <th>Cartridge Size</th>
+                                    <td>4 Megabit (0.5 MB)</td>
+                                </tr>
+                                <tr>
+                                    <th>Item Condition</th>
+                                    <td>Mint - Complete in Box</td>
+                                </tr>
+                                <tr>
+                                    <th>UPC</th>
+                                    <td>045496830077</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- SHIPPING TAB -->
+                        <div id="shipping" class="tab-pane">
+                            <h2>Shipping & Return Policy</h2>
+                            
+                            <div class="shipping-info">
+                                <h3><i class="fas fa-truck"></i> Shipping</h3>
+                                <ul>
+                                    <li><strong>Free shipping</strong> to continental US</li>
+                                    <li>Estimated delivery: 3-5 business days</li>
+                                    <li>Expedited shipping available at checkout (+$9.99)</li>
+                                    <li>International shipping available to select countries</li>
+                                    <li>All items are securely packaged in box with bubble wrap</li>
+                                    <li>Tracking number provided within 24 hours of shipment</li>
+                                </ul>
+                            </div>
+
+                            <div class="returns-info">
+                                <h3><i class="fas fa-undo-alt"></i> Returns</h3>
+                                <ul>
+                                    <li><strong>30-day returns</strong> from date of delivery</li>
+                                    <li>Full refund if item not as described</li>
+                                    <li>Buyer pays return shipping unless item is defective</li>
+                                    <li>Items must be returned in original condition</li>
+                                    <li>Refund processed within 3 business days of receipt</li>
+                                </ul>
+                            </div>
+
+                            <div class="guarantee">
+                                <h3><i class="fas fa-shield-alt"></i> Authenticity Guarantee</h3>
+                                <p>All games sold on Retro Market are guaranteed authentic. If any item is found to be counterfeit or reproduction without disclosure, we offer a full refund plus 20% compensation.</p>
+                            </div>
+                        </div>
+
+                        <!-- REVIEWS TAB -->
+                        <div id="reviews" class="tab-pane">
+                            <div class="reviews-summary">
+                                <div class="average-rating">
+                                    <span class="rating-number">4.9</span>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="total-reviews">Based on 124 reviews</span>
+                                </div>
+                                <button class="write-review-btn">WRITE A REVIEW</button>
+                            </div>
+
+                            <div class="review-filters">
+                                <span>Sort by:</span>
+                                <select>
+                                    <option>Most Recent</option>
+                                    <option>Highest Rated</option>
+                                    <option>Lowest Rated</option>
+                                    <option>With Photos</option>
+                                </select>
+                            </div>
+
+                            <div class="reviews-list">
+                                <!-- Review 1 -->
+                                <div class="review-item">
+                                    <div class="reviewer-info">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140040.png" alt="Reviewer">
+                                        <div>
+                                            <h4>SuperMarioFan</h4>
+                                            <div class="review-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-content">
+                                        <p class="review-title">Perfect condition, exactly as described!</p>
+                                        <p class="review-text">I've been looking for a mint copy of Super Mario World for my collection and this exceeded my expectations. The box is crisp, the cartridge looks brand new, and it saves perfectly. Fast shipping too!</p>
+                                        <p class="review-date">Reviewed on January 15, 2025</p>
+                                    </div>
+                                </div>
+
+                                <!-- Review 2 -->
+                                <div class="review-item">
+                                    <div class="reviewer-info">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140051.png" alt="Reviewer">
+                                        <div>
+                                            <h4>RetroCollector</h4>
+                                            <div class="review-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-content">
+                                        <p class="review-title">Authentic and well packaged</p>
+                                        <p class="review-text">Great seller, authentic game, and the packaging was superb. The box was protected in a plastic sleeve and bubble wrap. Would buy from again.</p>
+                                        <p class="review-date">Reviewed on December 3, 2024</p>
+                                    </div>
+                                </div>
+
+                                <!-- Review 3 -->
+                                <div class="review-item">
+                                    <div class="reviewer-info">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Reviewer">
+                                        <div>
+                                            <h4>NESGamer</h4>
+                                            <div class="review-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-content">
+                                        <p class="review-title">Great game, minor shelf wear on box</p>
+                                        <p class="review-text">The game itself is perfect and works great. The box has very minor shelf wear on one corner, but still presents well. Overall happy with the purchase.</p>
+                                        <p class="review-date">Reviewed on November 12, 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="load-more-reviews">
+                                <button class="load-more-btn">LOAD MORE REVIEWS</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RELATED PRODUCTS SECTION -->
+                <section class="related-products">
+                    <h2 class="section-title">YOU MAY ALSO LIKE</h2>
+                    <div class="related-grid">
+                        <!-- Related Product 1 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2459/2459115.png" alt="The Legend of Zelda: A Link to the Past">
+                                <div class="product-overlay">
+                                    <button class="quick-view">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">The Legend of Zelda: A Link to the Past</h3>
+                                <p class="product-platform"><i class="fas fa-gamepad"></i> SNES</p>
+                                <div class="product-price">$129.99</div>
+                            </div>
+                        </div>
+
+                        <!-- Related Product 2 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2459/2459178.png" alt="Super Metroid">
+                                <div class="product-overlay">
+                                    <button class="quick-view">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Super Metroid</h3>
+                                <p class="product-platform"><i class="fas fa-gamepad"></i> SNES</p>
+                                <div class="product-price">$149.99</div>
+                            </div>
+                        </div>
+
+                        <!-- Related Product 3 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2459/2459091.png" alt="Donkey Kong Country">
+                                <div class="product-overlay">
+                                    <button class="quick-view">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Donkey Kong Country</h3>
+                                <p class="product-platform"><i class="fas fa-gamepad"></i> SNES</p>
+                                <div class="product-price">$44.99</div>
+                            </div>
+                        </div>
+
+                        <!-- Related Product 4 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2459/2459108.png" alt="Super Mario Kart">
+                                <div class="product-overlay">
+                                    <button class="quick-view">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Super Mario Kart</h3>
+                                <p class="product-platform"><i class="fas fa-gamepad"></i> SNES</p>
+                                <div class="product-price">$89.99</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- EXPANDED FOOTER WITH BRAND LOGO -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <!-- Footer Brand Section -->
+                <div class="footer-brand">
+                    <div class="footer-logo-3d">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3655/3655578.png" alt="Retro Market" class="footer-3d-logo">
+                        <span class="footer-3d-text">RETRO MARKET</span>
+                    </div>
+                    <p>The #1 trusted marketplace for authentic retro video games since 2010. Buy, sell, and trade with confidence.</p>
+                    <div class="footer-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>4.8/5 from 15,000+ reviews</span>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-reddit"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-twitch"></i></a>
+                    </div>
+                </div>
+
+                <!-- Footer Links Columns -->
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h3>SHOP <i class="fas fa-chevron-right"></i></h3>
+                        <ul>
+                            <li><a href="marketplace.html">All Games</a></li>
+                            <li><a href="marketplace.html?condition=new">New Arrivals</a></li>
+                            <li><a href="marketplace.html?condition=mint">Mint Condition</a></li>
+                            <li><a href="marketplace.html?condition=graded">Graded Games</a></li>
+                            <li><a href="marketplace.html?category=rare">Rare Finds</a></li>
+                            <li><a href="accessories.html">Accessories</a></li>
+                            <li><a href="consoles.html">Consoles</a></li>
+                            <li><a href="clearance.html">Clearance</a></li>
+                            <li><a href="preorders.html">Pre-orders</a></li>
+                            <li><a href="bundles.html">Game Bundles</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>CONSOLES <i class="fas fa-chevron-right"></i></h3>
+                        <ul>
+                            <li><a href="marketplace.html?console=nes">NES</a></li>
+                            <li><a href="marketplace.html?console=snes">SNES</a></li>
+                            <li><a href="marketplace.html?console=n64">Nintendo 64</a></li>
+                            <li><a href="marketplace.html?console=gameboy">Game Boy</a></li>
+                            <li><a href="marketplace.html?console=gamecube">GameCube</a></li>
+                            <li><a href="marketplace.html?console=sega">Sega Genesis</a></li>
+                            <li><a href="marketplace.html?console=sega-saturn">Sega Saturn</a></li>
+                            <li><a href="marketplace.html?console=dreamcast">Dreamcast</a></li>
+                            <li><a href="marketplace.html?console=ps1">PlayStation</a></li>
+                            <li><a href="marketplace.html?console=ps2">PS2</a></li>
+                            <li><a href="marketplace.html?console=xbox">Original Xbox</a></li>
+                            <li><a href="marketplace.html?console=atari">Atari 2600</a></li>
+                            <li><a href="marketplace.html?console=turbografx">TurboGrafx-16</a></li>
+                            <li><a href="marketplace.html?console=neogeo">Neo Geo</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>SELLER CENTRAL <i class="fas fa-chevron-right"></i></h3>
+                        <ul>
+                            <li><a href="seller-dashboard.html">Seller Dashboard</a></li>
+                            <li><a href="how-to-sell.html">How to Start Selling</a></li>
+                            <li><a href="seller-fees.html">Fees & Commissions</a></li>
+                            <li><a href="shipping.html">Shipping Guide</a></li>
+                            <li><a href="grading.html">Grading Standards</a></li>
+                            <li><a href="seller-protection.html">Seller Protection</a></li>
+                            <li><a href="bulk-listing.html">Bulk Listing Tools</a></li>
+                            <li><a href="seller-forum.html">Seller Forum</a></li>
+                            <li><a href="success-stories.html">Success Stories</a></li>
+                            <li><a href="analytics.html">Sales Analytics</a></li>
+                            <li><a href="promotions.html">Seller Promotions</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>BUYER RESOURCES <i class="fas fa-chevron-right"></i></h3>
+                        <ul>
+                            <li><a href="buyer-protection.html">Buyer Protection</a></li>
+                            <li><a href="authentication.html">Authentication Guide</a></li>
+                            <li><a href="price-guide.html">Price Guide</a></li>
+                            <li><a href="condition-guide.html">Condition Guide</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="shipping-tracking.html">Shipping & Tracking</a></li>
+                            <li><a href="returns.html">Returns Policy</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                            <li><a href="deals.html">Daily Deals</a></li>
+                            <li><a href="gift-cards.html">Gift Cards</a></li>
+                            <li><a href="newsletter.html">Newsletter</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>COMPANY <i class="fas fa-chevron-right"></i></h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="press.html">Press</a></li>
+                            <li><a href="affiliates.html">Affiliates</a></li>
+                            <li><a href="partners.html">Partners</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="investors.html">Investors</a></li>
+                            <li><a href="sustainability.html">Sustainability</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>SUPPORT <i class="fas fa-chevron-right"></i></h3>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="contact-support.html">Contact Support</a></li>
+                            <li><a href="report.html">Report a Problem</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="cookies.html">Cookie Policy</a></li>
+                            <li><a href="accessibility.html">Accessibility</a></li>
+                            <li><a href="sitemap.html">Sitemap</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="dmca.html">DMCA</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom with Certifications -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <div class="footer-certifications">
+                        <span><i class="fas fa-shield-alt"></i> Verified Secure</span>
+                        <span><i class="fas fa-lock"></i> 256-bit SSL</span>
+                        <span><i class="fas fa-check-circle"></i> Authenticity Guaranteed</span>
+                        <span><i class="fas fa-truck"></i> Free Shipping Over $100</span>
+                        <span><i class="fas fa-undo"></i> 30-Day Returns</span>
+                        <span><i class="fas fa-credit-card"></i> Secure Payments</span>
+                        <span><i class="fas fa-gem"></i> Member Since 2010</span>
+                        <span><i class="fas fa-award"></i> Top Rated</span>
+                    </div>
+                    
+                    <div class="footer-copyright">
+                        <p>© 2025 Retro Video Game Marketplace. All rights reserved. All trademarks are property of their respective owners.</p>
+                        <div class="payment-methods">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-cc-discover"></i>
+                            <i class="fab fa-cc-apple-pay"></i>
+                            <i class="fab fa-cc-amazon-pay"></i>
+                            <i class="fab fa-bitcoin"></i>
+                            <i class="fab fa-ethereum"></i>
+                        </div>
+                    </div>
+
+                    <div class="footer-stats">
+                        <div class="stat">
+                            <span class="stat-value">50K+</span>
+                            <span class="stat-label">Games Sold</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">15K+</span>
+                            <span class="stat-label">Happy Collectors</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">2.5K+</span>
+                            <span class="stat-label">Active Sellers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">12+</span>
+                            <span class="stat-label">Years Online</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">98%</span>
+                            <span class="stat-label">Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Image gallery function
+        function changeImage(thumbnail, src) {
+            document.getElementById('mainProductImage').src = src;
+            
+            // Remove active class from all thumbnails
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            
+            // Add active class to clicked thumbnail
+            thumbnail.classList.add('active');
+        }
+
+        // Quantity selector
+        function updateQuantity(change) {
+            const input = document.getElementById('quantity');
+            let value = parseInt(input.value) + change;
+            if (value < 1) value = 1;
+            if (value > 5) value = 5;
+            input.value = value;
+        }
+
+        // Tabs functionality
+        function openTab(event, tabId) {
+            // Hide all tab panes
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            tabPanes.forEach(pane => pane.classList.remove('active'));
+            
+            // Remove active class from all tab buttons
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            tabBtns.forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected tab pane
+            document.getElementById(tabId).classList.add('active');
+            
+            // Add active class to clicked tab button
+            event.currentTarget.classList.add('active');
+        }
+
+</script>
+</body>
+</html>
