@@ -4,10 +4,6 @@
 /* Complete with Retro Gaming Aesthetic
 /* ============================================ */
 
-html, body {
-    overflow-x: hidden;
-}
-
 /* ============================================ */
 /* PAGE HEADER - WITH BACKGROUND IMAGE
 /* ============================================ */
@@ -175,9 +171,9 @@ html, body {
     filter: drop-shadow(0 0 5px var(--accent, #ffaa33));
 }
 
-/* ============================================ */
-/* FILTER SECTION
-/* ============================================ */
+/* ============================================
+   FILTER SECTION
+============================================ */
 
 .filter-section {
     margin-bottom: 3rem;
@@ -190,11 +186,17 @@ html, body {
     padding: 2rem;
     backdrop-filter: blur(10px);
     box-shadow: 8px 8px 0 var(--shadow-color, #4d2f19);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 body.light-mode .filter-container {
     background: rgba(255, 247, 232, 0.8);
 }
+
+/* ============================================
+   FILTER HEADER
+============================================ */
 
 .filter-header {
     display: flex;
@@ -237,19 +239,27 @@ body.light-mode .filter-container {
 .clear-filters:hover {
     background: var(--accent, #ffaa33);
     color: #221100;
-    transform: scale(1.05);
 }
+
+/* ============================================
+   GRID (FIXED PROPERLY)
+============================================ */
 
 .filter-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 1.5rem;
 }
+
+/* ============================================
+   FILTER GROUP
+============================================ */
 
 .filter-group {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    min-width: 0; /* prevents overflow */
 }
 
 .filter-group label {
@@ -260,7 +270,15 @@ body.light-mode .filter-container {
     letter-spacing: 1px;
 }
 
+/* ============================================
+   SELECT STYLING
+============================================ */
+
 .filter-select {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
     background: rgba(0, 0, 0, 0.5);
     border: 2px solid var(--primary-light, #b87c4b);
     border-radius: 10px;
@@ -271,7 +289,6 @@ body.light-mode .filter-container {
     transition: all 0.3s;
 }
 
-.filter-select:hover,
 .filter-select:focus {
     border-color: var(--accent, #ffaa33);
     outline: none;
@@ -282,14 +299,22 @@ body.light-mode .filter-select {
     color: #2c1e0e;
 }
 
+/* ============================================
+   PRICE RANGE FIX
+============================================ */
+
 .price-range {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    width: 100%;
 }
 
 .price-range input {
     flex: 1;
+    min-width: 0;   /* VERY IMPORTANT */
+    box-sizing: border-box;
+
     background: rgba(0, 0, 0, 0.5);
     border: 2px solid var(--primary-light, #b87c4b);
     border-radius: 10px;
@@ -313,9 +338,13 @@ body.light-mode .price-range input {
     font-weight: bold;
 }
 
+/* ============================================
+   APPLY BUTTON
+============================================ */
+
 .apply-filters {
     background: var(--accent, #ffaa33);
-    border: none;
+    border: 2px solid var(--shadow-color, #4d2f19);
     color: #221100;
     font-weight: bold;
     padding: 0.8rem;
@@ -324,7 +353,6 @@ body.light-mode .price-range input {
     transition: all 0.3s;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 2px solid var(--shadow-color, #4d2f19);
     box-shadow: 0 4px 0 var(--shadow-color, #4d2f19);
     width: 100%;
 }
@@ -341,16 +369,26 @@ body.light-mode .price-range input {
 }
 
 /* ============================================
-   FILTER MOBILE FIX
+   RESPONSIVE BREAKPOINTS
 ============================================ */
 
+/* Tablet */
+@media (max-width: 992px) {
+    .filter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
 @media (max-width: 575px) {
+
+    .filter-section {
+        padding: 0 10px;
+    }
 
     .filter-container {
         padding: 1rem;
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
+        border-radius: 15px;
     }
 
     .filter-header {
@@ -359,39 +397,31 @@ body.light-mode .price-range input {
         gap: 1rem;
     }
 
+    .filter-header h3 {
+        font-size: 1.2rem;
+    }
+
     .clear-filters {
-        align-self: flex-start;
+        font-size: 0.9rem;
     }
 
     .filter-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
-        width: 100%;
-    }
-
-    .filter-group {
-        width: 100%;
-    }
-
-    .filter-select,
-    .price-range input,
-    .apply-filters {
-        width: 100%;
-        min-width: 0;
-        box-sizing: border-box;
     }
 
     .price-range {
         flex-direction: column;
         gap: 0.8rem;
-        width: 100%;
     }
 
     .price-range span {
-        display: none; /* hide dash between min & max */
+        display: none;
+    }
+
+    .apply-filters {
+        margin-top: 0.5rem;
     }
 }
-
 /* ============================================ */
 /* PRODUCTS SECTION
 /* ============================================ */
