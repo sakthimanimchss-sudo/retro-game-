@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Retro Video Game Marketplace - Home 1</title>
+    <title>Retro Game Market - Buy & Sell Classic Games</title>
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>🎮</text></svg>">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/home2.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body class="light-mode">
-    <!-- HEADER SECTION WITH DROPDOWNS -->
+    <!-- HEADER SECTION (Same as home2.html) -->
     <header class="header">
         <div class="container">
             <div class="logo">
                 <a href="index.html">
                     <i class="fas fa-gamepad"></i>
-                    <span class="logo-3d">RETRO MARKET</span>
+                    RETRO MARKET
                 </a>
             </div>
 
@@ -150,7 +150,7 @@
                     </li>
 
                     <!-- Theme/RTL Controls -->
-                    <li class="nav-item">
+                      <li class="nav-item">
                         <div class="theme-rtl">
                             <button id="themeToggle" class="theme-btn-compact" aria-label="Toggle theme">
                                 <i class="fas fa-moon"></i>
@@ -329,408 +329,505 @@
     </header>
 
     <main>
-        <!-- SECTION 1: HERO SECTION - HOME 1 (RETRO LANDING) -->
-        <section class="hero-retro">
+        <!-- HERO SECTION - MARKETPLACE FOCUS -->
+        <section class="hero-section" style="background: linear-gradient(135deg, rgba(139, 69, 19, 0.95), rgba(90, 45, 15, 0.98)), url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;">
             <div class="container">
-                <div class="hero-3d-logo">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3655/3655578.png" alt="Retro Gaming" class="hero-3d-image">
-                </div>
-                <h1>
-                    <i class="fas fa-crown"></i>
-                    LEVEL UP YOUR COLLECTION
-                    <i class="fas fa-crown"></i>
+                <h1 class="hero-title">
+                    <span class="retro-logo">BUY & SELL</span><br>
+                    <span class="retro-logo">RETRO GAMES</span>
                 </h1>
-                <p class="hero-subtitle">Buy, Sell, and Trade Authentic Retro Games</p>
-                <div class="hero-buttons">
-                    <a href="marketplace.html" class="btn hero-btn primary-btn">
-                        <i class="fas fa-search"></i>
-                        Browse Marketplace
-                    </a>
-                    <a href="seller-dashboard.html" class="btn hero-btn secondary-btn">
-                        <i class="fas fa-tag"></i>
-                        Start Selling
-                    </a>
+                
+                <p class="hero-description">
+                    The largest marketplace for authentic retro video games. Buy, sell, and trade 
+                    classic games from NES, SNES, Sega Genesis, PlayStation, and more. 
+                    Join 50,000+ collectors today!
+                </p>
+
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search for games, consoles, accessories..." class="search-input">
+                        <button class="search-button">Search</button>
+                    </div>
+                </div>
+
+                <div class="platform-tags">
+                    <a href="#" class="platform-tag">NES</a>
+                    <a href="#" class="platform-tag">SNES</a>
+                    <a href="#" class="platform-tag">N64</a>
+                    <a href="#" class="platform-tag">Game Boy</a>
+                    <a href="#" class="platform-tag">Sega Genesis</a>
+                    <a href="#" class="platform-tag">PlayStation</a>
+                    <a href="#" class="platform-tag">Xbox</a>
+                    <a href="#" class="platform-tag">Atari</a>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 2: FEATURED CONSOLES -->
+<!-- MARKET STATS SECTION -->
+<div class="stats-section">
+    <div class="stats-grid">
+        
+        <div class="stat-card">
+            <i class="fas fa-gamepad"></i>
+            <h3>50K+</h3>
+            <p>Games Listed</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fas fa-users"></i>
+            <h3>15K+</h3>
+            <p>Active Sellers</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fas fa-tag"></i>
+            <h3>$2.5M</h3>
+            <p>Monthly Sales</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fas fa-star"></i>
+            <h3>4.8/5</h3>
+            <p>Seller Rating</p>
+        </div>
+
+    </div>
+</div>
+
+        <!-- FEATURED LISTINGS SECTION (EXPANDED TO 8 GRIDS) -->
         <div class="container">
             <div class="section-header">
-                <div class="section-logo-3d">
-                    <img src="https://cdn-icons-png.flaticon.com/512/686/686225.png" alt="Console" class="section-3d-icon">
-                </div>
-                <h2><i class="fas fa-star"></i> FEATURED CONSOLES <i class="fas fa-star"></i></h2>
-                <p>Browse by your favorite retro systems</p>
+                <h2 class="section-title">Featured Listings</h2>
+                <a href="marketplace.html" class="view-all">
+                    View All <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
 
-            <div class="feature-grid">
-                <!-- NES Card -->
-                <div class="card console-card">
-                    <div class="console-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/686/686215.png" alt="NES" class="console-3d">
+            <div class="game-grid">
+                <!-- Listing Card 1 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-1286397.webp?raw=true" alt="Super Mario 64">
+                        <div class="game-overlay">
+                            <button class="play-button">View Listing</button>
+                        </div>
                     </div>
-                    <h3>NES</h3>
-                    <p>Nintendo Entertainment System</p>
-                    <span class="game-count">124 games available</span>
-                    <a href="marketplace.html?console=nes" class="btn card-btn">
-                        View Games <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="game-info">
+                        <h3 class="game-title">Super Mario 64</h3>
+                        <span class="game-platform">Nintendo 64</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$89.99</span>
+                            <span style="color: #44ff44; font-size: 0.8rem;">Mint</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- SNES Card -->
-                <div class="card console-card">
-                    <div class="console-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/686/686222.png" alt="SNES" class="console-3d">
+                <!-- Listing Card 2 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-1375944.webp?raw=true" alt="Sonic 3">
+                        <div class="game-overlay">
+                            <button class="play-button">View Listing</button>
+                        </div>
                     </div>
-                    <h3>Super NES</h3>
-                    <p>16-bit classics</p>
-                    <span class="game-count">98 games available</span>
-                    <a href="marketplace.html?console=snes" class="btn card-btn">
-                        View Games <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="game-info">
+                        <h3 class="game-title">Sonic 3 & Knuckles</h3>
+                        <span class="game-platform">Sega Genesis</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$129.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">CIB</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Sega Genesis Card -->
-                <div class="card console-card">
-                    <div class="console-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/686/686232.png" alt="Sega" class="console-3d">
+                <!-- Listing Card 3 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-1377704.webp?raw=true" alt="Zelda">
+                        <div class="game-overlay">
+                            <button class="play-button">View Listing</button>
+                        </div>
                     </div>
-                    <h3>Sega Genesis</h3>
-                    <p>Blast processing</p>
-                    <span class="game-count">76 games available</span>
-                    <a href="marketplace.html?console=sega" class="btn card-btn">
-                        View Games <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="game-info">
+                        <h3 class="game-title">Zelda: Ocarina of Time</h3>
+                        <span class="game-platform">Nintendo 64</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$149.99</span>
+                            <span style="color: #44ff44; font-size: 0.8rem;">Graded 8.5</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- PlayStation Card -->
-                <div class="card console-card">
-                    <div class="console-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/686/686208.png" alt="PS" class="console-3d">
+                <!-- Listing Card 4 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-333217.webp?raw=true" alt="Street Fighter">
+                        <div class="game-overlay">
+                            <button class="play-button">View Listing</button>
+                        </div>
                     </div>
-                    <h3>PlayStation</h3>
-                    <p>Original PS1 & PS2</p>
-                    <span class="game-count">156 games available</span>
-                    <a href="marketplace.html?console=ps1" class="btn card-btn">
-                        View Games <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="game-info">
+                        <h3 class="game-title">Street Fighter II Turbo</h3>
+                        <span class="game-platform">SNES</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$59.99</span>
+                            <span style="color: #44ff44; font-size: 0.8rem;">Mint</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Listing Card 5 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-338814.webp?raw=true" alt="Mortal Kombat">
+                        <div class="game-overlay">
+                            <button class="play-button">View Listing</button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Mortal Kombat II</h3>
+                        <span class="game-platform">Sega Genesis</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$44.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">Good</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Listing Card 6 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-370408.webp?raw=true" alt="Crash">
+                        <div class="game-overlay">
+                            <button class="play-button">View Listing</button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Crash Bandicoot 3</h3>
+                        <span class="game-platform">PlayStation</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$34.99</span>
+                            <span style="color: #44ff44; font-size: 0.8rem;">Mint</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Listing Card 7 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-988021.webp?raw=true" alt="Donkey Kong">
+                        <div class="game-overlay">
+                            <button class="play-button">View Listing</button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Donkey Kong Country 2</h3>
+                        <span class="game-platform">SNES</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$49.99</span>
+                            <span style="color: #44ff44; font-size: 0.8rem;">Mint</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Listing Card 8 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-996764.webp?raw=true" alt="Pokemon">
+                        <div class="game-overlay">
+                            <button class="play-button">View Listing</button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Pokémon Red</h3>
+                        <span class="game-platform">Game Boy</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$79.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">CIB</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- SECTION 3: RECENTLY ADDED GAMES (EXPANDED TO 8 GRIDS) -->
+        <!-- SELLER CTA BANNER -->
         <div class="container">
-            <div class="section-header">
-                <div class="section-logo-3d">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991555.png" alt="Recent" class="section-3d-icon">
+            <div class="featured-banner" style="background: linear-gradient(135deg, #8b4513, #5a2e0f);">
+                <div class="featured-content">
+                    <h2 class="featured-title">SELL YOUR COLLECTION</h2>
+                    <p class="featured-description">
+                        Turn your retro games into cash! List your games for free and reach thousands 
+                        of collectors worldwide. No fees until 2026.
+                    </p>
+                    <a href="seller-dashboard.html" class="featured-button">Start Selling</a>
                 </div>
-                <h2><i class="fas fa-clock"></i> RECENTLY ADDED <i class="fas fa-clock"></i></h2>
-                <p>Fresh listings from our community</p>
-            </div>
-
-            <div class="recent-grid">
-                <!-- Game Card 1 -->
-                <div class="card game-card">
-                    <div class="game-image">
-                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/carl-raw-hv4jH7B_U8Y-unsplash.jpg?raw=true" alt="Mario" class="game-3d">
-                    </div>
-                    <h3>Super Mario Bros. 3</h3>
-                    <p class="game-console"><i class="fas fa-gamepad"></i> NES</p>
-                    <p class="game-condition condition-mint">Mint - CIB</p>
-                    <p class="game-price">$89.99</p>
-                    <a href="product-details.html?id=1" class="btn view-btn">
-                        View Details <i class="fas fa-eye"></i>
-                    </a>
-                </div>
-
-                <!-- Game Card 2 -->
-                <div class="card game-card">
-                    <div class="game-image">
-                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/carl-raw-m3hn2Kn5Bns-unsplash.jpg?raw=true" alt="Sonic" class="game-3d">
-                    </div>
-                    <h3>Sonic the Hedgehog 2</h3>
-                    <p class="game-console"><i class="fas fa-gamepad"></i> Sega Genesis</p>
-                    <p class="game-condition condition-good">Good - Cart Only</p>
-                    <p class="game-price">$24.99</p>
-                    <a href="product-details.html?id=2" class="btn view-btn">
-                        View Details <i class="fas fa-eye"></i>
-                    </a>
-                </div>
-
-                <!-- Game Card 3 -->
-                <div class="card game-card">
-                    <div class="game-image">
-                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/denise-jans-uIemlFWQSC4-unsplash.jpg?raw=true" alt="Zelda" class="game-3d">
-                    </div>
-                    <h3>The Legend of Zelda</h3>
-                    <p class="game-console"><i class="fas fa-gamepad"></i> NES</p>
-                    <p class="game-condition condition-fair">Fair - With Manual</p>
-                    <p class="game-price">$45.50</p>
-                    <a href="product-details.html?id=3" class="btn view-btn">
-                        View Details <i class="fas fa-eye"></i>
-                    </a>
-                </div>
-
-                <!-- Game Card 4 -->
-                <div class="card game-card">
-                    <div class="game-image">
-                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/lorenzo-herrera-p0j-mE6mGo4-unsplash.jpg?raw=true" alt="Street Fighter" class="game-3d">
-                    </div>
-                    <h3>Street Fighter II</h3>
-                    <p class="game-console"><i class="fas fa-gamepad"></i> SNES</p>
-                    <p class="game-condition condition-mint">Mint - CIB</p>
-                    <p class="game-price">$65.00</p>
-                    <a href="product-details.html?id=4" class="btn view-btn">
-                        View Details <i class="fas fa-eye"></i>
-                    </a>
-                </div>
-
-                <!-- Game Card 5 -->
-                <div class="card game-card">
-                    <div class="game-image">
-                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/maurice-nguyen-sRKXKg3fSUE-unsplash.jpg?raw=true" alt="Mortal Kombat" class="game-3d">
-                    </div>
-                    <h3>Mortal Kombat</h3>
-                    <p class="game-console"><i class="fas fa-gamepad"></i> Sega Genesis</p>
-                    <p class="game-condition condition-good">Good - Cart Only</p>
-                    <p class="game-price">$34.99</p>
-                    <a href="product-details.html?id=5" class="btn view-btn">
-                        View Details <i class="fas fa-eye"></i>
-                    </a>
-                </div>
-
-                <!-- Game Card 6 -->
-                <div class="card game-card">
-                    <div class="game-image">
-                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/sei-bS46IAXWAO4-unsplash.jpg?raw=true" alt="Crash" class="game-3d">
-                    </div>
-                    <h3>Crash Bandicoot</h3>
-                    <p class="game-console"><i class="fas fa-gamepad"></i> PS1</p>
-                    <p class="game-condition condition-mint">Mint - CIB</p>
-                    <p class="game-price">$54.99</p>
-                    <a href="product-details.html?id=6" class="btn view-btn">
-                        View Details <i class="fas fa-eye"></i>
-                    </a>
-                </div>
-
-                <!-- NEW GAME CARD 7 (added to fill empty space) -->
-                <div class="card game-card">
-                    <div class="game-image">
-                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumb-350-333222.webp?raw=true" alt="Mega Man" class="game-3d">
-                    </div>
-                    <h3>Mega Man 2</h3>
-                    <p class="game-console"><i class="fas fa-gamepad"></i> NES</p>
-                    <p class="game-condition condition-good">Cart + Manual</p>
-                    <p class="game-price">$49.99</p>
-                    <a href="product-details.html?id=7" class="btn view-btn">
-                        View Details <i class="fas fa-eye"></i>
-                    </a>
-                </div>
-
-                <!-- NEW GAME CARD 8 (added to fill empty space) -->
-                <div class="card game-card">
-                    <div class="game-image">
-                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-1021182.webp?raw=true" alt="Final Fantasy" class="game-3d">
-                    </div>
-                    <h3>Final Fantasy III</h3>
-                    <p class="game-console"><i class="fas fa-gamepad"></i> SNES</p>
-                    <p class="game-condition condition-mint">Mint - CIB</p>
-                    <p class="game-price">$129.99</p>
-                    <a href="product-details.html?id=8" class="btn view-btn">
-                        View Details <i class="fas fa-eye"></i>
-                    </a>
+                <div class="featured-image">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3655/3655578.png" alt="Sell Games">
                 </div>
             </div>
         </div>
 
-        <!-- SECTION 4: GAMING ACCESSORIES -->
+        <!-- RECENTLY SOLD SECTION (EXPANDED TO 8 GRIDS) -->
         <div class="container">
             <div class="section-header">
-                <div class="section-logo-3d">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991586.png" alt="Accessories" class="section-3d-icon">
+                <div class="d-flex align-items-center">
+                    <h2 class="section-title">Recently Sold</h2>
+                    <span class="pulse-dot ml-3"></span>
                 </div>
-                <h2><i class="fas fa-headphones"></i> RETRO ACCESSORIES <i class="fas fa-headphones"></i></h2>
-                <p>Complete your gaming setup</p>
+                <span class="text-gray">Updated in real-time</span>
             </div>
 
-            <div class="feature-grid">
-                <div class="card accessory-card">
-                    <div class="accessory-image">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3655/3655578.png" alt="Controller" class="accessory-3d">
+            <div class="game-grid">
+                <!-- Sold Card 1 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-988021.webp?raw=true" alt="Chrono Trigger">
+                        <div class="game-overlay">
+                            <span style="color: var(--accent); font-weight: bold;">SOLD</span>
+                        </div>
                     </div>
-                    <h3>NES Controller</h3>
-                    <p>Original OEM - Tested</p>
-                    <p class="accessory-price">$24.99</p>
+                    <div class="game-info">
+                        <h3 class="game-title">Chrono Trigger</h3>
+                        <span class="game-platform">SNES</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$399.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">2 days ago</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="card accessory-card">
-                    <div class="accessory-image">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3655/3655590.png" alt="Joystick" class="accessory-3d">
+                <!-- Sold Card 2 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-996764.webp?raw=true" alt="Earthbound">
+                        <div class="game-overlay">
+                            <span style="color: var(--accent); font-weight: bold;">SOLD</span>
+                        </div>
                     </div>
-                    <h3>Arcade Stick</h3>
-                    <p>Genesis Arcade Power Stick</p>
-                    <p class="accessory-price">$39.99</p>
+                    <div class="game-info">
+                        <h3 class="game-title">EarthBound</h3>
+                        <span class="game-platform">SNES</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$899.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">5 days ago</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="card accessory-card">
-                    <div class="accessory-image">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3655/3655568.png" alt="Memory Card" class="accessory-3d">
+                <!-- Sold Card 3 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-96393.webp?raw=true" alt="Panzer Dragoon">
+                        <div class="game-overlay">
+                            <span style="color: var(--accent); font-weight: bold;">SOLD</span>
+                        </div>
                     </div>
-                    <h3>PS1 Memory Card</h3>
-                    <p>Sony Official - 15 blocks</p>
-                    <p class="accessory-price">$19.99</p>
+                    <div class="game-info">
+                        <h3 class="game-title">Panzer Dragoon Saga</h3>
+                        <span class="game-platform">Sega Saturn</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$1,299.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">1 week ago</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="card accessory-card">
-                    <div class="accessory-image">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3655/3655555.png" alt="Cables" class="accessory-3d">
+                <!-- Sold Card 4 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-928371.webp?raw=true" alt="Metal Slug">
+                        <div class="game-overlay">
+                            <span style="color: var(--accent); font-weight: bold;">SOLD</span>
+                        </div>
                     </div>
-                    <h3>AV Cables</h3>
-                    <p>Composite - NES/SNES/N64</p>
-                    <p class="accessory-price">$12.99</p>
+                    <div class="game-info">
+                        <h3 class="game-title">Metal Slug AES</h3>
+                        <span class="game-platform">Neo Geo</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$4,500</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">3 days ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Sold Card 5 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-1286397.webp?raw=true" alt="Mega Man X">
+                        <div class="game-overlay">
+                            <span style="color: var(--accent); font-weight: bold;">SOLD</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Mega Man X</h3>
+                        <span class="game-platform">SNES</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$79.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">4 days ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Sold Card 6 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-1375944.webp?raw=true" alt="Shining Force">
+                        <div class="game-overlay">
+                            <span style="color: var(--accent); font-weight: bold;">SOLD</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Shining Force II</h3>
+                        <span class="game-platform">Sega Genesis</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$149.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">2 days ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Sold Card 7 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-1377704.webp?raw=true" alt="Final Fantasy VII">
+                        <div class="game-overlay">
+                            <span style="color: var(--accent); font-weight: bold;">SOLD</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Final Fantasy VII</h3>
+                        <span class="game-platform">PlayStation</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$129.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">1 week ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Sold Card 8 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-333217.webp?raw=true" alt="Castlevania">
+                        <div class="game-overlay">
+                            <span style="color: var(--accent); font-weight: bold;">SOLD</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Castlevania: SOTN</h3>
+                        <span class="game-platform">PlayStation</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$199.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">6 days ago</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- SECTION 5: COLLECTOR'S CORNER -->
+        <!-- CATEGORIES SECTION -->
         <div class="container">
-            <div class="section-header">
-                <div class="section-logo-3d">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991612.png" alt="Collector" class="section-3d-icon">
-                </div>
-                <h2><i class="fas fa-trophy"></i> COLLECTOR'S CORNER <i class="fas fa-trophy"></i></h2>
-                <p>Rare and graded games</p>
-            </div>
-
-            <div class="collector-grid">
-                <div class="card collector-card featured">
-                    <div class="collector-image">
-                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/tasha-kostyuk-wPoDpsEEWdc-unsplash.jpg?raw=true" alt="Stadium Events" class="collector-3d">
-                    </div>
-                    <h3>Stadium Events (NES)</h3>
-                    <p class="game-condition condition-mint">Graded WATA 9.0</p>
-                    <p class="collector-price">$15,999.99</p>
-                </div>
-
-                <div class="card collector-card">
-                    <div class="collector-image">
-                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumb-350-333222.webp?raw=true" alt="Panzer Dragoon" class="collector-3d">
-                    </div>
-                    <h3>Panzer Dragoon Saga</h3>
-                    <p class="game-condition condition-mint">Complete - Like New</p>
-                    <p class="collector-price">$1,299.99</p>
-                </div>
-
-                <div class="card collector-card">
-                    <div class="collector-image">
-                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-1021182.webp?raw=true" alt="EarthBound" class="collector-3d">
-                    </div>
-                    <h3>EarthBound (SNES)</h3>
-                    <p class="game-condition condition-good">Cart + Guide</p>
-                    <p class="collector-price">$899.99</p>
-                </div>
+            <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Shop by Category</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
+                <a href="#" style="background: rgba(0,0,0,0.3); border: 2px solid var(--primary-light); border-radius: 10px; padding: 2rem 1rem; text-align: center; text-decoration: none; transition: all 0.3s;">
+                    <i class="fas fa-gamepad" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="color: var(--light); font-size: 1.2rem;">NES</h3>
+                </a>
+                <a href="#" style="background: rgba(0,0,0,0.3); border: 2px solid var(--primary-light); border-radius: 10px; padding: 2rem 1rem; text-align: center; text-decoration: none; transition: all 0.3s;">
+                    <i class="fas fa-gamepad" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="color: var(--light); font-size: 1.2rem;">SNES</h3>
+                </a>
+                <a href="#" style="background: rgba(0,0,0,0.3); border: 2px solid var(--primary-light); border-radius: 10px; padding: 2rem 1rem; text-align: center; text-decoration: none; transition: all 0.3s;">
+                    <i class="fas fa-bolt" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="color: var(--light); font-size: 1.2rem;">Sega</h3>
+                </a>
+                <a href="#" style="background: rgba(0,0,0,0.3); border: 2px solid var(--primary-light); border-radius: 10px; padding: 2rem 1rem; text-align: center; text-decoration: none; transition: all 0.3s;">
+                    <i class="fas fa-compact-disc" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="color: var(--light); font-size: 1.2rem;">PlayStation</h3>
+                </a>
+                <a href="#" style="background: rgba(0,0,0,0.3); border: 2px solid var(--primary-light); border-radius: 10px; padding: 2rem 1rem; text-align: center; text-decoration: none; transition: all 0.3s;">
+                    <i class="fas fa-headphones" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="color: var(--light); font-size: 1.2rem;">Accessories</h3>
+                </a>
+                <a href="#" style="background: rgba(0,0,0,0.3); border: 2px solid var(--primary-light); border-radius: 10px; padding: 2rem 1rem; text-align: center; text-decoration: none; transition: all 0.3s;">
+                    <i class="fas fa-tv" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="color: var(--light); font-size: 1.2rem;">Consoles</h3>
+                </a>
             </div>
         </div>
 
-        <!-- SECTION 6: SELLER CTA BANNER -->
-        <div class="cta-banner">
+        <!-- FAQ SECTION - MARKETPLACE FOCUS -->
+        <section class="faq-section">
             <div class="container">
-                <div class="cta-logo-3d">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991638.png" alt="Sell" class="cta-3d-icon">
-                </div>
-                <div class="cta-content">
-                    <h2><i class="fas fa-store"></i> SELL YOUR COLLECTION <i class="fas fa-store"></i></h2>
-                    <p>Join our community of retro game sellers. List your games in minutes!</p>
-                    <div class="cta-features">
-                        <span><i class="fas fa-check-circle"></i> 0% fees until 2026</span>
-                        <span><i class="fas fa-check-circle"></i> 5000+ active buyers</span>
-                        <span><i class="fas fa-check-circle"></i> Free shipping labels</span>
-                        <span><i class="fas fa-check-circle"></i> Bulk listing tools</span>
-                        <span><i class="fas fa-check-circle"></i> Price guides</span>
-                        <span><i class="fas fa-check-circle"></i> Instant payouts</span>
-                        <span><i class="fas fa-check-circle"></i> Seller protection</span>
+                <h2 class="section-title text-center mb-5">Marketplace FAQs</h2>
+
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3 class="faq-question">How do I sell my retro games?</h3>
+                        <p class="faq-answer">
+                            Selling on our marketplace is easy! Create a seller account, take clear photos of your games, set your price, and list them. We provide grading guidelines and shipping tips to help you get the best value for your collection.
+                        </p>
                     </div>
-                    <a href="seller-dashboard.html" class="btn cta-btn">
-                        Start Selling <i class="fas fa-rocket"></i>
-                    </a>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">What payment methods are accepted?</h3>
+                        <p class="faq-answer">
+                            We accept all major credit cards, PayPal, Apple Pay, Google Pay, and cryptocurrency. All transactions are secured with 256-bit SSL encryption and our buyer/seller protection program.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">How does game grading work?</h3>
+                        <p class="faq-answer">
+                            Our grading system follows industry standards: Mint (like new), Excellent (minimal wear), Good (normal wear), Fair (heavy wear). Sellers can also list professionally graded games from WATA, VGA, or CGC.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">What are the seller fees?</h3>
+                        <p class="faq-answer">
+                            Listing is completely free! We only charge a small commission (3%) when your item sells. Until 2026, we're running a promotion with 0% fees for all sellers. No hidden costs, ever.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">How do I know if a game is authentic?</h3>
+                        <p class="faq-answer">
+                            We have a dedicated authentication team that reviews suspicious listings. Buyers are protected by our authenticity guarantee - if a game is found to be counterfeit, we refund 100% of your purchase.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">What's the shipping process?</h3>
+                        <p class="faq-answer">
+                            Sellers handle shipping directly. We provide discounted shipping labels and tracking integration. Most sellers ship within 2 business days, and tracking is automatically updated in your dashboard.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- SECTION 7: COMMUNITY HIGHLIGHTS -->
+        <!-- TRUSTED SELLERS SECTION -->
         <div class="container">
-            <div class="section-header">
-                <div class="section-logo-3d">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991652.png" alt="Community" class="section-3d-icon">
-                </div>
-                <h2><i class="fas fa-users"></i> COMMUNITY HIGHLIGHTS <i class="fas fa-users"></i></h2>
-                <p>What our collectors are saying</p>
-            </div>
-
-            <div class="community-grid">
-                <div class="card community-card">
-                    <div class="community-avatar">
-                        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="User" class="avatar-3d">
+            <div class="brand-showcase" style="margin: 3rem 0;">
+                <h2 class="section-title text-center mb-4">Trusted Sellers</h2>
+                <div class="brand-grid" style="display: flex; gap: 3rem; animation: scrollBrands 20s linear infinite; width: fit-content;">
+                    <div class="brand-item" style="min-width: 150px; padding: 1rem; background: white; border-radius: 10px;">
+                        <span style="font-weight: bold; color: #333;">RETRO GAMES NYC</span>
                     </div>
-                    <p>"Found a complete copy of Chrono Trigger for $200! Best marketplace ever."</p>
-                    <h4>- RetroGamerMike</h4>
-                    <div class="community-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <div class="brand-item" style="min-width: 150px; padding: 1rem; background: white; border-radius: 10px;">
+                        <span style="font-weight: bold; color: #333;">CLASSIC GAMER</span>
                     </div>
-                </div>
-
-                <div class="card community-card">
-                    <div class="community-avatar">
-                        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140051.png" alt="User" class="avatar-3d">
+                    <div class="brand-item" style="min-width: 150px; padding: 1rem; background: white; border-radius: 10px;">
+                        <span style="font-weight: bold; color: #333;">TOKYO RETRO</span>
                     </div>
-                    <p>"Sold my collection for top dollar. The seller tools are amazing!"</p>
-                    <h4>- Sarah_Collects</h4>
-                    <div class="community-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <div class="brand-item" style="min-width: 150px; padding: 1rem; background: white; border-radius: 10px;">
+                        <span style="font-weight: bold; color: #333;">GAME PRESERVE</span>
                     </div>
-                </div>
-
-                <div class="card community-card">
-                    <div class="community-avatar">
-                        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140040.png" alt="User" class="avatar-3d">
+                    <div class="brand-item" style="min-width: 150px; padding: 1rem; background: white; border-radius: 10px;">
+                        <span style="font-weight: bold; color: #333;">RETRO HUNTER</span>
                     </div>
-                    <p>"The grading verification service saved me from buying a fake. Highly recommended!"</p>
-                    <h4>- ClassicGameHunter</h4>
-                    <div class="community-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SECTION 8: BRAND SHOWCASE (BONUS) -->
-        <div class="brand-showcase">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-logo-3d">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2991/2991668.png" alt="Brands" class="section-3d-icon">
-                    </div>
-                    <h2><i class="fas fa-certificate"></i> TRUSTED BRANDS <i class="fas fa-certificate"></i></h2>
-                </div>
-                <div class="brand-grid">
-                    <div class="brand-item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Nintendo.svg/1200px-Nintendo.svg.png" alt="Nintendo" class="brand-3d">
-                    </div>
-                    <div class="brand-item">
-                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/images.jpg?raw=true" alt="Sega" class="brand-3d">
-                    </div>
-                    <div class="brand-item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/PlayStation_logo.svg/1200px-PlayStation_logo.svg.png" alt="Sony" class="brand-3d">
-                    </div>
-                    <div class="brand-item">
-                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/1.jpeg?raw=true" alt="Atari" class="brand-3d">
-                    </div>
-                    <div class="brand-item">
-                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/2.jpeg?raw=true" alt="NEC" class="brand-3d">
-                    </div>
-                    <div class="brand-item">
-                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/3.jpeg?raw=true" alt="SNK" class="brand-3d">
+                    <div class="brand-item" style="min-width: 150px; padding: 1rem; background: white; border-radius: 10px;">
+                        <span style="font-weight: bold; color: #333;">METROPOLIS</span>
                     </div>
                 </div>
             </div>
@@ -939,112 +1036,6 @@
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
     
-    <style>
-        /* 3D Visual Effects */
-        .logo-3d, .hero-3d-image, .console-3d, .game-3d, .accessory-3d, .collector-3d, .avatar-3d, .brand-3d, .footer-3d-logo {
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
-            transition: transform 0.3s ease, filter 0.3s ease;
-        }
-        
-        .logo-3d:hover, .console-3d:hover, .game-3d:hover, .accessory-3d:hover {
-            transform: perspective(500px) rotateY(10deg) rotateX(5deg) scale(1.05);
-            filter: drop-shadow(0 20px 25px rgba(255,170,51,0.4));
-        }
-        
-        .hero-3d-image {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 20px;
-            animation: float3d 3s ease-in-out infinite;
-        }
-        
-        @keyframes float3d {
-            0%, 100% { transform: perspective(500px) rotateY(0deg) rotateX(5deg) translateY(0); }
-            50% { transform: perspective(500px) rotateY(10deg) rotateX(10deg) translateY(-15px); }
-        }
-        
-        .section-logo-3d {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        
-        .section-3d-icon {
-            width: 60px;
-            height: 60px;
-            filter: drop-shadow(0 10px 15px rgba(255,170,51,0.5));
-            animation: iconSpin 10s linear infinite;
-        }
-        
-        @keyframes iconSpin {
-            from { transform: rotateY(0deg); }
-            to { transform: rotateY(360deg); }
-        }
-        
-        .cta-logo-3d {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        
-        .cta-3d-icon {
-            width: 80px;
-            height: 80px;
-            filter: drop-shadow(0 0 20px #ffaa00);
-            animation: pulse3d 2s ease-in-out infinite;
-        }
-        
-        @keyframes pulse3d {
-            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px #ffaa00); }
-            50% { transform: scale(1.1); filter: drop-shadow(0 0 40px #ff5500); }
-        }
-        
-        .footer-logo-3d {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        
-        .footer-3d-logo {
-            width: 60px;
-            height: 60px;
-            animation: logoGlow3d 3s ease-in-out infinite;
-        }
-        
-        .footer-3d-text {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #f7c35c;
-            text-shadow: 3px 3px 0 #8b4513, 5px 5px 0 #4a2c1a, 7px 7px 0 #2a1a0a;
-            animation: textFloat3d 3s ease-in-out infinite;
-        }
-        
-        @keyframes logoGlow3d {
-            0%, 100% { filter: drop-shadow(0 0 10px #ffaa00); }
-            50% { filter: drop-shadow(0 0 30px #ff5500) drop-shadow(0 0 50px #ffaa00); }
-        }
-        
-        @keyframes textFloat3d {
-            0%, 100% { transform: translateZ(0) translateY(0); }
-            50% { transform: translateZ(20px) translateY(-5px); }
-        }
-        
-        .community-rating {
-            margin-top: 10px;
-            color: #ffaa00;
-        }
-        
-        .community-rating i {
-            margin: 0 2px;
-            animation: starTwinkle 2s ease-in-out infinite;
-        }
-        
-        @keyframes starTwinkle {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.1); }
-        }
-    </style>
+   
 </body>
 </html>
