@@ -2,55 +2,16 @@
 /* assets/css/product-details.css
 /* Product Details Page - Single Product View
 /* Complete with Retro Gaming Aesthetic
+/* BREADCRUMB REMOVED - ADJUSTED SPACING
 /* ============================================ */
 
 /* ============================================ */
-/* BREADCRUMB NAVIGATION
-/* ============================================ */
-
-.breadcrumb {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 1rem 0;
-    margin-bottom: 2rem;
-    border-bottom: 2px solid var(--accent, #ffaa33);
-    border-top: 2px solid var(--accent, #ffaa33);
-}
-
-.breadcrumb .container {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    flex-wrap: wrap;
-}
-
-.breadcrumb a {
-    color: var(--text-muted, #b7a88b);
-    text-decoration: none;
-    transition: color 0.3s;
-    font-size: 0.95rem;
-}
-
-.breadcrumb a:hover {
-    color: var(--accent, #ffaa33);
-}
-
-.breadcrumb i {
-    color: var(--accent, #ffaa33);
-    font-size: 0.8rem;
-}
-
-.breadcrumb span {
-    color: var(--secondary, #ff9933);
-    font-weight: bold;
-    font-size: 0.95rem;
-}
-
-/* ============================================ */
-/* PRODUCT DETAILS GRID
+/* PRODUCT DETAILS SECTION - ADJUSTED TOP SPACING
 /* ============================================ */
 
 .product-details {
     margin-bottom: 4rem;
+    padding-top: 2rem; /* Added top padding since breadcrumb removed */
 }
 
 .product-details-grid {
@@ -144,7 +105,7 @@
 }
 
 /* ============================================ */
-/* PRODUCT INFO DETAIL
+/* PRODUCT INFO DETAIL - BOLD TEXT IN LIGHT MODE
 /* ============================================ */
 
 .product-info-detail {
@@ -156,10 +117,129 @@
     box-shadow: 10px 10px 0 var(--shadow-color, #4d2f19);
 }
 
+/* Light Mode - Bold Text for Better Visibility */
 body.light-mode .product-info-detail {
-    background: rgba(255, 247, 232, 0.9);
+    background: #fcf5e8;
+    border-color: #b87c4b;
+    box-shadow: 10px 10px 0 #8b5a2b;
 }
 
+body.light-mode .product-title-detail {
+    color: #cc6600;
+    text-shadow: 2px 2px 0 #ffaa33;
+    font-weight: 900;
+}
+
+body.light-mode .product-meta span {
+    color: #5a3a2a;
+    font-weight: 600;
+}
+
+body.light-mode .product-platform i {
+    color: #cc6600;
+}
+
+body.light-mode .product-sku {
+    color: #6b4f34;
+    font-weight: 500;
+}
+
+body.light-mode .product-pricing {
+    background: #fff0d8;
+    border-color: #cc6600;
+}
+
+body.light-mode .current-price {
+    color: #cc6600;
+    font-weight: 900;
+}
+
+body.light-mode .original-price {
+    color: #8b6d4b;
+    font-weight: 600;
+}
+
+body.light-mode .price-note {
+    color: #5a3a2a;
+    font-weight: 500;
+}
+
+body.light-mode .product-condition-detail h3 {
+    color: #b85e00;
+    font-weight: 800;
+}
+
+body.light-mode .condition-details p {
+    color: #2c1e0e !important;
+    font-weight: 600;
+}
+
+body.light-mode .condition-details i {
+    color: #cc6600;
+}
+
+body.light-mode .seller-details h4 {
+    color: #2c1e0e !important;
+    font-weight: 800;
+}
+
+body.light-mode .seller-rating-detail span {
+    color: #6b4f34;
+    font-weight: 600;
+}
+
+body.light-mode .badge {
+    background: #e6d5b8;
+    border-color: #cc6600;
+    color: #2c1e0e;
+    font-weight: 700;
+}
+
+body.light-mode .badge i {
+    color: #cc6600;
+}
+
+body.light-mode .view-seller-profile {
+    color: #cc6600;
+    font-weight: 700;
+}
+
+body.light-mode .qty-btn {
+    background: #cc6600;
+    color: white;
+    font-weight: 900;
+}
+
+body.light-mode .quantity-selector input {
+    color: #2c1e0e;
+    font-weight: 700;
+}
+
+body.light-mode .add-to-cart-detail {
+    background: #cc6600;
+    color: white;
+    font-weight: 800;
+    border-color: #8b4513;
+}
+
+body.light-mode .wishlist-btn {
+    color: #cc6600;
+    border-color: #cc6600;
+    font-weight: bold;
+}
+
+body.light-mode .buy-now-btn {
+    color: #cc6600;
+    border-color: #cc6600;
+    font-weight: 800;
+}
+
+body.light-mode .buy-now-btn:hover {
+    background: #cc6600;
+    color: white;
+}
+
+/* Product Header */
 .product-header {
     margin-bottom: 2rem;
     padding-bottom: 1rem;
@@ -172,6 +252,7 @@ body.light-mode .product-info-detail {
     text-shadow: 3px 3px 0 #8b4513;
     margin-bottom: 0.5rem;
     line-height: 1.2;
+    font-weight: 900;
 }
 
 .product-meta {
@@ -222,7 +303,7 @@ body.light-mode .product-info-detail {
 
 .current-price {
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: 900;
     color: var(--accent, #ffaa33);
     text-shadow: 3px 3px 0 var(--shadow-color, #4d2f19);
     animation: priceFloat 2s ease-in-out infinite;
@@ -244,7 +325,7 @@ body.light-mode .product-info-detail {
     color: white;
     padding: 0.3rem 1rem;
     border-radius: 30px;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 1rem;
     box-shadow: 0 3px 0 #992222;
 }
@@ -266,13 +347,14 @@ body.light-mode .product-info-detail {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-weight: 800;
 }
 
 .condition-badge-detail {
     display: inline-block;
     padding: 0.5rem 1.5rem;
     border-radius: 30px;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 1rem;
     margin-bottom: 1rem;
 }
@@ -299,6 +381,7 @@ body.light-mode .product-info-detail {
 
 body.light-mode .condition-details p {
     color: #2c1e0e;
+    font-weight: 600;
 }
 
 .condition-details i {
@@ -329,7 +412,7 @@ body.light-mode .condition-details p {
     border: none;
     color: #221100;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 900;
     cursor: pointer;
     transition: all 0.3s;
 }
@@ -346,11 +429,12 @@ body.light-mode .condition-details p {
     text-align: center;
     color: var(--text-light, #e5d9c6);
     font-size: 1.1rem;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 body.light-mode .quantity-selector input {
     color: #2c1e0e;
+    font-weight: 700;
 }
 
 .quantity-selector input:focus {
@@ -374,7 +458,7 @@ body.light-mode .quantity-selector input {
     background: var(--accent, #ffaa33);
     border: 3px solid var(--shadow-color, #4d2f19);
     color: #221100;
-    font-weight: bold;
+    font-weight: 800;
     font-size: 1.1rem;
     padding: 0 2rem;
     border-radius: 10px;
@@ -425,7 +509,7 @@ body.light-mode .quantity-selector input {
     background: transparent;
     border: 3px solid var(--accent, #ffaa33);
     color: var(--accent, #ffaa33);
-    font-weight: bold;
+    font-weight: 800;
     font-size: 1.2rem;
     padding: 1rem;
     border-radius: 10px;
@@ -453,6 +537,7 @@ body.light-mode .quantity-selector input {
     font-size: 1.2rem;
     color: var(--secondary, #ff9933);
     margin-bottom: 1rem;
+    font-weight: 800;
 }
 
 .seller-card {
@@ -472,10 +557,12 @@ body.light-mode .quantity-selector input {
     font-size: 1.2rem;
     color: var(--text-light, #e5d9c6);
     margin-bottom: 0.3rem;
+    font-weight: 800;
 }
 
 body.light-mode .seller-details h4 {
     color: #2c1e0e;
+    font-weight: 800;
 }
 
 .seller-rating-detail {
@@ -493,6 +580,10 @@ body.light-mode .seller-details h4 {
     color: var(--text-muted, #b7a88b);
     font-size: 0.9rem;
     margin-left: 0.3rem;
+}
+
+body.light-mode .seller-rating-detail span {
+    font-weight: 600;
 }
 
 .seller-badges {
@@ -513,6 +604,13 @@ body.light-mode .seller-details h4 {
     gap: 0.3rem;
 }
 
+body.light-mode .badge {
+    background: #e6d5b8;
+    color: #2c1e0e;
+    font-weight: 700;
+    border-color: #cc6600;
+}
+
 .badge i {
     color: var(--accent, #ffaa33);
 }
@@ -525,6 +623,11 @@ body.light-mode .seller-details h4 {
     align-items: center;
     gap: 0.5rem;
     transition: gap 0.3s;
+}
+
+body.light-mode .view-seller-profile {
+    color: #cc6600;
+    font-weight: 700;
 }
 
 .view-seller-profile:hover {
@@ -608,12 +711,14 @@ body.light-mode .seller-details h4 {
     font-size: 1.8rem;
     color: var(--secondary, #ff9933);
     margin-bottom: 1rem;
+    font-weight: 800;
 }
 
 .tab-pane h3 {
     font-size: 1.3rem;
     color: var(--accent, #ffaa33);
     margin: 1.5rem 0 1rem;
+    font-weight: 700;
 }
 
 .tab-pane p {
@@ -624,6 +729,7 @@ body.light-mode .seller-details h4 {
 
 body.light-mode .tab-pane p {
     color: #2c1e0e;
+    font-weight: 500;
 }
 
 .tab-pane ul {
@@ -640,6 +746,7 @@ body.light-mode .tab-pane p {
 
 body.light-mode .tab-pane ul li {
     color: #2c1e0e;
+    font-weight: 500;
 }
 
 .tab-pane ul li::before {
@@ -669,7 +776,7 @@ body.light-mode .tab-pane ul li {
     color: var(--secondary, #ff9933);
     text-align: left;
     width: 200px;
-    font-weight: bold;
+    font-weight: 800;
 }
 
 .specs-table td {
@@ -679,6 +786,7 @@ body.light-mode .tab-pane ul li {
 
 body.light-mode .specs-table td {
     color: #2c1e0e;
+    font-weight: 500;
 }
 
 /* Shipping Tab */
@@ -690,6 +798,7 @@ body.light-mode .specs-table td {
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    font-weight: 700;
 }
 
 .shipping-info h3 i, .returns-info h3 i, .guarantee h3 i {
@@ -711,6 +820,7 @@ body.light-mode .specs-table td {
 body.light-mode .shipping-info ul li,
 body.light-mode .returns-info ul li {
     color: #2c1e0e;
+    font-weight: 500;
 }
 
 .shipping-info ul li::before,
@@ -728,6 +838,11 @@ body.light-mode .returns-info ul li {
     border-radius: 10px;
     padding: 1rem;
     color: var(--text-light, #e5d9c6);
+}
+
+body.light-mode .guarantee p {
+    color: #2c1e0e;
+    font-weight: 500;
 }
 
 /* Reviews Tab */
@@ -749,7 +864,7 @@ body.light-mode .returns-info ul li {
 
 .rating-number {
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: 900;
     color: var(--accent, #ffaa33);
 }
 
@@ -763,11 +878,15 @@ body.light-mode .returns-info ul li {
     color: var(--text-muted, #b7a88b);
 }
 
+body.light-mode .total-reviews {
+    font-weight: 600;
+}
+
 .write-review-btn {
     background: var(--accent, #ffaa33);
     border: 3px solid var(--shadow-color, #4d2f19);
     color: #221100;
-    font-weight: bold;
+    font-weight: 800;
     padding: 0.8rem 1.5rem;
     border-radius: 10px;
     cursor: pointer;
@@ -793,6 +912,10 @@ body.light-mode .returns-info ul li {
     color: var(--text-muted, #b7a88b);
 }
 
+body.light-mode .review-filters span {
+    font-weight: 600;
+}
+
 .review-filters select {
     background: rgba(0, 0, 0, 0.3);
     border: 2px solid var(--primary-light, #b87c4b);
@@ -801,6 +924,12 @@ body.light-mode .returns-info ul li {
     color: var(--text-light, #e5d9c6);
     font-family: 'Courier New', monospace;
     cursor: pointer;
+}
+
+body.light-mode .review-filters select {
+    background: white;
+    color: #2c1e0e;
+    font-weight: 500;
 }
 
 .reviews-list {
@@ -831,6 +960,7 @@ body.light-mode .returns-info ul li {
 .reviewer-info h4 {
     color: var(--secondary, #ff9933);
     margin-bottom: 0.3rem;
+    font-weight: 800;
 }
 
 .review-rating i {
@@ -840,13 +970,14 @@ body.light-mode .returns-info ul li {
 
 .review-title {
     font-size: 1.1rem;
-    font-weight: bold;
+    font-weight: 800;
     color: var(--text-light, #e5d9c6);
     margin-bottom: 0.5rem;
 }
 
 body.light-mode .review-title {
     color: #2c1e0e;
+    font-weight: 800;
 }
 
 .review-text {
@@ -855,10 +986,18 @@ body.light-mode .review-title {
     margin-bottom: 0.8rem;
 }
 
+body.light-mode .review-text {
+    font-weight: 500;
+}
+
 .review-date {
     color: var(--text-muted, #b7a88b);
     font-size: 0.85rem;
     font-style: italic;
+}
+
+body.light-mode .review-date {
+    font-weight: 500;
 }
 
 .load-more-reviews {
@@ -869,7 +1008,7 @@ body.light-mode .review-title {
     background: transparent;
     border: 2px solid var(--accent, #ffaa33);
     color: var(--accent, #ffaa33);
-    font-weight: bold;
+    font-weight: 800;
     padding: 0.8rem 2rem;
     border-radius: 30px;
     cursor: pointer;
@@ -896,6 +1035,7 @@ body.light-mode .review-title {
     text-shadow: 3px 3px 0 #8b4513;
     text-align: center;
     margin-bottom: 2rem;
+    font-weight: 900;
 }
 
 .related-grid {
@@ -948,6 +1088,10 @@ body.light-mode .review-title {
     text-overflow: ellipsis;
 }
 
+body.light-mode .related-grid .product-title {
+    font-weight: 700;
+}
+
 .related-grid .product-platform {
     font-size: 0.8rem;
     margin-bottom: 0.3rem;
@@ -957,6 +1101,11 @@ body.light-mode .review-title {
     font-size: 1.2rem;
     margin: 0.3rem 0 0;
     animation: none;
+}
+
+body.light-mode .related-grid .product-price {
+    font-weight: 800;
+    color: #cc6600;
 }
 
 .related-grid .product-overlay {
@@ -1019,8 +1168,8 @@ body.light-mode .review-title {
 
 /* Tablet Portrait */
 @media (max-width: 768px) {
-    .breadcrumb {
-        padding: 0.8rem 0;
+    .product-details {
+        padding-top: 1.5rem;
     }
     
     .product-title-detail {
@@ -1116,6 +1265,7 @@ body.light-mode .review-title {
 @media (max-width: 576px) {
     .product-details {
         margin-bottom: 3rem;
+        padding-top: 1.2rem;
     }
     
     .product-info-detail {
@@ -1265,14 +1415,6 @@ body.light-mode .review-title {
 /* ============================================ */
 /* RTL SUPPORT
 /* ============================================ */
-
-body.rtl .breadcrumb .container {
-    flex-direction: row-reverse;
-}
-
-body.rtl .breadcrumb i {
-    transform: rotate(180deg);
-}
 
 body.rtl .product-meta {
     flex-direction: row-reverse;
