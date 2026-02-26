@@ -550,6 +550,7 @@ body.dark-mode .rtl-btn:hover {
     background: linear-gradient(145deg, #6a4a3a, #4a3a2a);
 }
 
+
 /* ============================================ */
 /* MOBILE THEME BUTTONS
 /* ============================================ */
@@ -1293,6 +1294,7 @@ body.rtl .mobile-dropdown-item a:hover i:last-child {
     gap: 0.5rem;
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
+    flex-wrap: wrap;
 }
 
 .footer-rating i {
@@ -1381,7 +1383,7 @@ body.rtl .mobile-dropdown-item a:hover i:last-child {
 }
 
 /* ============================================ */
-/* FOOTER LINKS GRID
+/* FOOTER LINKS GRID - FIXED: Changed a to span
 /* ============================================ */
 
 .footer-links {
@@ -1500,16 +1502,19 @@ body.rtl .mobile-dropdown-item a:hover i:last-child {
     transform: translateX(5px);
 }
 
-.footer-col a {
+/* FIXED: Changed from a to span for non-link items */
+.footer-col ul li span {
     color: #ddd5c0;
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
     position: relative;
     padding-left: 0;
+    cursor: default;
+    font-size: 0.95rem;
 }
 
-.footer-col a::before {
+.footer-col ul li span::before {
     content: '►';
     position: absolute;
     left: -20px;
@@ -1519,13 +1524,13 @@ body.rtl .mobile-dropdown-item a:hover i:last-child {
     font-size: 0.8rem;
 }
 
-.footer-col a:hover {
+.footer-col ul li:hover span {
     color: #f7c35c;
     transform: translateX(5px);
     padding-left: 15px;
 }
 
-.footer-col a:hover::before {
+.footer-col ul li:hover span::before {
     opacity: 1;
     left: -5px;
     animation: arrowPulse 1s ease-in-out infinite;
@@ -1740,7 +1745,7 @@ body.rtl .mobile-dropdown-item a:hover i:last-child {
 }
 
 /* ============================================ */
-/* RTL FOOTER ADJUSTMENTS
+/* RTL FOOTER ADJUSTMENTS - FIXED
 /* ============================================ */
 
 body.rtl .footer-col h3 {
@@ -1750,19 +1755,19 @@ body.rtl .footer-col h3 {
     padding-right: 10px;
 }
 
-body.rtl .footer-col a::before {
+body.rtl .footer-col ul li span::before {
     content: '◄';
     left: auto;
     right: -20px;
 }
 
-body.rtl .footer-col a:hover {
+body.rtl .footer-col ul li:hover span {
     transform: translateX(-5px);
     padding-left: 0;
     padding-right: 15px;
 }
 
-body.rtl .footer-col a:hover::before {
+body.rtl .footer-col ul li:hover span::before {
     left: auto;
     right: -5px;
 }
@@ -1931,7 +1936,7 @@ body.rtl .stat::before {
         font-size: 1.1rem;
     }
     
-    .footer-col a {
+    .footer-col ul li span {
         font-size: 0.9rem;
     }
     
@@ -1975,7 +1980,7 @@ body.dark-mode .footer-certifications {
     .footer-certifications span,
     .footer-col,
     .footer-col h3 i,
-    .footer-col a::before,
+    .footer-col ul li span::before,
     .stat,
     .stat::before,
     .stat-value,
@@ -1985,13 +1990,17 @@ body.dark-mode .footer-certifications {
     }
     
     .footer-social a:hover,
-    .footer-col a:hover,
+    .footer-col ul li:hover span,
     .payment-methods i:hover {
         transform: none !important;
     }
     
     .footer-logo-link:hover {
         transform: none;
+    }
+    
+    .footer-col ul li:hover span::before {
+        animation: none !important;
     }
 }
 /* ============================================ */
@@ -2477,3 +2486,4 @@ body.dark-mode .theme-switch {
     25% { transform: rotate(-5deg) scale(1.1); }
     75% { transform: rotate(5deg) scale(1.1); }
 }
+
