@@ -363,33 +363,38 @@
             </div>
         </section>
 
-        <!-- MARKET STATS SECTION -->
-        <div class="container">
-            <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 3rem 0;">
-                <div class="stat-card" style="background: rgba(0,0,0,0.3); border: 3px solid var(--accent); border-radius: 15px; padding: 2rem; text-align: center;">
-                    <i class="fas fa-gamepad" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
-                    <h3 style="font-size: 2.5rem; color: var(--secondary);">50K+</h3>
-                    <p style="color: var(--text-muted);">Games Listed</p>
-                </div>
-                <div class="stat-card" style="background: rgba(0,0,0,0.3); border: 3px solid var(--accent); border-radius: 15px; padding: 2rem; text-align: center;">
-                    <i class="fas fa-users" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
-                    <h3 style="font-size: 2.5rem; color: var(--secondary);">15K+</h3>
-                    <p style="color: var(--text-muted);">Active Sellers</p>
-                </div>
-                <div class="stat-card" style="background: rgba(0,0,0,0.3); border: 3px solid var(--accent); border-radius: 15px; padding: 2rem; text-align: center;">
-                    <i class="fas fa-tag" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
-                    <h3 style="font-size: 2.5rem; color: var(--secondary);">$2.5M</h3>
-                    <p style="color: var(--text-muted);">Monthly Sales</p>
-                </div>
-                <div class="stat-card" style="background: rgba(0,0,0,0.3); border: 3px solid var(--accent); border-radius: 15px; padding: 2rem; text-align: center;">
-                    <i class="fas fa-star" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
-                    <h3 style="font-size: 2.5rem; color: var(--secondary);">4.8/5</h3>
-                    <p style="color: var(--text-muted);">Seller Rating</p>
-                </div>
-            </div>
+<!-- MARKET STATS SECTION -->
+<div class="stats-section">
+    <div class="stats-grid">
+        
+        <div class="stat-card">
+            <i class="fas fa-gamepad"></i>
+            <h3>50K+</h3>
+            <p>Games Listed</p>
         </div>
 
-        <!-- FEATURED LISTINGS SECTION -->
+        <div class="stat-card">
+            <i class="fas fa-users"></i>
+            <h3>15K+</h3>
+            <p>Active Sellers</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fas fa-tag"></i>
+            <h3>$2.5M</h3>
+            <p>Monthly Sales</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fas fa-star"></i>
+            <h3>4.8/5</h3>
+            <p>Seller Rating</p>
+        </div>
+
+    </div>
+</div>
+
+        <!-- FEATURED LISTINGS SECTION (EXPANDED TO 8 GRIDS) -->
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Featured Listings</h2>
@@ -506,6 +511,42 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- NEW Listing Card 7 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-988021.webp?raw=true" alt="Donkey Kong">
+                        <div class="game-overlay">
+                            <button class="play-button">View Listing</button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Donkey Kong Country 2</h3>
+                        <span class="game-platform">SNES</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$49.99</span>
+                            <span style="color: #44ff44; font-size: 0.8rem;">Mint</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Listing Card 8 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-996764.webp?raw=true" alt="Pokemon">
+                        <div class="game-overlay">
+                            <button class="play-button">View Listing</button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Pokémon Red</h3>
+                        <span class="game-platform">Game Boy</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$79.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">CIB</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -526,7 +567,7 @@
             </div>
         </div>
 
-        <!-- RECENTLY SOLD SECTION -->
+        <!-- RECENTLY SOLD SECTION (EXPANDED TO 8 GRIDS) -->
         <div class="container">
             <div class="section-header">
                 <div class="d-flex align-items-center">
@@ -605,6 +646,78 @@
                         <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
                             <span style="color: var(--accent); font-weight: bold;">$4,500</span>
                             <span style="color: #ffaa44; font-size: 0.8rem;">3 days ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Sold Card 5 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-1286397.webp?raw=true" alt="Mega Man X">
+                        <div class="game-overlay">
+                            <span style="color: var(--accent); font-weight: bold;">SOLD</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Mega Man X</h3>
+                        <span class="game-platform">SNES</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$79.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">4 days ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Sold Card 6 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-1375944.webp?raw=true" alt="Shining Force">
+                        <div class="game-overlay">
+                            <span style="color: var(--accent); font-weight: bold;">SOLD</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Shining Force II</h3>
+                        <span class="game-platform">Sega Genesis</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$149.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">2 days ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Sold Card 7 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-1377704.webp?raw=true" alt="Final Fantasy VII">
+                        <div class="game-overlay">
+                            <span style="color: var(--accent); font-weight: bold;">SOLD</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Final Fantasy VII</h3>
+                        <span class="game-platform">PlayStation</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$129.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">1 week ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Sold Card 8 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-333217.webp?raw=true" alt="Castlevania">
+                        <div class="game-overlay">
+                            <span style="color: var(--accent); font-weight: bold;">SOLD</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Castlevania: SOTN</h3>
+                        <span class="game-platform">PlayStation</span>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                            <span style="color: var(--accent); font-weight: bold;">$199.99</span>
+                            <span style="color: #ffaa44; font-size: 0.8rem;">6 days ago</span>
                         </div>
                     </div>
                 </div>
@@ -926,6 +1039,3 @@
    
 </body>
 </html>
-
-
-
