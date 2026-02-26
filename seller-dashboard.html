@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Seller Dashboard - Retro Game Marketplace</title>
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>🎮</text></svg>">
@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* ============================================ */
-        /* SELLER DASHBOARD - ADVANCED UI/UX
+        /* SELLER DASHBOARD - HIGH CONTRAST VERSION
+        /* IMPROVED TEXT VISIBILITY FOR ALL DEVICES
+        /* NO RIGHT SIDE SCROLLING - FIXED
         /* ============================================ */
 
         * {
@@ -21,19 +23,21 @@
 
         body {
             font-family: 'Courier New', Courier, monospace;
-            background: linear-gradient(135deg, #0f0a07 0%, #1a120c 100%);
-            color: #e5d9c6;
+            background: linear-gradient(135deg, #0a0502 0%, #1a120c 100%);
+            color: #f0e6d8;
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
         }
 
         body.light-mode {
-            background: linear-gradient(135deg, #f4e9d8 0%, #e5d9c6 100%);
-            color: #2c1e0e;
+            background: linear-gradient(135deg, #f8f0e0 0%, #ecdbb8 100%);
+            color: #221c14;
         }
 
-        /* Animated Background */
+        /* Animated Background - More Subtle */
         .dashboard-bg {
             position: fixed;
             top: 0;
@@ -42,6 +46,9 @@
             bottom: 0;
             z-index: 0;
             overflow: hidden;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
         }
 
         .bg-grid {
@@ -51,8 +58,8 @@
             top: -50%;
             left: -50%;
             background-image: 
-                linear-gradient(rgba(255, 170, 51, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 170, 51, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(255, 170, 51, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 170, 51, 0.05) 1px, transparent 1px);
             background-size: 50px 50px;
             transform: rotate(45deg);
             animation: gridMove 30s linear infinite;
@@ -72,7 +79,6 @@
 
         .bg-float:nth-child(2) { top: 10%; right: 5%; transform: rotate(15deg); animation: float1 20s ease-in-out infinite; }
         .bg-float:nth-child(3) { bottom: 10%; left: 5%; transform: rotate(-15deg); animation: float2 25s ease-in-out infinite; }
-        .bg-float:nth-child(4) { top: 40%; left: 20%; font-size: 10rem; animation: float3 18s ease-in-out infinite; }
 
         @keyframes float1 {
             0%, 100% { transform: rotate(15deg) translateY(0); }
@@ -84,10 +90,102 @@
             50% { transform: rotate(-15deg) translateY(50px); }
         }
 
-        @keyframes float3 {
-            0%, 100% { transform: translateX(0) rotate(0deg); }
-            33% { transform: translateX(30px) rotate(5deg); }
-            66% { transform: translateX(-30px) rotate(-5deg); }
+        /* Header with Clickable Logo */
+        .dashboard-header {
+            background: rgba(26, 18, 12, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid #ffaa33;
+            border-radius: 0 0 30px 30px;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        /* Clickable Logo - Same Style */
+        .header-logo a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.3s ease;
+            flex-wrap: wrap;
+        }
+
+        .header-logo a:hover {
+            transform: scale(1.05);
+        }
+
+        .header-logo i {
+            font-size: 2.5rem;
+            color: #ffaa33;
+            filter: drop-shadow(0 0 10px #ffaa33);
+            animation: logoSpin 5s linear infinite;
+        }
+
+        @keyframes logoSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .header-logo span {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffd966;
+            text-shadow: 
+                2px 2px 0 #8b4513,
+                4px 4px 0 #4a2c1a,
+                6px 6px 0 #2a1a0a;
+            letter-spacing: 3px;
+        }
+
+        .header-logo a:hover span {
+            color: #ffaa33;
+            text-shadow: 
+                2px 2px 0 #8b4513,
+                4px 4px 0 #4a2c1a,
+                6px 6px 0 #2a1a0a,
+                0 0 20px #ffaa33;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .header-btn {
+            padding: 0.6rem 1.2rem;
+            background: rgba(255, 170, 51, 0.15);
+            border: 2px solid #ffaa33;
+            border-radius: 30px;
+            color: #ffaa33;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .header-btn:hover {
+            background: #ffaa33;
+            color: #221100;
+            box-shadow: 0 0 15px #ffaa33;
         }
 
         /* Main Container */
@@ -95,34 +193,32 @@
             position: relative;
             z-index: 10;
             max-width: 1400px;
-            margin: 2rem auto;
+            margin: 0 auto 2rem;
             padding: 0 2rem;
+            width: 100%;
+            overflow-x: hidden;
         }
 
-        /* ============================================ */
-        /* SELLER HEADER - REDESIGNED
-        /* ============================================ */
-
-        .seller-header {
-            background: rgba(26, 18, 12, 0.6);
+        /* Welcome Section - High Contrast */
+        .welcome-section {
+            background: rgba(26, 18, 12, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 170, 51, 0.2);
+            border: 2px solid #ffaa33;
             border-radius: 30px;
-            padding: 2rem 2.5rem;
+            padding: 2rem;
             margin-bottom: 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 2rem;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            animation: headerAppear 0.8s ease-out;
+            gap: 1.5rem;
+            animation: welcomeAppear 0.8s ease-out;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
-        @keyframes headerAppear {
+        @keyframes welcomeAppear {
             from {
                 opacity: 0;
                 transform: translateY(-30px);
@@ -133,42 +229,26 @@
             }
         }
 
-        .seller-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 170, 51, 0.1), transparent);
-            animation: headerShine 8s infinite;
-        }
-
-        @keyframes headerShine {
-            0% { left: -100%; }
-            20% { left: 100%; }
-            100% { left: 100%; }
-        }
-
-        .header-content h1 {
-            font-size: 2.5rem;
-            font-weight: 900;
+        .welcome-content h1 {
+            font-size: 2.2rem;
             margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
-            gap: 1rem;
-        }
-
-        .header-content h1 i {
+            gap: 0.8rem;
+            flex-wrap: wrap;
             color: #ffaa33;
-            font-size: 2.5rem;
-            animation: headerIcon 3s ease-in-out infinite;
         }
 
-        @keyframes headerIcon {
-            0%, 100% { transform: rotate(0deg) scale(1); }
-            25% { transform: rotate(10deg) scale(1.1); }
-            75% { transform: rotate(-10deg) scale(1.1); }
+        .welcome-content h1 i {
+            color: #ffaa33;
+            filter: drop-shadow(0 0 10px #ffaa33);
+            animation: welcomeIcon 3s infinite;
+        }
+
+        @keyframes welcomeIcon {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(10deg); }
+            75% { transform: rotate(-10deg); }
         }
 
         .glow-text {
@@ -176,109 +256,69 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 30px rgba(255, 170, 51, 0.5);
+            font-weight: 900;
         }
 
-        .header-content p {
-            color: #b7a88b;
-            font-size: 1.1rem;
+        .welcome-content p {
+            color: #e5d9c6;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
-        .header-content p i {
+        .welcome-content p i {
             color: #44ff44;
             font-size: 0.8rem;
+            filter: drop-shadow(0 0 5px #44ff44);
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
         }
 
-        .header-actions {
+        .welcome-stats {
             display: flex;
-            gap: 1rem;
+            gap: 2rem;
             flex-wrap: wrap;
         }
 
-        .action-btn {
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 15px;
+        .stat-badge {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            border: 1px solid #ffaa33;
+        }
+
+        .stat-badge .value {
+            font-size: 1.8rem;
             font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            position: relative;
-            overflow: hidden;
-            font-family: 'Courier New', monospace;
-        }
-
-        .action-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .action-btn:hover::before {
-            left: 100%;
-        }
-
-        .action-btn.primary {
-            background: linear-gradient(135deg, #ffaa33, #ff9933);
-            color: #221100;
-            box-shadow: 0 10px 20px rgba(255, 170, 51, 0.3);
-        }
-
-        .action-btn.primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(255, 170, 51, 0.4);
-        }
-
-        .action-btn.secondary {
-            background: rgba(255, 170, 51, 0.1);
-            border: 2px solid #ffaa33;
             color: #ffaa33;
+            text-shadow: 0 0 10px #ffaa33;
         }
 
-        .action-btn.secondary:hover {
-            background: rgba(255, 170, 51, 0.2);
-            transform: translateY(-3px);
-        }
-
-        .earnings-badge {
-            background: linear-gradient(135deg, #ffaa33, #ff9933);
-            color: #221100;
-            padding: 0.3rem 1rem;
-            border-radius: 30px;
+        .stat-badge .label {
+            color: #e5d9c6;
             font-size: 0.9rem;
-            margin-left: 1rem;
-            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* ============================================ */
-        /* SELLER LAYOUT
-        /* ============================================ */
-
+        /* Dashboard Grid */
         .dashboard-grid {
             display: grid;
-            grid-template-columns: 320px 1fr;
+            grid-template-columns: 300px 1fr;
             gap: 2rem;
-            animation: contentAppear 0.8s ease-out 0.2s both;
+            animation: gridAppear 0.8s ease-out 0.2s both;
+            width: 100%;
         }
 
-        @keyframes contentAppear {
+        @keyframes gridAppear {
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -289,59 +329,53 @@
             }
         }
 
-        /* ============================================ */
-        /* SIDEBAR - ADVANCED
-        /* ============================================ */
-
+        /* Sidebar - High Contrast */
         .seller-sidebar {
-            background: rgba(26, 18, 12, 0.6);
+            background: rgba(26, 18, 12, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 170, 51, 0.2);
+            border: 2px solid #ffaa33;
             border-radius: 30px;
             padding: 2rem;
             height: fit-content;
             position: sticky;
-            top: 2rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            top: 100px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
-        .seller-profile-card {
+        .seller-profile {
             text-align: center;
             padding-bottom: 2rem;
-            border-bottom: 2px solid rgba(255, 170, 51, 0.2);
+            border-bottom: 2px solid #ffaa33;
             margin-bottom: 2rem;
         }
 
         .avatar-container {
             position: relative;
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 1.5rem;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1rem;
         }
 
         .avatar-container img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            border: 4px solid #ffaa33;
+            border: 3px solid #ffaa33;
             box-shadow: 0 0 30px rgba(255, 170, 51, 0.5);
-            transition: transform 0.3s;
-        }
-
-        .avatar-container:hover img {
-            transform: scale(1.05);
         }
 
         .status-badge {
             position: absolute;
             bottom: 5px;
             right: 5px;
-            width: 20px;
-            height: 20px;
+            width: 15px;
+            height: 15px;
             background: #44ff44;
-            border: 3px solid #221100;
+            border: 2px solid #221100;
             border-radius: 50%;
+            box-shadow: 0 0 10px #44ff44;
             animation: statusPulse 2s infinite;
         }
 
@@ -350,101 +384,72 @@
             50% { transform: scale(1.2); opacity: 0.8; }
         }
 
-        .seller-profile-card h3 {
-            font-size: 1.5rem;
+        .seller-profile h3 {
+            font-size: 1.3rem;
             color: #ffaa33;
             margin-bottom: 0.3rem;
+            text-shadow: 0 0 10px #ffaa33;
+        }
+
+        .seller-profile p {
+            color: #e5d9c6;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
         }
 
         .seller-badge {
-            background: linear-gradient(135deg, #ffaa33, #ff9933);
-            color: #221100;
+            background: rgba(255, 170, 51, 0.2);
+            border: 1px solid #ffaa33;
+            color: #ffaa33;
             padding: 0.3rem 1rem;
             border-radius: 30px;
-            font-size: 0.8rem;
             display: inline-block;
             margin-bottom: 1rem;
             font-weight: bold;
         }
 
-        .seller-rating {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            flex-wrap: wrap;
-        }
-
         .rating-stars {
             display: flex;
+            justify-content: center;
             gap: 0.2rem;
+            margin-bottom: 0.3rem;
         }
 
         .rating-stars i {
             color: gold;
             font-size: 0.9rem;
+            filter: drop-shadow(0 0 5px gold);
         }
-
-        .rating-stars i:nth-child(1) { animation-delay: 0s; }
-        .rating-stars i:nth-child(2) { animation-delay: 0.2s; }
-        .rating-stars i:nth-child(3) { animation-delay: 0.4s; }
-        .rating-stars i:nth-child(4) { animation-delay: 0.6s; }
-        .rating-stars i:nth-child(5) { animation-delay: 0.8s; }
 
         .rating-text {
-            color: #b7a88b;
-            font-size: 0.9rem;
+            color: #e5d9c6;
+            font-size: 0.85rem;
         }
 
-        .seller-stats-mini {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 170, 51, 0.2);
-        }
-
-        .mini-stat {
-            text-align: center;
-        }
-
-        .mini-stat .value {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #ffaa33;
-        }
-
-        .mini-stat .label {
-            font-size: 0.8rem;
-            color: #b7a88b;
-        }
-
-        /* Sidebar Navigation */
-        .seller-nav {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .nav-item {
+        /* Sidebar Navigation - High Contrast */
+        .seller-nav ul {
             list-style: none;
         }
 
-        .nav-link {
+        .seller-nav li {
+            margin-bottom: 0.5rem;
+        }
+
+        .seller-nav a {
             display: flex;
             align-items: center;
             gap: 1rem;
-            padding: 1rem 1.2rem;
-            color: #b7a88b;
+            padding: 0.8rem 1rem;
+            color: #e5d9c6;
             text-decoration: none;
             border-radius: 15px;
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            font-weight: 500;
         }
 
-        .nav-link::before {
+        .seller-nav a::before {
             content: '';
             position: absolute;
             top: 0;
@@ -453,159 +458,152 @@
             height: 0;
             background: #ffaa33;
             transition: height 0.3s;
+            box-shadow: 0 0 10px #ffaa33;
         }
 
-        .nav-link:hover::before,
-        .nav-item.active .nav-link::before {
+        .seller-nav a:hover::before,
+        .seller-nav li.active a::before {
             height: 100%;
         }
 
-        .nav-link:hover {
-            background: rgba(255, 170, 51, 0.1);
+        .seller-nav a:hover {
+            background: rgba(255, 170, 51, 0.2);
             color: #ffaa33;
             transform: translateX(5px);
         }
 
-        .nav-item.active .nav-link {
-            background: rgba(255, 170, 51, 0.15);
+        .seller-nav li.active a {
+            background: rgba(255, 170, 51, 0.25);
             color: #ffaa33;
+            font-weight: bold;
         }
 
-        .nav-link i {
-            width: 24px;
-            font-size: 1.2rem;
+        .seller-nav i {
+            width: 20px;
+            font-size: 1.1rem;
+            color: #ffaa33;
         }
 
         .badge {
             background: #ffaa33;
             color: #221100;
-            padding: 0.2rem 0.6rem;
+            padding: 0.2rem 0.5rem;
             border-radius: 30px;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: bold;
             margin-left: auto;
         }
 
         .logout-item {
             margin-top: 1rem;
-            border-top: 2px solid rgba(255, 170, 51, 0.2);
+            border-top: 2px solid #ffaa33;
             padding-top: 1rem;
         }
 
         .logout-link {
-            color: #ff5555;
+            color: #ff8888 !important;
         }
 
         .logout-link i {
-            color: #ff5555;
+            color: #ff8888 !important;
         }
 
-        /* ============================================ */
-        /* MAIN CONTENT
-        /* ============================================ */
+        .logout-link:hover {
+            color: #ff5555 !important;
+        }
 
+        .logout-link:hover i {
+            color: #ff5555 !important;
+        }
+
+        /* Main Content */
         .dashboard-main {
             display: flex;
             flex-direction: column;
             gap: 2rem;
+            width: 100%;
+            overflow-x: hidden;
         }
 
-        /* Stats Cards */
+        /* Stats Cards - High Contrast */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
+            width: 100%;
         }
 
-        .stat-card-modern {
-            background: rgba(26, 18, 12, 0.6);
+        .stat-card {
+            background: rgba(26, 18, 12, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 170, 51, 0.2);
+            border: 2px solid #ffaa33;
             border-radius: 25px;
-            padding: 1.8rem;
+            padding: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1.2rem;
             transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-            animation: statAppear 0.6s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .stat-card-modern:nth-child(1) { animation-delay: 0.1s; }
-        .stat-card-modern:nth-child(2) { animation-delay: 0.2s; }
-        .stat-card-modern:nth-child(3) { animation-delay: 0.3s; }
-        .stat-card-modern:nth-child(4) { animation-delay: 0.4s; }
-
-        @keyframes statAppear {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .stat-card-modern:hover {
+        .stat-card:hover {
             transform: translateY(-5px);
             border-color: #ffaa33;
-            box-shadow: 0 20px 30px rgba(255, 170, 51, 0.2);
+            box-shadow: 0 15px 30px rgba(255, 170, 51, 0.3);
         }
 
-        .stat-icon-modern {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, rgba(255, 170, 51, 0.2), rgba(255, 153, 51, 0.2));
-            border-radius: 20px;
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 170, 51, 0.2);
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #ffaa33;
+            border: 1px solid #ffaa33;
         }
 
-        .stat-content-modern h3 {
-            font-size: 2rem;
-            font-weight: bold;
+        .stat-content h3 {
+            font-size: 1.8rem;
             color: #ffaa33;
             line-height: 1;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
+            text-shadow: 0 0 10px #ffaa33;
         }
 
-        .stat-content-modern p {
-            color: #b7a88b;
+        .stat-content p {
+            color: #e5d9c6;
             font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Quick Actions - High Contrast */
+        .quick-actions {
+            background: rgba(26, 18, 12, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 2px solid #ffaa33;
+            border-radius: 30px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .quick-actions h2 {
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #ffaa33;
+            margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        /* Quick Actions */
-        .quick-actions-modern {
-            background: rgba(26, 18, 12, 0.6);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 170, 51, 0.2);
-            border-radius: 30px;
-            padding: 1.5rem;
-        }
-
-        .quick-actions-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .quick-actions-header h2 {
-            font-size: 1.3rem;
+        .quick-actions h2 i {
             color: #ffaa33;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .quick-actions-header h2 i {
             animation: quickIcon 2s infinite;
         }
 
@@ -614,68 +612,70 @@
             50% { transform: scale(1.2); }
         }
 
-        .actions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        .action-buttons {
+            display: flex;
             gap: 1rem;
+            flex-wrap: wrap;
         }
 
-        .quick-action-btn {
-            background: rgba(255, 170, 51, 0.1);
-            border: 1px solid rgba(255, 170, 51, 0.3);
+        .action-btn {
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 170, 51, 0.15);
+            border: 2px solid #ffaa33;
             border-radius: 15px;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            color: #b7a88b;
+            color: #ffaa33;
+            font-weight: bold;
             cursor: pointer;
             transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             font-family: 'Courier New', monospace;
         }
 
-        .quick-action-btn:hover {
-            background: rgba(255, 170, 51, 0.2);
-            border-color: #ffaa33;
-            color: #ffaa33;
+        .action-btn:hover {
+            background: #ffaa33;
+            color: #221100;
             transform: translateY(-3px);
+            box-shadow: 0 5px 15px #ffaa33;
         }
 
-        .quick-action-btn i {
-            font-size: 1.8rem;
-            color: #ffaa33;
+        .action-btn i {
+            font-size: 1.2rem;
         }
 
-        /* Section Cards */
+        /* Section Cards - High Contrast */
         .section-card {
-            background: rgba(26, 18, 12, 0.6);
+            background: rgba(26, 18, 12, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 170, 51, 0.2);
+            border: 2px solid #ffaa33;
             border-radius: 30px;
-            padding: 2rem;
-            transition: all 0.3s;
+            padding: 1.8rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .section-header-modern {
+        .section-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             flex-wrap: wrap;
             gap: 1rem;
         }
 
-        .section-header-modern h2 {
-            font-size: 1.5rem;
+        .section-header h2 {
+            font-size: 1.3rem;
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.5rem;
             color: #ffaa33;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .section-header-modern h2 i {
+        .section-header h2 i {
+            color: #ffaa33;
             animation: sectionIcon 3s infinite;
         }
 
@@ -691,39 +691,49 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            border: 2px solid transparent;
+            padding: 0.4rem 1rem;
+            border: 2px solid #ffaa33;
             border-radius: 30px;
             transition: all 0.3s;
+            font-weight: bold;
         }
 
         .view-link:hover {
-            border-color: #ffaa33;
-            background: rgba(255, 170, 51, 0.1);
-            gap: 1rem;
+            background: #ffaa33;
+            color: #221100;
+            gap: 0.8rem;
+            box-shadow: 0 0 15px #ffaa33;
         }
 
-        /* Orders Table */
+        /* Orders Table - High Contrast */
         .table-container {
             overflow-x: auto;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 15px;
         }
 
-        .orders-table-modern {
+        .orders-table {
             width: 100%;
             border-collapse: collapse;
+            min-width: 700px;
         }
 
-        .orders-table-modern th {
+        .orders-table th {
             text-align: left;
             padding: 1rem;
             color: #ffaa33;
             font-weight: bold;
-            border-bottom: 2px solid rgba(255, 170, 51, 0.3);
+            border-bottom: 2px solid #ffaa33;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .orders-table-modern td {
+        .orders-table td {
             padding: 1rem;
-            border-bottom: 1px solid rgba(255, 170, 51, 0.1);
+            border-bottom: 1px solid rgba(255, 170, 51, 0.3);
+            color: #e5d9c6;
         }
 
         .order-item {
@@ -733,72 +743,88 @@
         }
 
         .order-item img {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
             object-fit: cover;
             border: 2px solid #ffaa33;
         }
 
-        .status-badge-modern {
-            padding: 0.4rem 1rem;
+        .order-item span {
+            color: #e5d9c6;
+            font-weight: 500;
+        }
+
+        .status-badge {
+            padding: 0.3rem 1rem;
             border-radius: 30px;
             font-size: 0.8rem;
             font-weight: bold;
             display: inline-block;
         }
 
-        .status-badge-modern.paid {
+        .status-badge.paid {
             background: rgba(0, 170, 85, 0.2);
-            color: #00aa55;
-            border: 1px solid #00aa55;
+            color: #44ff44;
+            border: 1px solid #44ff44;
+            text-shadow: 0 0 5px #44ff44;
         }
 
-        .status-badge-modern.shipped {
+        .status-badge.shipped {
             background: rgba(255, 170, 51, 0.2);
             color: #ffaa33;
             border: 1px solid #ffaa33;
+            text-shadow: 0 0 5px #ffaa33;
         }
 
-        .status-badge-modern.pending {
+        .status-badge.pending {
             background: rgba(255, 170, 68, 0.2);
             color: #ffaa44;
             border: 1px solid #ffaa44;
+            text-shadow: 0 0 5px #ffaa44;
         }
 
-        .btn-modern {
-            padding: 0.4rem 1rem;
-            background: rgba(255, 170, 51, 0.1);
+        .btn-small {
+            padding: 0.3rem 1rem;
+            background: rgba(255, 170, 51, 0.15);
             border: 1px solid #ffaa33;
             border-radius: 30px;
             color: #ffaa33;
             text-decoration: none;
             font-size: 0.8rem;
             transition: all 0.3s;
+            display: inline-block;
+            font-weight: bold;
         }
 
-        .btn-modern:hover {
+        .btn-small:hover {
             background: #ffaa33;
             color: #221100;
+            box-shadow: 0 0 10px #ffaa33;
         }
 
         /* Listings Table */
-        .listings-table-modern {
+        .listings-table {
             width: 100%;
             border-collapse: collapse;
+            min-width: 800px;
         }
 
-        .listings-table-modern th {
+        .listings-table th {
             text-align: left;
             padding: 1rem;
             color: #ffaa33;
             font-weight: bold;
-            border-bottom: 2px solid rgba(255, 170, 51, 0.3);
+            border-bottom: 2px solid #ffaa33;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .listings-table-modern td {
+        .listings-table td {
             padding: 1rem;
-            border-bottom: 1px solid rgba(255, 170, 51, 0.1);
+            border-bottom: 1px solid rgba(255, 170, 51, 0.3);
+            color: #e5d9c6;
         }
 
         .listing-item {
@@ -808,11 +834,16 @@
         }
 
         .listing-item img {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
             object-fit: cover;
             border: 2px solid #ffaa33;
+        }
+
+        .listing-item span {
+            color: #e5d9c6;
+            font-weight: 500;
         }
 
         .condition-badge {
@@ -825,20 +856,23 @@
 
         .condition-badge.mint {
             background: rgba(0, 170, 85, 0.2);
-            color: #00aa55;
-            border: 1px solid #00aa55;
+            color: #44ff44;
+            border: 1px solid #44ff44;
+            text-shadow: 0 0 5px #44ff44;
         }
 
         .condition-badge.good {
             background: rgba(255, 170, 51, 0.2);
             color: #ffaa33;
             border: 1px solid #ffaa33;
+            text-shadow: 0 0 5px #ffaa33;
         }
 
         .condition-badge.fair {
             background: rgba(255, 85, 85, 0.2);
-            color: #ff5555;
-            border: 1px solid #ff5555;
+            color: #ff8888;
+            border: 1px solid #ff8888;
+            text-shadow: 0 0 5px #ff8888;
         }
 
         .action-icons {
@@ -847,11 +881,11 @@
         }
 
         .icon-btn {
-            width: 35px;
-            height: 35px;
-            background: rgba(255, 170, 51, 0.1);
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 170, 51, 0.15);
             border: 1px solid #ffaa33;
-            border-radius: 10px;
+            border-radius: 8px;
             color: #ffaa33;
             cursor: pointer;
             transition: all 0.3s;
@@ -860,44 +894,47 @@
         .icon-btn:hover {
             background: #ffaa33;
             color: #221100;
+            box-shadow: 0 0 10px #ffaa33;
         }
 
         /* Chart Section */
         .chart-section {
-            background: rgba(26, 18, 12, 0.6);
+            background: rgba(26, 18, 12, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 170, 51, 0.2);
+            border: 2px solid #ffaa33;
             border-radius: 30px;
-            padding: 2rem;
+            padding: 1.8rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .chart-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             flex-wrap: wrap;
             gap: 1rem;
         }
 
         .chart-header h2 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #ffaa33;
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.5rem;
         }
 
         .chart-controls {
             display: flex;
             gap: 0.5rem;
+            flex-wrap: wrap;
         }
 
         .chart-btn {
             padding: 0.5rem 1.5rem;
-            background: rgba(255, 170, 51, 0.1);
-            border: 1px solid rgba(255, 170, 51, 0.3);
+            background: rgba(255, 170, 51, 0.15);
+            border: 1px solid #ffaa33;
             border-radius: 30px;
             color: #b7a88b;
             cursor: pointer;
@@ -908,10 +945,11 @@
             background: #ffaa33;
             color: #221100;
             border-color: #ffaa33;
+            font-weight: bold;
         }
 
         .chart-btn:hover {
-            background: rgba(255, 170, 51, 0.2);
+            background: rgba(255, 170, 51, 0.3);
             color: #ffaa33;
         }
 
@@ -919,6 +957,8 @@
             background: rgba(0, 0, 0, 0.3);
             border-radius: 20px;
             padding: 2rem;
+            width: 100%;
+            overflow-x: auto;
         }
 
         .chart-bars {
@@ -927,6 +967,7 @@
             justify-content: space-around;
             gap: 1rem;
             min-height: 200px;
+            min-width: 500px;
         }
 
         .bar {
@@ -940,6 +981,7 @@
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
+            border: 1px solid #ffaa33;
         }
 
         @keyframes barGrow {
@@ -952,29 +994,31 @@
             bottom: -25px;
             color: #b7a88b;
             font-size: 0.8rem;
+            font-weight: bold;
         }
 
         /* Top Items */
-        .top-items-modern {
+        .top-items {
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
 
-        .top-item-modern {
+        .top-item {
             display: flex;
             align-items: center;
             gap: 1rem;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 170, 51, 0.2);
-            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 170, 51, 0.3);
+            border-radius: 15px;
             padding: 1rem;
             transition: all 0.3s;
         }
 
-        .top-item-modern:hover {
+        .top-item:hover {
             border-color: #ffaa33;
             transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(255, 170, 51, 0.3);
         }
 
         .rank {
@@ -991,7 +1035,7 @@
             font-size: 1.2rem;
         }
 
-        .top-item-modern img {
+        .top-item img {
             width: 60px;
             height: 60px;
             border-radius: 10px;
@@ -999,16 +1043,17 @@
             border: 2px solid #ffaa33;
         }
 
-        .item-details-modern {
+        .item-details {
             flex: 1;
         }
 
-        .item-details-modern h4 {
-            font-size: 1.1rem;
+        .item-details h4 {
+            font-size: 1rem;
             margin-bottom: 0.3rem;
+            color: #e5d9c6;
         }
 
-        .item-details-modern p {
+        .item-details p {
             color: #b7a88b;
             font-size: 0.9rem;
         }
@@ -1025,34 +1070,40 @@
 
         .trend.up {
             background: rgba(0, 170, 85, 0.2);
-            color: #00aa55;
+            color: #44ff44;
+            border: 1px solid #44ff44;
         }
 
         .trend.down {
             background: rgba(255, 85, 85, 0.2);
-            color: #ff5555;
+            color: #ff8888;
+            border: 1px solid #ff8888;
         }
 
         /* Tips Section */
-        .tips-section {
-            background: linear-gradient(135deg, rgba(255, 170, 51, 0.1), rgba(255, 153, 51, 0.1));
-            border: 1px solid #ffaa33;
+        .seller-tips {
+            background: rgba(26, 18, 12, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 2px solid #ffaa33;
             border-radius: 30px;
             padding: 1.5rem;
             display: flex;
             align-items: center;
             gap: 1rem;
             animation: tipGlow 3s infinite;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         @keyframes tipGlow {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 170, 51, 0.2); }
-            50% { box-shadow: 0 0 40px rgba(255, 170, 51, 0.4); }
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 170, 51, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(255, 170, 51, 0.5); }
         }
 
-        .tips-section i {
+        .seller-tips i {
             font-size: 2.5rem;
             color: #ffaa33;
+            filter: drop-shadow(0 0 10px #ffaa33);
             animation: tipIcon 2s infinite;
         }
 
@@ -1068,18 +1119,165 @@
         }
 
         .tip-content p {
-            color: #b7a88b;
+            color: #e5d9c6;
             font-size: 0.95rem;
         }
 
-        /* Responsive */
-        @media (max-width: 1200px) {
+        /* ============================================ */
+        /* RESPONSIVE DESIGN - ALL DEVICES
+        /* ============================================ */
+
+        /* Extra Large Desktop (1400px and above) */
+        @media (min-width: 1400px) {
+            .dashboard-container {
+                max-width: 1600px;
+            }
+            
             .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(4, 1fr);
             }
         }
 
-        @media (max-width: 992px) {
+        /* Desktop (1200px to 1399px) */
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            .dashboard-grid {
+                grid-template-columns: 280px 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Small Desktop / Large Tablet (992px to 1199px) */
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .dashboard-grid {
+                grid-template-columns: 250px 1fr;
+                gap: 1.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .seller-nav a {
+                padding: 0.7rem 0.8rem;
+            }
+            
+            .orders-table {
+                min-width: 650px;
+            }
+            
+            .listings-table {
+                min-width: 750px;
+            }
+        }
+
+        /* Tablet Landscape (768px to 991px) */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .header-container {
+                padding: 0 1.5rem;
+            }
+
+            .header-logo span {
+                font-size: 1.6rem;
+            }
+
+            .dashboard-container {
+                padding: 0 1.5rem;
+            }
+
+            .welcome-section {
+                padding: 1.5rem;
+            }
+
+            .welcome-content h1 {
+                font-size: 2rem;
+            }
+
+            .welcome-stats {
+                gap: 1rem;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .seller-sidebar {
+                position: static;
+                margin-bottom: 1.5rem;
+            }
+
+            .seller-nav ul {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+            }
+
+            .seller-nav .logout-item {
+                grid-column: span 3;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .action-buttons {
+                justify-content: center;
+            }
+            
+            .orders-table {
+                min-width: 600px;
+            }
+            
+            .listings-table {
+                min-width: 700px;
+            }
+        }
+
+        /* Tablet Portrait (576px to 767px) */
+        @media (min-width: 576px) and (max-width: 767px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+
+            .header-logo i {
+                font-size: 2rem;
+            }
+
+            .header-logo span {
+                font-size: 1.4rem;
+            }
+
+            .header-actions {
+                gap: 0.5rem;
+            }
+
+            .header-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .dashboard-container {
+                padding: 0 1rem;
+            }
+
+            .welcome-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.2rem;
+            }
+
+            .welcome-content h1 {
+                font-size: 1.8rem;
+                justify-content: center;
+            }
+
+            .welcome-stats {
+                width: 100%;
+                justify-content: space-around;
+            }
+
             .dashboard-grid {
                 grid-template-columns: 1fr;
             }
@@ -1088,140 +1286,285 @@
                 position: static;
             }
 
-            .stats-grid {
+            .seller-nav ul {
+                display: grid;
                 grid-template-columns: repeat(2, 1fr);
-            }
-
-            .chart-bars {
                 gap: 0.5rem;
             }
 
-            .bar {
-                min-width: 30px;
+            .seller-nav .logout-item {
+                grid-column: span 2;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .action-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .orders-table th:nth-child(3),
+            .orders-table td:nth-child(3) {
+                display: none;
+            }
+            
+            .listings-table th:nth-child(4),
+            .listings-table td:nth-child(4),
+            .listings-table th:nth-child(5),
+            .listings-table td:nth-child(5) {
+                display: none;
+            }
+            
+            .chart-bars {
+                min-width: 400px;
             }
         }
 
-        @media (max-width: 768px) {
-            .dashboard-container {
-                padding: 0 1rem;
-            }
-
-            .seller-header {
+        /* Mobile (375px to 575px) */
+        @media (max-width: 575px) {
+            .header-container {
                 flex-direction: column;
-                text-align: center;
-                padding: 1.5rem;
+                align-items: flex-start;
+                gap: 0.8rem;
+                padding: 0.8rem 1rem;
             }
 
-            .header-content h1 {
-                justify-content: center;
-                font-size: 2rem;
+            .header-logo a {
+                gap: 0.5rem;
+            }
+
+            .header-logo i {
+                font-size: 1.8rem;
+            }
+
+            .header-logo span {
+                font-size: 1.2rem;
+                letter-spacing: 2px;
             }
 
             .header-actions {
                 width: 100%;
+                justify-content: space-between;
             }
 
-            .action-btn {
-                flex: 1;
+            .header-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            .dashboard-container {
+                padding: 0 1rem;
+            }
+
+            .welcome-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.2rem;
+            }
+
+            .welcome-content h1 {
+                font-size: 1.5rem;
                 justify-content: center;
-                padding: 0.8rem;
+            }
+
+            .welcome-content p {
+                font-size: 0.9rem;
+            }
+
+            .welcome-stats {
+                width: 100%;
+                justify-content: space-around;
+                gap: 0.5rem;
+            }
+
+            .stat-badge {
+                padding: 0.5rem 0.8rem;
+            }
+
+            .stat-badge .value {
+                font-size: 1.3rem;
+            }
+
+            .stat-badge .label {
+                font-size: 0.7rem;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .seller-sidebar {
+                position: static;
+                padding: 1.5rem;
+            }
+
+            .avatar-container {
+                width: 80px;
+                height: 80px;
+            }
+
+            .seller-profile h3 {
+                font-size: 1.2rem;
+            }
+
+            .seller-nav ul {
+                grid-template-columns: 1fr;
+            }
+
+            .seller-nav .logout-item {
+                grid-column: auto;
             }
 
             .stats-grid {
                 grid-template-columns: 1fr;
             }
 
-            .actions-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .stat-card {
+                padding: 1rem;
             }
 
+            .stat-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.5rem;
+            }
+
+            .stat-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .action-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .section-card {
+                padding: 1.2rem;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
             .table-container {
                 margin: 0 -1rem;
                 padding: 0 1rem;
+                width: calc(100% + 2rem);
             }
-
-            .orders-table-modern th:nth-child(3),
-            .orders-table-modern td:nth-child(3) {
+            
+            .orders-table th:nth-child(2),
+            .orders-table td:nth-child(2),
+            .orders-table th:nth-child(4),
+            .orders-table td:nth-child(4) {
                 display: none;
             }
-
-            .listings-table-modern th:nth-child(4),
-            .listings-table-modern td:nth-child(4) {
+            
+            .listings-table th:nth-child(2),
+            .listings-table td:nth-child(2),
+            .listings-table th:nth-child(3),
+            .listings-table td:nth-child(3),
+            .listings-table th:nth-child(5),
+            .listings-table td:nth-child(5) {
                 display: none;
             }
-
+            
+            .chart-container {
+                padding: 1rem;
+            }
+            
             .chart-bars {
-                flex-wrap: wrap;
-                justify-content: center;
+                min-width: 350px;
             }
-
-            .bar {
-                min-width: 50px;
+            
+            .top-item {
+                flex-direction: column;
+                text-align: center;
             }
-
-            .top-item-modern {
-                flex-wrap: wrap;
+            
+            .rank {
+                margin: 0 auto;
             }
-
+            
+            .item-details {
+                text-align: center;
+            }
+            
             .trend {
                 width: 100%;
                 justify-content: center;
             }
-
-            .tips-section {
+            
+            .seller-tips {
                 flex-direction: column;
                 text-align: center;
             }
         }
 
-        @media (max-width: 576px) {
-            .header-content h1 {
-                font-size: 1.6rem;
+        /* Small Mobile (320px to 374px) */
+        @media (max-width: 374px) {
+            .header-logo i {
+                font-size: 1.5rem;
             }
 
-            .actions-grid {
-                grid-template-columns: 1fr;
+            .header-logo span {
+                font-size: 1rem;
             }
 
-            .section-header-modern {
-                flex-direction: column;
-                align-items: flex-start;
+            .header-btn {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.7rem;
             }
 
-            .order-item {
-                flex-direction: column;
-                text-align: center;
+            .welcome-content h1 {
+                font-size: 1.3rem;
             }
 
-            .listing-item {
-                flex-direction: column;
-                text-align: center;
+            .stat-badge .value {
+                font-size: 1.2rem;
             }
 
-            .action-icons {
-                justify-content: center;
+            .stat-card {
+                padding: 0.8rem;
             }
 
-            .top-item-modern {
-                flex-direction: column;
-                text-align: center;
+            .stat-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.3rem;
             }
 
-            .rank {
-                margin: 0 auto;
+            .stat-content h3 {
+                font-size: 1.3rem;
             }
 
-            .item-details-modern {
-                text-align: center;
+            .stat-content p {
+                font-size: 0.8rem;
+            }
+            
+            .orders-table th:nth-child(5),
+            .orders-table td:nth-child(5) {
+                display: none;
+            }
+            
+            .listings-table th:nth-child(6),
+            .listings-table td:nth-child(6) {
+                display: none;
             }
         }
 
         /* RTL Support */
-        body.rtl .nav-link:hover {
+        body.rtl .seller-nav a:hover {
             transform: translateX(-5px);
         }
 
-        body.rtl .nav-link::before {
+        body.rtl .seller-nav a::before {
             left: auto;
             right: 0;
         }
@@ -1230,11 +1573,7 @@
             transform: rotate(180deg);
         }
 
-        body.rtl .view-link:hover {
-            gap: 1rem;
-        }
-
-        body.rtl .top-item-modern:hover {
+        body.rtl .top-item:hover {
             transform: translateX(-5px);
         }
 
@@ -1242,32 +1581,89 @@
             transform: rotate(180deg);
         }
 
-        body.rtl .tips-section {
+        body.rtl .seller-tips {
             flex-direction: row-reverse;
+        }
+
+        /* Touch Device Optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .stat-card:hover,
+            .action-btn:hover,
+            .top-item:hover,
+            .icon-btn:hover,
+            .btn-small:hover {
+                transform: none;
+            }
+            
+            .seller-nav a {
+                min-height: 44px;
+            }
+            
+            .icon-btn,
+            .btn-small {
+                min-height: 44px;
+                min-width: 44px;
+            }
         }
 
         /* Reduced Motion */
         @media (prefers-reduced-motion: reduce) {
             .bg-grid,
             .bg-float,
-            .seller-header::before,
-            .header-content h1 i,
+            .header-logo i,
+            .welcome-content h1 i,
             .status-badge,
-            .rating-stars i,
-            .quick-actions-header h2 i,
-            .section-header-modern h2 i,
-            .stat-card-modern,
-            .quick-action-btn,
-            .icon-btn,
-            .btn-modern,
-            .action-btn,
-            .chart-btn,
-            .top-item-modern,
-            .tips-section,
-            .tips-section i,
-            .bar {
+            .quick-actions h2 i,
+            .section-header h2 i,
+            .stat-card,
+            .bar,
+            .seller-tips,
+            .seller-tips i {
                 animation: none !important;
                 transition: none !important;
+            }
+            
+            .stat-card:hover,
+            .action-btn:hover,
+            .top-item:hover {
+                transform: none !important;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .dashboard-bg,
+            .dashboard-header,
+            .seller-nav .logout-item,
+            .action-btn,
+            .view-link,
+            .btn-small,
+            .icon-btn,
+            .chart-btn,
+            .seller-tips {
+                display: none !important;
+            }
+            
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            
+            .seller-sidebar,
+            .section-card,
+            .stat-card,
+            .top-item,
+            .quick-actions {
+                background: white !important;
+                border: 1px solid #ccc !important;
+                box-shadow: none !important;
+                color: black !important;
+            }
+            
+            .stat-content h3,
+            .welcome-content h1 i,
+            .section-header h2 {
+                color: black !important;
             }
         }
     </style>
@@ -1278,13 +1674,28 @@
         <div class="bg-grid"></div>
         <div class="bg-float">💰</div>
         <div class="bg-float">📦</div>
-        <div class="bg-float">📊</div>
     </div>
 
+    <!-- Header with Clickable Logo -->
+    <header class="dashboard-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <a href="index.html">
+                    <i class="fas fa-gamepad"></i>
+                    <span>RETRO MARKET</span>
+                </a>
+            </div>
+            <div class="header-actions">
+                <a href="dashboard.html" class="header-btn">BUYER MODE</a>
+                <a href="index.html" class="header-btn">LOGOUT</a>
+            </div>
+        </div>
+    </header>
+
     <div class="dashboard-container">
-        <!-- SELLER HEADER -->
-        <div class="seller-header">
-            <div class="header-content">
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <div class="welcome-content">
                 <h1>
                     <i class="fas fa-store-alt"></i>
                     <span class="glow-text">SELLER DASHBOARD</span>
@@ -1294,363 +1705,208 @@
                     Welcome back, <strong>RetroGameSeller</strong>! Your store is performing well.
                 </p>
             </div>
-            <div class="header-actions">
-                <button class="action-btn primary">
-                    <i class="fas fa-plus"></i>
-                    LIST NEW ITEM
-                </button>
-                <button class="action-btn secondary">
-                    <i class="fas fa-chart-line"></i>
-                    ANALYTICS
-                </button>
-                <button class="action-btn secondary">
-                    <i class="fas fa-dollar-sign"></i>
-                    EARNINGS
-                    <span class="earnings-badge">$1,847</span>
-                </button>
+            <div class="welcome-stats">
+                <div class="stat-badge">
+                    <div class="value">12</div>
+                    <div class="label">Active</div>
+                </div>
+                <div class="stat-badge">
+                    <div class="value">24</div>
+                    <div class="label">Sold</div>
+                </div>
+                <div class="stat-badge">
+                    <div class="value">$1.8K</div>
+                    <div class="label">Revenue</div>
+                </div>
             </div>
         </div>
 
-        <!-- DASHBOARD GRID -->
+        <!-- Dashboard Grid -->
         <div class="dashboard-grid">
-            <!-- SIDEBAR -->
+            <!-- Sidebar -->
             <aside class="seller-sidebar">
-                <div class="seller-profile-card">
+                <div class="seller-profile">
                     <div class="avatar-container">
                         <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Profile">
                         <div class="status-badge"></div>
                     </div>
                     <h3>RetroGameSeller</h3>
                     <div class="seller-badge">PREMIUM SELLER</div>
-                    <div class="seller-rating">
-                        <div class="rating-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="rating-text">4.9 (847 reviews)</span>
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                    <div class="seller-stats-mini">
-                        <div class="mini-stat">
-                            <div class="value">12</div>
-                            <div class="label">Active</div>
-                        </div>
-                        <div class="mini-stat">
-                            <div class="value">24</div>
-                            <div class="label">Sold</div>
-                        </div>
-                        <div class="mini-stat">
-                            <div class="value">98%</div>
-                            <div class="label">Rating</div>
-                        </div>
-                    </div>
+                    <div class="rating-text">4.9 · 847 reviews</div>
                 </div>
 
                 <nav class="seller-nav">
                     <ul>
-                        <li class="nav-item active">
-                            <a href="#overview" class="nav-link">
-                                <i class="fas fa-home"></i>
-                                <span>Overview</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#listings" class="nav-link">
-                                <i class="fas fa-store"></i>
-                                <span>My Listings</span>
-                                <span class="badge">12</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#orders" class="nav-link">
-                                <i class="fas fa-shopping-bag"></i>
-                                <span>Orders</span>
-                                <span class="badge">3</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#sales" class="nav-link">
-                                <i class="fas fa-chart-line"></i>
-                                <span>Sales Report</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#messages" class="nav-link">
-                                <i class="fas fa-envelope"></i>
-                                <span>Messages</span>
-                                <span class="badge">5</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#payments" class="nav-link">
-                                <i class="fas fa-coins"></i>
-                                <span>Payments</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#analytics" class="nav-link">
-                                <i class="fas fa-chart-pie"></i>
-                                <span>Analytics</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#promotions" class="nav-link">
-                                <i class="fas fa-tag"></i>
-                                <span>Promotions</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#settings" class="nav-link">
-                                <i class="fas fa-cog"></i>
-                                <span>Settings</span>
-                            </a>
-                        </li>
-                        <li class="nav-item logout-item">
-                            <a href="index.html" class="nav-link logout-link">
-                                <i class="fas fa-sign-out-alt"></i>
-                                <span>Logout</span>
-                            </a>
-                        </li>
+                        <li class="active"><a href="#overview"><i class="fas fa-home"></i> Overview</a></li>
+                        <li><a href="#listings"><i class="fas fa-store"></i> My Listings <span class="badge">12</span></a></li>
+                        <li><a href="#orders"><i class="fas fa-shopping-bag"></i> Orders <span class="badge">3</span></a></li>
+                        <li><a href="#sales"><i class="fas fa-chart-line"></i> Sales Report</a></li>
+                        <li><a href="#messages"><i class="fas fa-envelope"></i> Messages <span class="badge">5</span></a></li>
+                        <li><a href="#payments"><i class="fas fa-coins"></i> Payments</a></li>
+                        <li><a href="#analytics"><i class="fas fa-chart-pie"></i> Analytics</a></li>
+                        <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li class="logout-item"><a href="index.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                     </ul>
                 </nav>
             </aside>
 
-            <!-- MAIN CONTENT -->
+            <!-- Main Content -->
             <main class="dashboard-main">
-                <!-- STATS CARDS -->
+                <!-- Stats Cards -->
                 <div class="stats-grid">
-                    <div class="stat-card-modern">
-                        <div class="stat-icon-modern">
-                            <i class="fas fa-store"></i>
-                        </div>
-                        <div class="stat-content-modern">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-store"></i></div>
+                        <div class="stat-content">
                             <h3>12</h3>
                             <p>Active Listings</p>
                         </div>
                     </div>
-                    <div class="stat-card-modern">
-                        <div class="stat-icon-modern">
-                            <i class="fas fa-shopping-bag"></i>
-                        </div>
-                        <div class="stat-content-modern">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-shopping-bag"></i></div>
+                        <div class="stat-content">
                             <h3>24</h3>
                             <p>Sold This Month</p>
                         </div>
                     </div>
-                    <div class="stat-card-modern">
-                        <div class="stat-icon-modern">
-                            <i class="fas fa-dollar-sign"></i>
-                        </div>
-                        <div class="stat-content-modern">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
+                        <div class="stat-content">
                             <h3>$1,847</h3>
                             <p>Monthly Revenue</p>
                         </div>
                     </div>
-                    <div class="stat-card-modern">
-                        <div class="stat-icon-modern">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <div class="stat-content-modern">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-eye"></i></div>
+                        <div class="stat-content">
                             <h3>2,345</h3>
                             <p>Total Views</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- QUICK ACTIONS -->
-                <div class="quick-actions-modern">
-                    <div class="quick-actions-header">
-                        <h2><i class="fas fa-bolt"></i> QUICK ACTIONS</h2>
-                        <span class="earnings-badge">MOST USED</span>
-                    </div>
-                    <div class="actions-grid">
-                        <button class="quick-action-btn">
-                            <i class="fas fa-camera"></i>
-                            <span>Add Photos</span>
-                        </button>
-                        <button class="quick-action-btn">
-                            <i class="fas fa-tag"></i>
-                            <span>Bulk Edit</span>
-                        </button>
-                        <button class="quick-action-btn">
-                            <i class="fas fa-ship"></i>
-                            <span>Shipping Labels</span>
-                        </button>
-                        <button class="quick-action-btn">
-                            <i class="fas fa-percent"></i>
-                            <span>Create Discount</span>
-                        </button>
-                        <button class="quick-action-btn">
-                            <i class="fas fa-file-pdf"></i>
-                            <span>Export Data</span>
-                        </button>
-                        <button class="quick-action-btn">
-                            <i class="fas fa-copy"></i>
-                            <span>Duplicate</span>
-                        </button>
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h2><i class="fas fa-bolt"></i> QUICK ACTIONS</h2>
+                    <div class="action-buttons">
+                        <button class="action-btn"><i class="fas fa-plus"></i> List New Item</button>
+                        <button class="action-btn"><i class="fas fa-camera"></i> Add Photos</button>
+                        <button class="action-btn"><i class="fas fa-tag"></i> Bulk Edit</button>
+                        <button class="action-btn"><i class="fas fa-ship"></i> Shipping Labels</button>
                     </div>
                 </div>
 
-                <!-- RECENT ORDERS -->
+                <!-- Recent Orders -->
                 <div class="section-card">
-                    <div class="section-header-modern">
+                    <div class="section-header">
                         <h2><i class="fas fa-clock"></i> RECENT ORDERS</h2>
                         <a href="#" class="view-link">VIEW ALL <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="table-container">
-                        <table class="orders-table-modern">
+                        <table class="orders-table">
                             <thead>
                                 <tr>
-                                    <th>ORDER #</th>
-                                    <th>ITEM</th>
-                                    <th>BUYER</th>
-                                    <th>DATE</th>
-                                    <th>TOTAL</th>
-                                    <th>STATUS</th>
-                                    <th>ACTION</th>
+                                    <th>Order #</th>
+                                    <th>Item</th>
+                                    <th>Buyer</th>
+                                    <th>Date</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>#ORD-12345</td>
-                                    <td>
-                                        <div class="order-item">
-                                            <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/25425.jpg?raw=true" alt="Super Mario World">
-                                            <span>Super Mario World (SNES)</span>
-                                        </div>
-                                    </td>
+                                    <td><div class="order-item"><img src="https://cdn-icons-png.flaticon.com/512/2459/2459156.png" alt=""><span>Super Mario World</span></div></td>
                                     <td>MarioFan</td>
-                                    <td>Feb 15, 2025</td>
+                                    <td>Feb 15</td>
                                     <td>$79.99</td>
-                                    <td><span class="status-badge-modern paid">Paid</span></td>
-                                    <td><a href="#" class="btn-modern">Process</a></td>
+                                    <td><span class="status-badge paid">Paid</span></td>
+                                    <td><a href="#" class="btn-small">Process</a></td>
                                 </tr>
                                 <tr>
                                     <td>#ORD-12346</td>
-                                    <td>
-                                        <div class="order-item">
-                                            <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/24938.jpg?raw=true" alt="Zelda">
-                                            <span>The Legend of Zelda (NES)</span>
-                                        </div>
-                                    </td>
+                                    <td><div class="order-item"><img src="https://cdn-icons-png.flaticon.com/512/2459/2459115.png" alt=""><span>The Legend of Zelda</span></div></td>
                                     <td>ZeldaFan</td>
-                                    <td>Feb 14, 2025</td>
+                                    <td>Feb 14</td>
                                     <td>$129.99</td>
-                                    <td><span class="status-badge-modern shipped">Shipped</span></td>
-                                    <td><a href="#" class="btn-modern">Track</a></td>
+                                    <td><span class="status-badge shipped">Shipped</span></td>
+                                    <td><a href="#" class="btn-small">Track</a></td>
                                 </tr>
                                 <tr>
                                     <td>#ORD-12347</td>
-                                    <td>
-                                        <div class="order-item">
-                                            <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-1286397.webp?raw=true" alt="Sonic">
-                                            <span>Sonic the Hedgehog 2 (Genesis)</span>
-                                        </div>
-                                    </td>
+                                    <td><div class="order-item"><img src="https://cdn-icons-png.flaticon.com/512/2459/2459122.png" alt=""><span>Sonic 2</span></div></td>
                                     <td>SonicFan</td>
-                                    <td>Feb 12, 2025</td>
+                                    <td>Feb 12</td>
                                     <td>$49.99</td>
-                                    <td><span class="status-badge-modern pending">Pending</span></td>
-                                    <td><a href="#" class="btn-modern">View</a></td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td><a href="#" class="btn-small">View</a></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-                <!-- ACTIVE LISTINGS -->
+                <!-- Active Listings -->
                 <div class="section-card">
-                    <div class="section-header-modern">
+                    <div class="section-header">
                         <h2><i class="fas fa-store"></i> ACTIVE LISTINGS</h2>
                         <a href="#" class="view-link">MANAGE <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="table-container">
-                        <table class="listings-table-modern">
+                        <table class="listings-table">
                             <thead>
                                 <tr>
-                                    <th>ITEM</th>
-                                    <th>PRICE</th>
-                                    <th>CONDITION</th>
-                                    <th>VIEWS</th>
-                                    <th>WATCHERS</th>
-                                    <th>LISTED</th>
-                                    <th>ACTIONS</th>
+                                    <th>Item</th>
+                                    <th>Price</th>
+                                    <th>Condition</th>
+                                    <th>Views</th>
+                                    <th>Watchers</th>
+                                    <th>Listed</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>
-                                        <div class="listing-item">
-                                            <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-376662.webp?raw=true" alt="Mega Man 2">
-                                            <span>Mega Man 2 (NES)</span>
-                                        </div>
-                                    </td>
+                                    <td><div class="listing-item"><img src="https://cdn-icons-png.flaticon.com/512/2459/2459130.png" alt=""><span>Mega Man 2</span></div></td>
                                     <td>$79.99</td>
                                     <td><span class="condition-badge mint">Mint</span></td>
                                     <td>234</td>
                                     <td>12</td>
                                     <td>Feb 10</td>
-                                    <td>
-                                        <div class="action-icons">
-                                            <button class="icon-btn" title="Edit"><i class="fas fa-edit"></i></button>
-                                            <button class="icon-btn" title="Stats"><i class="fas fa-chart-line"></i></button>
-                                            <button class="icon-btn" title="Copy"><i class="fas fa-copy"></i></button>
-                                            <button class="icon-btn" title="Delete"><i class="fas fa-trash"></i></button>
-                                        </div>
-                                    </td>
+                                    <td><div class="action-icons"><button class="icon-btn"><i class="fas fa-edit"></i></button><button class="icon-btn"><i class="fas fa-chart-line"></i></button></div></td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <div class="listing-item">
-                                            <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/25270.jpg?raw=true" alt="Donkey Kong">
-                                            <span>Donkey Kong Country (SNES)</span>
-                                        </div>
-                                    </td>
+                                    <td><div class="listing-item"><img src="https://cdn-icons-png.flaticon.com/512/2459/2459091.png" alt=""><span>Donkey Kong Country</span></div></td>
                                     <td>$44.99</td>
                                     <td><span class="condition-badge good">Good</span></td>
                                     <td>156</td>
                                     <td>8</td>
                                     <td>Feb 8</td>
-                                    <td>
-                                        <div class="action-icons">
-                                            <button class="icon-btn"><i class="fas fa-edit"></i></button>
-                                            <button class="icon-btn"><i class="fas fa-chart-line"></i></button>
-                                            <button class="icon-btn"><i class="fas fa-copy"></i></button>
-                                            <button class="icon-btn"><i class="fas fa-trash"></i></button>
-                                        </div>
-                                    </td>
+                                    <td><div class="action-icons"><button class="icon-btn"><i class="fas fa-edit"></i></button><button class="icon-btn"><i class="fas fa-chart-line"></i></button></div></td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <div class="listing-item">
-                                            <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/25461.jpg?raw=true" alt="Castlevania">
-                                            <span>Castlevania (NES)</span>
-                                        </div>
-                                    </td>
+                                    <td><div class="listing-item"><img src="https://cdn-icons-png.flaticon.com/512/686/686215.png" alt=""><span>Castlevania</span></div></td>
                                     <td>$44.99</td>
                                     <td><span class="condition-badge fair">Fair</span></td>
                                     <td>89</td>
                                     <td>3</td>
                                     <td>Feb 5</td>
-                                    <td>
-                                        <div class="action-icons">
-                                            <button class="icon-btn"><i class="fas fa-edit"></i></button>
-                                            <button class="icon-btn"><i class="fas fa-chart-line"></i></button>
-                                            <button class="icon-btn"><i class="fas fa-copy"></i></button>
-                                            <button class="icon-btn"><i class="fas fa-trash"></i></button>
-                                        </div>
-                                    </td>
+                                    <td><div class="action-icons"><button class="icon-btn"><i class="fas fa-edit"></i></button><button class="icon-btn"><i class="fas fa-chart-line"></i></button></div></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-                <!-- SALES CHART -->
+                <!-- Sales Chart -->
                 <div class="chart-section">
                     <div class="chart-header">
                         <h2><i class="fas fa-chart-line"></i> SALES OVERVIEW</h2>
@@ -1660,7 +1916,6 @@
                             <button class="chart-btn">Year</button>
                         </div>
                     </div>
-
                     <div class="chart-container">
                         <div class="chart-bars">
                             <div class="bar" style="height: 40px;"><span>Mon</span></div>
@@ -1674,36 +1929,35 @@
                     </div>
                 </div>
 
-                <!-- TOP SELLING ITEMS -->
+                <!-- Top Selling Items -->
                 <div class="section-card">
-                    <div class="section-header-modern">
+                    <div class="section-header">
                         <h2><i class="fas fa-trophy"></i> TOP SELLING ITEMS</h2>
                     </div>
-
-                    <div class="top-items-modern">
-                        <div class="top-item-modern">
+                    <div class="top-items">
+                        <div class="top-item">
                             <div class="rank">1</div>
-                            <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/25224.jpg?raw=true" alt="Super Mario World">
-                            <div class="item-details-modern">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2459/2459156.png" alt="">
+                            <div class="item-details">
                                 <h4>Super Mario World (SNES)</h4>
                                 <p>Sold: 24 units • Revenue: $1,919.76</p>
                             </div>
                             <span class="trend up"><i class="fas fa-arrow-up"></i> +12%</span>
                         </div>
-                        <div class="top-item-modern">
+                        <div class="top-item">
                             <div class="rank">2</div>
-                            <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/25461.jpg?raw=true" alt="Zelda">
-                            <div class="item-details-modern">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2459/2459115.png" alt="">
+                            <div class="item-details">
                                 <h4>The Legend of Zelda (NES)</h4>
                                 <p>Sold: 18 units • Revenue: $2,339.82</p>
                             </div>
                             <span class="trend up"><i class="fas fa-arrow-up"></i> +8%</span>
                         </div>
-                        <div class="top-item-modern">
+                        <div class="top-item">
                             <div class="rank">3</div>
-                            <img src="https://github.com/sakthimanimchss-sudo/retro-game-/blob/main/assets/image/thumbbig-1286397.webp?raw=true" alt="Sonic">
-                            <div class="item-details-modern">
-                                <h4>Sonic the Hedgehog 2 (Genesis)</h4>
+                            <img src="https://cdn-icons-png.flaticon.com/512/2459/2459122.png" alt="">
+                            <div class="item-details">
+                                <h4>Sonic 2 (Genesis)</h4>
                                 <p>Sold: 15 units • Revenue: $749.85</p>
                             </div>
                             <span class="trend down"><i class="fas fa-arrow-down"></i> -3%</span>
@@ -1711,12 +1965,12 @@
                     </div>
                 </div>
 
-                <!-- TIPS SECTION -->
-                <div class="tips-section">
+                <!-- Tips Section -->
+                <div class="seller-tips">
                     <i class="fas fa-lightbulb"></i>
                     <div class="tip-content">
                         <h4>Pro Tip</h4>
-                        <p>Items with high-quality photos sell 3x faster. Add multiple angles, show the condition clearly, and include photos of the cartridge, box, and manual for CIB items.</p>
+                        <p>Items with high-quality photos sell 3x faster. Add multiple angles and show the condition clearly!</p>
                     </div>
                 </div>
             </main>
@@ -1724,27 +1978,18 @@
     </div>
 
     <script>
-        // Sidebar navigation active state
         document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-link');
-            
+            const navLinks = document.querySelectorAll('.seller-nav a');
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     if (this.getAttribute('href').startsWith('#')) {
                         e.preventDefault();
-                        
-                        // Remove active class from all nav items
-                        document.querySelectorAll('.nav-item').forEach(item => {
-                            item.classList.remove('active');
-                        });
-                        
-                        // Add active class to parent nav item
-                        this.closest('.nav-item').classList.add('active');
+                        navLinks.forEach(l => l.parentElement.classList.remove('active'));
+                        this.parentElement.classList.add('active');
                     }
                 });
             });
 
-            // Chart buttons
             const chartBtns = document.querySelectorAll('.chart-btn');
             chartBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
@@ -1753,39 +1998,11 @@
                 });
             });
 
-            // Quick action buttons (demo)
-            const quickBtns = document.querySelectorAll('.quick-action-btn');
-            quickBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    alert(`${this.querySelector('span').textContent} action would be triggered here.`);
-                });
-            });
-
-            // Icon buttons (demo)
-            const iconBtns = document.querySelectorAll('.icon-btn');
-            iconBtns.forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    const action = this.querySelector('i').classList[1];
-                    alert(`${action} action would be triggered here.`);
-                });
-            });
-
-            // View links (demo)
-            const viewLinks = document.querySelectorAll('.view-link');
-            viewLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    alert('View all page would open here.');
-                });
-            });
-
-            // Process buttons (demo)
-            const processBtns = document.querySelectorAll('.btn-modern');
-            processBtns.forEach(btn => {
+            // Demo buttons
+            document.querySelectorAll('.action-btn, .btn-small, .icon-btn, .view-link').forEach(btn => {
                 btn.addEventListener('click', function(e) {
                     e.preventDefault();
-                    alert(`${this.textContent} action for order would be triggered here.`);
+                    alert('Demo: This action would be implemented.');
                 });
             });
         });
