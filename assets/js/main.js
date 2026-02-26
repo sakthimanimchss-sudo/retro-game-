@@ -489,46 +489,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ========================================
-    // RETRO SCANLINES EFFECT (optional toggle)
-    // ========================================
-    function initScanlines() {
-        // Check if scanlines are enabled in localStorage
-        const scanlinesEnabled = localStorage.getItem('retroScanlines') !== 'false';
-        
-        if (scanlinesEnabled) {
-            document.body.classList.add('crt-effect');
-        }
-        
-        // Create scanlines toggle button (optional)
-        if (!document.getElementById('scanlinesToggle') && document.querySelector('.theme-rtl')) {
-            const scanlinesBtn = document.createElement('button');
-            scanlinesBtn.id = 'scanlinesToggle';
-            scanlinesBtn.className = 'theme-btn';
-            scanlinesBtn.innerHTML = '<i class="fas fa-tv"></i>';
-            scanlinesBtn.setAttribute('aria-label', 'Toggle scanlines');
-            scanlinesBtn.title = 'Toggle CRT scanlines effect';
-            
-            // Add to desktop theme-rtl container
-            const desktopThemeRtl = document.querySelector('.theme-rtl');
-            if (desktopThemeRtl) {
-                desktopThemeRtl.appendChild(scanlinesBtn);
-            }
-            
-            // Toggle scanlines
-            scanlinesBtn.addEventListener('click', function() {
-                document.body.classList.toggle('crt-effect');
-                const enabled = document.body.classList.contains('crt-effect');
-                localStorage.setItem('retroScanlines', enabled);
-                
-                // Visual feedback
-                this.style.transform = 'scale(0.9)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 200);
-            });
-        }
-    }
 
     // ========================================
     // PAGE TRANSITIONS (simple fade)
