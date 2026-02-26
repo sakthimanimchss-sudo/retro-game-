@@ -1,3 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>SNES Games - Retro Game Marketplace</title>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>🎮</text></svg>">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/marketplace.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="light-mode">
+    <!-- HEADER SECTION -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-gamepad"></i>
+                    RETRO MARKET
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">
+                                <a href="index.html">
+                                    <i class="fas fa-home"></i>
+                                    <span>Home 1 (Retro Landing)</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="home2.html">
+                                    <i class="fas fa-store"></i>
+                                    <span>Home 2 (Marketplace)</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Shop</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">
+                                <a href="marketplace.html">
+                                    <i class="fas fa-store"></i>
+                                    <span>All Products</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="nes.html">
+                                    <i class="fas fa-gamepad"></i>
+                                    <span>NES Games</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="snes.html">
+                                    <i class="fas fa-gamepad"></i>
+                                    <span>SNES Games</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="sega.html">
+                                    <i class="fas fa-gamepad"></i>
+                                    <span>Sega Genesis</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-file"></i>
+                            <span>Pages</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">
+                                <a href="product-details.html">
+                                    <i class="fas fa-box"></i>
+                                    <span>Product Details</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="dashboard.html">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>User Dashboard</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="seller-dashboard.html">
+                                    <i class="fas fa-store-alt"></i>
+                                    <span>Seller Panel</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="about.html">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>About Us</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="contact.html">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Contact</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item auth-buttons">
+                        <a href="login.html" class="btn btn-login">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>Login</span>
+                        </a>
+                        <a href="register.html" class="btn btn-register">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Register</span>
+                        </a>
+                    </li>
+
+                    <!-- Theme/RTL Controls -->
+                      <li class="nav-item">
+                        <div class="theme-rtl">
+                            <button id="themeToggle" class="theme-btn-compact" aria-label="Toggle theme">
+                                <i class="fas fa-moon"></i>
+                                <i class="fas fa-sun"></i>
+                            </button>
+                            <button id="rtlToggle" class="rtl-btn" aria-label="Toggle RTL">
+                                <i class="fas fa-exchange-alt"></i>
+                                <span>RTL</span>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile">
+                <button class="hamburger" id="hamburgerBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="mobile-menu" id="mobileMenu">
+                    <ul class="nav-mobile-menu">
+                        <li class="mobile-nav-item mobile-dropdown">
+                            <div class="mobile-dropdown-header">
+                                <a href="#" class="mobile-nav-link">
+                                    <i class="fas fa-home"></i>
+                                    <span>Home</span>
+                                </a>
+                                <button class="mobile-dropdown-toggle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <ul class="mobile-dropdown-menu">
+                                <li class="mobile-dropdown-item">
+                                    <a href="index.html">
+                                        <i class="fas fa-home"></i>
+                                        <span>Home 1 (Retro Landing)</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="home2.html">
+                                        <i class="fas fa-store"></i>
+                                        <span>Home 2 (Marketplace)</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="mobile-nav-item mobile-dropdown">
+                            <div class="mobile-dropdown-header">
+                                <a href="#" class="mobile-nav-link">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Shop</span>
+                                </a>
+                                <button class="mobile-dropdown-toggle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <ul class="mobile-dropdown-menu">
+                                <li class="mobile-dropdown-item">
+                                    <a href="marketplace.html">
+                                        <i class="fas fa-store"></i>
+                                        <span>All Products</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="nes.html">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>NES Games</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="snes.html">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>SNES Games</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="sega.html">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>Sega Genesis</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="mobile-nav-item mobile-dropdown">
+                            <div class="mobile-dropdown-header">
+                                <a href="#" class="mobile-nav-link">
+                                    <i class="fas fa-file"></i>
+                                    <span>Pages</span>
+                                </a>
+                                <button class="mobile-dropdown-toggle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <ul class="mobile-dropdown-menu">
+                                <li class="mobile-dropdown-item">
+                                    <a href="product-details.html">
+                                        <i class="fas fa-box"></i>
+                                        <span>Product Details</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="dashboard.html">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        <span>User Dashboard</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="seller-dashboard.html">
+                                        <i class="fas fa-store-alt"></i>
+                                        <span>Seller Panel</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="about.html">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span>About Us</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-dropdown-item">
+                                    <a href="contact.html">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>Contact</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="mobile-nav-item">
+                            <div class="mobile-auth-buttons">
+                                <a href="auth.html?mode=login" class="btn btn-login mobile-btn">Login</a>
+                                <a href="auth.html?mode=register" class="btn btn-register mobile-btn">Register</a>
+                            </div>
+                        </li>
+
+                        <!-- Mobile Theme/RTL -->
+                        <li class="mobile-nav-item">
+                            <div class="theme-rtl mobile-theme-rtl">
+                                <button id="mobileThemeToggle" class="theme-btn-compact">
+                                    <i class="fas fa-moon"></i>
+                                    <i class="fas fa-sun"></i>
+                                </button>
+                                <button id="mobileRtlToggle" class="rtl-btn">
+                                    <i class="fas fa-exchange-alt"></i>
+                                    <span>RTL</span>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- PAGE HEADER - SNES THEMED -->
+        <section class="page-header snes-header">
+            <div class="container">
+                <h1>
+                    <i class="fas fa-crown"></i>
+                    SNES GAMES
+                    <i class="fas fa-crown"></i>
+                </h1>
+                <p>Browse our collection of Super Nintendo Entertainment System classics. From Super Mario World to Chrono Trigger, find your next favorite retro game.</p>
+                <div class="header-stats">
+                    <span><i class="fas fa-gamepad"></i> 287 Games</span>
+                    <span><i class="fas fa-tag"></i> 12 Consoles</span>
+                    <span><i class="fas fa-star"></i> 24 Graded</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FILTER SECTION -->
+        <section class="filter-section">
+            <div class="container">
+                <div class="filter-container">
+                    <div class="filter-header">
+                        <h3><i class="fas fa-filter"></i> FILTER SNES GAMES</h3>
+                        <button class="clear-filters">Clear All</button>
+                    </div>
+                    
+                    <div class="filter-grid">
+                        <div class="filter-group">
+                            <label>Category</label>
+                            <select class="filter-select">
+                                <option>All SNES Games</option>
+                                <option>Action</option>
+                                <option>RPG</option>
+                                <option>Platformer</option>
+                                <option>Fighting</option>
+                                <option>Racing</option>
+                                <option>Puzzle</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label>Region</label>
+                            <select class="filter-select">
+                                <option>All Regions</option>
+                                <option>USA</option>
+                                <option>Japan (Super Famicom)</option>
+                                <option>Europe (PAL)</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label>Condition</label>
+                            <select class="filter-select">
+                                <option>All Conditions</option>
+                                <option>Mint - CIB</option>
+                                <option>Good - Cart Only</option>
+                                <option>Fair - With Manual</option>
+                                <option>Graded</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label>Price Range</label>
+                            <div class="price-range">
+                                <input type="number" placeholder="Min $">
+                                <span>-</span>
+                                <input type="number" placeholder="Max $">
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <label>Sort By</label>
+                            <select class="filter-select">
+                                <option>Newest First</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>Most Popular</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label>&nbsp;</label>
+                            <button class="apply-filters">APPLY FILTERS</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS GRID - SNES GAMES -->
+        <section class="products-section">
+            <div class="container">
+                <div class="products-header">
+                    <h2>SNES GAMES <span class="result-count">(287 results)</span></h2>
+                    <div class="view-options">
+                        <button class="view-btn active"><i class="fas fa-grid-2"></i></button>
+                        <button class="view-btn"><i class="fas fa-list"></i></button>
+                    </div>
+                </div>
+
+                <div class="products-grid">
+                    <!-- Product Card 1 - Super Mario World -->
+                    <div class="product-card">
+                        <div class="product-badge">HOT</div>
+                        <div class="snes-badge">SNES</div>
+                        <div class="product-image">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2459/2459156.png" alt="Super Mario World">
+                            <div class="product-overlay">
+                                <button class="quick-view">Quick View</button>
+                                <button class="add-to-cart"><i class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Super Mario World</h3>
+                            <p class="product-platform"><i class="fas fa-gamepad"></i> SNES</p>
+                            <div class="product-condition condition-mint">Mint - CIB</div>
+                            <div class="product-price">$79.99</div>
+                            <div class="product-seller">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Seller">
+                                <span>MarioFan</span>
+                                <span class="seller-rating"><i class="fas fa-star"></i> 4.9</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 - The Legend of Zelda: A Link to the Past -->
+                    <div class="product-card">
+                        <div class="snes-badge">SNES</div>
+                        <div class="product-image">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2459/2459115.png" alt="Zelda Link to the Past">
+                            <div class="product-overlay">
+                                <button class="quick-view">Quick View</button>
+                                <button class="add-to-cart"><i class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">The Legend of Zelda: A Link to the Past</h3>
+                            <p class="product-platform"><i class="fas fa-gamepad"></i> SNES</p>
+                            <div class="product-condition condition-mint">Mint - CIB</div>
+                            <div class="product-price">$129.99</div>
+                            <div class="product-seller">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4140/4140051.png" alt="Seller">
+                                <span>ZeldaFan</span>
+                                <span class="seller-rating"><i class="fas fa-star"></i> 4.9</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 - Super Metroid -->
+                    <div class="product-card">
+                        <div class="product-badge">RARE</div>
+                        <div class="snes-badge">SNES</div>
+                        <div class="product-image">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2459/2459178.png" alt="Super Metroid">
+                            <div class="product-overlay">
+                                <button class="quick-view">Quick View</button>
+                                <button class="add-to-cart"><i class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Super Metroid</h3>
+                            <p class="product-platform"><i class="fas fa-gamepad"></i> SNES</p>
+                            <div class="product-condition condition-mint">Mint - CIB</div>
+                            <div class="product-price">$149.99</div>
+                            <div class="product-seller">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4140/4140040.png" alt="Seller">
+                                <span>MetroidHunter</span>
+                                <span class="seller-rating"><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 4 - Chrono Trigger -->
+                    <div class="product-card">
+                        <div class="product-badge">GRADED</div>
+                        <div class="snes-badge">SNES</div>
+                        <div class="product-image">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2459/2459108.png" alt="Chrono Trigger">
+                            <div class="product-overlay">
+                                <button class="quick-view">Quick View</button>
+                                <button class="add-to-cart"><i class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Chrono Trigger</h3>
+                            <p class="product-platform"><i class="fas fa-gamepad"></i> SNES</p>
+                            <div class="product-condition condition-graded">Graded 9.0</div>
+                            <div class="product-price">$899.99</div>
+                            <div class="product-seller">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Seller">
+                                <span>RareGames</span>
+                                <span class="seller-rating"><i class="fas fa-star"></i> 5.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 5 - Donkey Kong Country -->
+                    <div class="product-card">
+                        <div class="snes-badge">SNES</div>
+                        <div class="product-image">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2459/2459091.png" alt="Donkey Kong Country">
+                            <div class="product-overlay">
+                                <button class="quick-view">Quick View</button>
+                                <button class="add-to-cart"><i class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Donkey Kong Country</h3>
+                            <p class="product-platform"><i class="fas fa-gamepad"></i> SNES</p>
+                            <div class="product-condition condition-good">Good - Cart Only</div>
+                            <div class="product-price">$44.99</div>
+                            <div class="product-seller">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4140/4140051.png" alt="Seller">
+                                <span>DKCollector</span>
+                                <span class="seller-rating"><i class="fas fa-star"></i> 4.7</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 6 - Final Fantasy III (VI) -->
+                    <div class="product-card">
+                        <div class="product-badge">POPULAR</div>
+                        <div class="snes-badge">SNES</div>
+                        <div class="product-image">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2459/2459130.png" alt="Final Fantasy III">
+                            <div class="product-overlay">
+                                <button class="quick-view">Quick View</button>
+                                <button class="add-to-cart"><i class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Final Fantasy III (VI)</h3>
+                            <p class="product-platform"><i class="fas fa-gamepad"></i> SNES</p>
+                            <div class="product-condition condition-mint">Mint - CIB</div>
+                            <div class="product-price">$249.99</div>
+                            <div class="product-seller">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4140/4140040.png" alt="Seller">
+                                <span>FFMaster</span>
+                                <span class="seller-rating"><i class="fas fa-star"></i> 4.9</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 7 - Street Fighter II Turbo -->
+                    <div class="product-card">
+                        <div class="snes-badge">SNES</div>
+                        <div class="product-image">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2459/2459122.png" alt="Street Fighter II Turbo">
+                            <div class="product-overlay">
+                                <button class="quick-view">Quick View</button>
+                                <button class="add-to-cart"><i class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Street Fighter II Turbo</h3>
+                            <p class="product-platform"><i class="fas fa-gamepad"></i> SNES</p>
+                            <div class="product-condition condition-good">Good - Cart Only</div>
+                            <div class="product-price">$34.99</div>
+                            <div class="product-seller">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Seller">
+                                <span>FighterFan</span>
+                                <span class="seller-rating"><i class="fas fa-star"></i> 4.6</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 8 - Mega Man X -->
+                    <div class="product-card">
+                        <div class="snes-badge">SNES</div>
+                        <div class="product-image">
+                            <img src="https://cdn-icons-png.flaticon.com/512/686/686215.png" alt="Mega Man X">
+                            <div class="product-overlay">
+                                <button class="quick-view">Quick View</button>
+                                <button class="add-to-cart"><i class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Mega Man X</h3>
+                            <p class="product-platform"><i class="fas fa-gamepad"></i> SNES</p>
+                            <div class="product-condition condition-mint">Mint - CIB</div>
+                            <div class="product-price">$89.99</div>
+                            <div class="product-seller">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4140/4140051.png" alt="Seller">
+                                <span>MegaManFan</span>
+                                <span class="seller-rating"><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 9 - Super Mario RPG -->
+                    <div class="product-card">
+                        <div class="product-badge">RARE</div>
+                        <div class="snes-badge">SNES</div>
+                        <div class="product-image">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2459/2459143.png" alt="Super Mario RPG">
+                            <div class="product-overlay">
+                                <button class="quick-view">Quick View</button>
+                                <button class="add-to-cart"><i class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Super Mario RPG</h3>
+                            <p class="product-platform"><i class="fas fa-gamepad"></i> SNES</p>
+                            <div class="product-condition condition-mint">Mint - CIB</div>
+                            <div class="product-price">$199.99</div>
+                            <div class="product-seller">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4140/4140040.png" alt="Seller">
+                                <span>RPGKing</span>
+                                <span class="seller-rating"><i class="fas fa-star"></i> 4.9</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 10 - EarthBound -->
+                    <div class="product-card">
+                        <div class="product-badge">ULTRA RARE</div>
+                        <div class="snes-badge">SNES</div>
+                        <div class="product-image">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2459/2459167.png" alt="EarthBound">
+                            <div class="product-overlay">
+                                <button class="quick-view">Quick View</button>
+                                <button class="add-to-cart"><i class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">EarthBound</h3>
+                            <p class="product-platform"><i class="fas fa-gamepad"></i> SNES</p>
+                            <div class="product-condition condition-graded">Graded 8.5</div>
+                            <div class="product-price">$1,299.99</div>
+                            <div class="product-seller">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Seller">
+                                <span>GradedGaming</span>
+                                <span class="seller-rating"><i class="fas fa-star"></i> 5.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 11 - Kirby Super Star -->
+                    <div class="product-card">
+                        <div class="snes-badge">SNES</div>
+                        <div class="product-image">
+                            <img src="https://cdn-icons-png.flaticon.com/512/686/686222.png" alt="Kirby Super Star">
+                            <div class="product-overlay">
+                                <button class="quick-view">Quick View</button>
+                                <button class="add-to-cart"><i class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Kirby Super Star</h3>
+                            <p class="product-platform"><i class="fas fa-gamepad"></i> SNES</p>
+                            <div class="product-condition condition-good">Good - Cart Only</div>
+                            <div class="product-price">$59.99</div>
+                            <div class="product-seller">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4140/4140051.png" alt="Seller">
+                                <span>KirbyFan</span>
+                                <span class="seller-rating"><i class="fas fa-star"></i> 4.7</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 12 - Star Fox -->
+                    <div class="product-card">
+                        <div class="snes-badge">SNES</div>
+                        <div class="product-image">
+                            <img src="https://cdn-icons-png.flaticon.com/512/686/686232.png" alt="Star Fox">
+                            <div class="product-overlay">
+                                <button class="quick-view">Quick View</button>
+                                <button class="add-to-cart"><i class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Star Fox</h3>
+                            <p class="product-platform"><i class="fas fa-gamepad"></i> SNES</p>
+                            <div class="product-condition condition-mint">Mint - CIB</div>
+                            <div class="product-price">$69.99</div>
+                            <div class="product-seller">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4140/4140040.png" alt="Seller">
+                                <span>FoxMcCloud</span>
+                                <span class="seller-rating"><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGINATION -->
+                <div class="pagination">
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">4</button>
+                    <button class="page-btn">5</button>
+                    <span class="page-dots">...</span>
+                    <button class="page-btn">12</button>
+                    <button class="page-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED CATEGORIES -->
+        <section class="featured-categories">
+            <div class="container">
+                <h2 class="section-title">SHOP BY CATEGORY</h2>
+                <div class="categories-grid">
+                    <a href="marketplace.html?console=nes" class="category-card">
+                        <i class="fas fa-gamepad"></i>
+                        <h3>NES Games</h3>
+                        <span>324 items</span>
+                    </a>
+                    <a href="marketplace.html?console=snes" class="category-card">
+                        <i class="fas fa-gamepad"></i>
+                        <h3>SNES Games</h3>
+                        <span>287 items</span>
+                    </a>
+                    <a href="marketplace.html?console=sega" class="category-card">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Sega Genesis</h3>
+                        <span>196 items</span>
+                    </a>
+                    <a href="marketplace.html?console=ps1" class="category-card">
+                        <i class="fas fa-compact-disc"></i>
+                        <h3>PlayStation</h3>
+                        <span>312 items</span>
+                    </a>
+                    <a href="accessories.html" class="category-card">
+                        <i class="fas fa-headphones"></i>
+                        <h3>Accessories</h3>
+                        <span>234 items</span>
+                    </a>
+                    <a href="consoles.html" class="category-card">
+                        <i class="fas fa-tv"></i>
+                        <h3>Consoles</h3>
+                        <span>86 items</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
 <footer class="footer">
     <div class="footer-main">
         <div class="container">
@@ -151,7 +906,7 @@
                     <span><i class="fas fa-truck"></i> Free Shipping Over $100</span>
                     <span><i class="fas fa-undo"></i> 30-Day Returns</span>
                     <span><i class="fas fa-credit-card"></i> Secure Payments</span>
-                    <span><i class="fas fa-gem"></i> Member Since 2010</span>
+                    <span><i class="fas fa-gem"></i> Member Since 2026</span>
                     <span><i class="fas fa-award"></i> Top Rated</span>
                 </div>
                 
@@ -196,3 +951,11 @@
         </div>
     </div>
 </footer>
+
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
